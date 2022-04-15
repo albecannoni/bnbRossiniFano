@@ -1,67 +1,152 @@
-body, header, html{
+/*generale*/
+
+body, html {
     margin: 0;
     padding: 0;
-    
+    height: 900px;
 }
 
-header{
-    box-shadow: 0px 0px 3vh rgb(56, 55, 55);
+html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.corsivo{
+    font-style: italic;
+    font-weight:600;
+}
+
+/*Navbar responsive*/
+#navWrapper{
+    height: 3.5vh;
+}
+
+header {
+    box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);    
 }
 
 /* ======================== */
-.contenitore{
-    max-width: 100%; /*Limits the width of the container but let's it get smaller if needed.*/
-    margin: 0 auto; /*Center the container horizontally in the middle of the page.*/
+.contenitore {
+    max-width: 100%;
+    /*Limits the width of the container but let's it get smaller if needed.*/
+    margin: 0 auto;
+    /*Center the container horizontally in the middle of the page.*/
     padding: 0px;
+    box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);
 }
-.navbar{
+
+.hamburger{
+    margin-right: 8vh;
+}
+.ri-menu-line{
+    background-color: rgb(33, 100, 224);
+    width: 100%;
+    border-radius: 5px;
+}
+
+.navbar {
     display: flex;
-    flex-wrap: wrap; /*Allows the children inside a flex container to wrap down onto the next line if there is not enough space.*/
-    align-items: center; /*Centers the children of a flex container vertically.*/
-    justify-content: space-between; /*Adds space between each child of a flex container.*/
-    background-color: rgb(224, 33, 33);
-    padding-block: 15px; /*Padding top and bottom*/
-    
+    flex-wrap: wrap;
+    /*Allows the children inside a flex container to wrap down onto the next line if there is not enough space.*/
+    align-items: center;
+    /*Centers the children of a flex container vertically.*/
+    justify-content: space-between;
+    /*Adds space between each child of a flex container.*/
+    background-color: rgb(33, 173, 224);
 }
-.navbar a{
+
+.navbar a {
     text-decoration: none;
-    color: inherit; /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
+    color: inherit;
+    /*Inherits the same color as the parent element or grandparent (the body) unless you set the color to the navbar.*/
 }
-.logo{
-    margin-right: 0px;
+
+.logo {
+    margin-right: 9rem;
 }
-.list{
+
+.list {
     list-style: none;
     display: flex;
-    gap: 2vh; /*Applies right and bottom spacing between children inside a flex or grid container.*/
+    gap: 2vh;
+    /*Applies right and bottom spacing between children inside a flex or grid container.*/
 }
+
 #toggler,
-.navbar label{
-    display: none;/*Hide the checkbox and label on large screens.*/
+.navbar label {
+    display: none;
+    /*Hide the checkbox and label on large screens.*/
 }
+
 /*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
-@media screen and 
-(max-width: 600px){
-    .menu{
+@media screen and (max-width: 600px) {
+    .menu {
         width: 100%;
-        max-height: 0; /*Makes the max-height 0 to side the expanded menu.*/
-        overflow: hidden; /*Hides the overflowing content.*/
+        max-height: 0;
+        /*Makes the max-height 0 to side the expanded menu.*/
+        overflow: hidden;
+        /*Hides the overflowing content.*/
     }
-    .list{
-        flex-direction: column; /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
-        align-items: center;
+
+    .stocazzo{
+        margin-right: -100px;
+    }
+
+    .list {
+        flex-direction: column;
+        /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
+        align-items: flex-end;
         padding: 20px;
+        
+        font-size: large;
     }
-    .navbar label{
-        display: inline-flex; /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
+    .toggler{
+        margin-right: 100px;
+    }
+
+    .navbar label {
+        display: inline-flex;
+        /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
         align-items: center;
         cursor: pointer;
+        width: 100px;
+        color: white;
     }
+
     /* 
         The general sibling selector (~) selects all elements that are next siblings of #toggler.
         In this case we target the .menu and we turn the height back to 100% to show the menu.
     */
-    #toggler:checked ~ .menu{
+    #toggler:checked~.menu {
         max-height: 100%;
     }
+    .logo{
+        margin-right: 2rem;
+    }
+    
+}
+
+
+/*slideshow Fano*/
+
+#banner{
+    box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);
+    border-radius: 5px;
+}
+
+/*form*/
+
+form{
+    background-color: rgb(33, 173, 224); 
+    border-radius: 5px;
+    box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);   
+}
+
+input, textarea{
+    border-radius: 5px;
+}
+
+/*footer*/
+footer{
+    height: 50px;
+    background-color: rgb(33, 173, 224);
 }
