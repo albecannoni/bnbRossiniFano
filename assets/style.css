@@ -32,11 +32,7 @@ body, html {
     padding: 0;
     height: 900px;
 }
-img{
-    width: auto;
-    height: auto;
-    
-}
+
 
 html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -45,6 +41,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 .corsivo{
     font-style: italic;
     font-weight:600;
+}
+
+img{
+    width: 100%;       
 }
 
 /*Navbar responsive*/
@@ -148,9 +148,7 @@ footer{
         /*Makes the max-height 0 to side the expanded menu.*/
         overflow: hidden;
         /*Hides the overflowing content.*/
-    }
-
-   
+    } 
 
     .list {
         flex-direction: column;
@@ -162,6 +160,8 @@ footer{
     .toggler{
         margin-right: 100px;
     }
+
+    
 
     .navbar label {
         display: inline-flex;

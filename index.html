@@ -41,7 +41,7 @@
                                 <a href="#" class="logo">Casa Vacanze Rossini | Fano</a>
                             </h5>
                         </div>
-                        <div >
+                        <div>
                             <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
                             <input type="checkbox" id="toggler">
                             <label for="toggler"><i class="ri-menu-line hamburger text-center w-100"></i></label>
@@ -85,43 +85,51 @@
     <!--slideshow-->
     <div class="container-fluid justify-content-center align-content-center bg-danger w-75" id="banner">
 
-        <div class="d-flex h-100  align-content-center shadow-2-white">
+        <div class="d-flex  justify-content-center align-content-center shadow-2-white">
+            
 
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner carousel w-100 text-center">
-                    <div class="carousel-item active">
-                        <img src="https://doodleipsum.com/700x525/flat?i=0ca4af8cbb660d47f4f18a56fe91ab5b"
-                            class=" w-100" alt="...">
-                    </div>
-                    <div class="carousel-item ">
-                        <img src="https://doodleipsum.com/700x525/hand-drawn?i=e321843205659b96b1d525c2b01ba6d1"
-                            class=" w-100" alt="...">
-                    </div>
-                    <div class="carousel-item ">
-                        <img src="https://doodleipsum.com/700x525/avatar-2?i=3a7ca2d4b169ed44c01b1216ee20822f"
-                            class=" w-100" alt="...">
-                    </div>
 
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner carousel text-center">
+                        <div class="carousel-item active">
+                            <img src="https://doodleipsum.com/700x525/flat?i=0ca4af8cbb660d47f4f18a56fe91ab5b" class=" "
+                                alt="...">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="https://doodleipsum.com/700x525/hand-drawn?i=e321843205659b96b1d525c2b01ba6d1"
+                                class=" " alt="...">
+                        </div>
+                        <div class="carousel-item ">
+                            <img src="https://doodleipsum.com/700x525/avatar-2?i=3a7ca2d4b169ed44c01b1216ee20822f"
+                                class="" alt="...">
+                        </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-
-
+            
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="text-center mt-5 w-75 corsivo">
+            <p >Compila i campi per ricevere informazioni riguardo il tuo soggiorno :)</p>
         </div>
     </div>
 
+    <div id="alert"></div>
+
     <!--form-->
-    <div class="container justify-content-center align-content-center  w-75 py-4">
+    <div class="container justify-content-center align-content-center  w-75  py-4">
         <form class="w-100 d-grid">
             <fieldset>
                 <div class="col-12">
@@ -135,7 +143,7 @@
                                 <input type="text" placeholder="inserisci il cognome" class="">
                             </div>
                         </div>
-                        
+
                         <div class="col m-1">
                             <div class="row m-1">
                                 <input type="text" placeholder="inserisci la mail" class="">
@@ -151,16 +159,16 @@
                             placeholder="scrivi la tua richiesta"></textarea>
                     </div>
                 </div>
-                
-                    
-                
+
+
+
             </fieldset>
             <div class="text-center py-2">
                 <button>invia richiesta</button>
             </div>
         </form>
     </div>
-   
+
     <footer class="fixed-bottom">
         <p></p>
         <div></div>
