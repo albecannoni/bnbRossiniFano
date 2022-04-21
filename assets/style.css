@@ -5,6 +5,11 @@ body, html {
     padding: 0;
     height: 900px;
 }
+img{
+    width: auto;
+    height: auto;
+    
+}
 
 html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -19,7 +24,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 #navWrapper{
     height: 3.5vh;
 }
+.ombra{
+    box-shadow: 0px 0px 2.5vh rgb(56, 55, 55); 
 
+}
 header {
     box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);    
 }
@@ -65,6 +73,7 @@ header {
 }
 
 .list {
+    font-size: large;
     list-style: none;
     display: flex;
     gap: 2vh;
@@ -77,8 +86,35 @@ header {
     /*Hide the checkbox and label on large screens.*/
 }
 
+
+/*slideshow Fano*/
+
+#banner{
+    box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);
+    border-radius: 5px;
+}
+
+/*form*/
+
+form{
+    background-color: rgb(33, 173, 224); 
+    border-radius: 5px;
+    box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);   
+}
+
+input, textarea{
+    border-radius: 5px;
+}
+
+/*footer*/
+footer{
+    height: 50px;
+    background-color: rgb(33, 173, 224);
+}
+
+
 /*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 599.98px) {
     .menu {
         width: 100%;
         max-height: 0;
@@ -126,27 +162,3 @@ header {
 }
 
 
-/*slideshow Fano*/
-
-#banner{
-    box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);
-    border-radius: 5px;
-}
-
-/*form*/
-
-form{
-    background-color: rgb(33, 173, 224); 
-    border-radius: 5px;
-    box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);   
-}
-
-input, textarea{
-    border-radius: 5px;
-}
-
-/*footer*/
-footer{
-    height: 50px;
-    background-color: rgb(33, 173, 224);
-}
