@@ -42,9 +42,9 @@ header {
     box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);
 }
 
-.hamburger{
+/* .hamburger{
     margin-right: 8vh;
-}
+} */
 .ri-menu-line{
     background-color: rgb(33, 100, 224);
     width: 100%;
@@ -129,8 +129,7 @@ footer{
         flex-direction: column;
         /*Chances the direction of the flex container. By default it is a row so we change it to column in small screens.*/
         align-items: flex-end;
-        padding: 20px;
-        
+        padding: 20px;        
         font-size: large;
     }
     .toggler{
@@ -139,6 +138,7 @@ footer{
 
     .navbar label {
         display: inline-flex;
+        justify-content: end;
         /*Makes it an inline flex container for the icon. Used for centering the icon inside this box.*/
         align-items: center;
         cursor: pointer;
