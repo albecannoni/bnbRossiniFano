@@ -26,10 +26,7 @@
         rel="stylesheet">
 </head>
 
-
-
 <body>
-
     <header>
         <!--navbar-->
         <nav class="navbar container-fluid  fixed-top ombra">
@@ -55,13 +52,8 @@
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
-
             </div>
-
         </nav>
 
         <!--wrapper-->
@@ -71,19 +63,16 @@
     </header>
 
     <div class="d-flex justify-content-center">
-        <div class="text-center mt-5 w-75">
+        <div class="text-center my-5 w-50">
             <P class="corsivo">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio ad dolorem
-                eligendi
-                beatae illo quaerat officia hic distinctio laborum? Fugit molestiae expedita quo et iusto. Sequi ipsum
-                quae
-                quidem dignissimos."</P>
+                eligendi beatae illo quaerat officia hic distinctio laborum? Fugit molestiae expedita quo et iusto.
+                Sequi ipsum quae quidem dignissimos."</P>
         </div>
     </div>
 
     <!--slideshow-->
     <div class="container w-50" id="banner">
-
-        <div class="d-flex  justify-content-center align-content-center shadow-2-white">
+        <div class="d-flex  justify-content-center align-content-center ">
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -115,9 +104,9 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-
         </div>
     </div>
+
     <div class="d-flex justify-content-center">
         <div class="text-center mt-5 w-75 corsivo">
             <p>Compila i campi per ricevere informazioni riguardo il tuo soggiorno :)</p>
@@ -127,37 +116,42 @@
     <div id="alert"></div>
 
     <!--form-->
-    <div class="container justify-content-center align-content-center  w-75  py-4">
+    <div class="container justify-content-center align-content-center  w-50  py-4">
         <form class="w-100 d-grid">
             <fieldset>
                 <div class="col-12">
                     <div class="row">
                         <div class="col m-1">
                             <div class="row m-1">
-                                <input type="text" placeholder="inserisci il nome" class="">
+                                <label for="fname">Nome:</label>
+                                <input type="text" id="fname" name="fname" placeholder="inserisci il nome" class="">
                             </div>
                             <div class="row"></div>
                             <div class="row m-1">
-                                <input type="text" placeholder="inserisci il cognome" class="">
+                                <label for="lname">Cognome:</label>
+                                <input type="text" id="lname" name="lname" placeholder="inserisci il cognome" class="">
                             </div>
                         </div>
-
                         <div class="col m-1">
                             <div class="row m-1">
-                                <input type="text" placeholder="inserisci la mail" class="">
+                                <label for="email">Email:</label>
+                                <input type="text" id="email" name="email" placeholder="inserisci la mail" class="">
                             </div>
                             <div class="row"></div>
                             <div class="row m-1">
-                                <input type="text" placeholder="inserisci il telefono" class="">
+                                <label for="telephone">Telefono:</label>
+                                <input type="text" id="telephone" name="telephone" placeholder="inserisci il telefono" class="">
                             </div>
                         </div>
                     </div>
                     <div class="col d-grid m-2">
-                        <textarea name="richiesta" id="" cols="30" rows="5"
+                        <label for="info">Telefono:</label>
+                        <textarea name="richiesta" id="info"  cols="30" rows="5"
                             placeholder="scrivi la tua richiesta"></textarea>
                     </div>
                 </div>
             </fieldset>
+
             <div class="text-center py-2">
                 <button>ricevi informazioni</button>
             </div>
