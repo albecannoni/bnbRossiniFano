@@ -44,7 +44,8 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 
 img{
     width: auto;  
-    height: auto;     
+    height: auto;
+    border-radius: 7px;   
 }
 
 /*Navbar responsive*/
@@ -140,10 +141,9 @@ input, textarea{
 
 /*footer*/
 footer{
-    height: 50px;
+    height: 40px;
     background-color: rgb(33, 173, 224);
 }
-
 
 /*Breakpoint set at 600px, once it is 600px or smaller 
 the layout changes to use the following styles overriding the old ones.*/
@@ -154,9 +154,7 @@ the layout changes to use the following styles overriding the old ones.*/
         /*Makes the max-height 0 to side the expanded menu.*/
         overflow: hidden;
         /*Hides the overflowing content.*/
-    } 
-
-    
+    }     
 
     .list {
         flex-direction: column;
