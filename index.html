@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="b&b, affitta camere, casa vacanze, stanza in affitto, ostello">
+    <meta name="description" content="Ti sentirai come a casa">
     <meta name="author" content="Alberto Cannoni">
     <title>Casa Rossini | Fano</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/hnet.com-image.ico">
@@ -75,7 +75,7 @@
     <!--slideshow-->
     <div class="d-flex justify-content-center align-items-center">
         <div class="d-grid col-md-8 justify-content-center">
-            <div class="container-fluid row  justify-content-center" id="banner">
+            <div class="container-fluid row  justify-content-center align-items-center" id="banner">
                 <div class="d-flex align-content-center col-sm-10">
                     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -126,47 +126,50 @@
     <div id="alert"></div>
 
     <!--form-->
-    <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  py-4">
-        <form class="w-100 d-grid">
-            <fieldset>
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col m-1">
-                            <div class="row m-1">
-                                <label for="fname">Nome:</label>
-                                <input type="text" id="fname" name="fname" placeholder="inserisci il nome" class="">
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  py-4 m-sm-2 m-md-0">
+            <form class="w-100 d-grid">
+                <fieldset>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col m-1">
+                                <div class="row m-1">
+                                    <label for="fname">Nome:</label>
+                                    <input type="text" id="fname" name="fname" placeholder="inserisci il nome" class="">
+                                </div>
+                                <div class="row"></div>
+                                <div class="row m-1">
+                                    <label for="lname">Cognome:</label>
+                                    <input type="text" id="lname" name="lname" placeholder="inserisci il cognome" class="">
+                                </div>
                             </div>
-                            <div class="row"></div>
-                            <div class="row m-1">
-                                <label for="lname">Cognome:</label>
-                                <input type="text" id="lname" name="lname" placeholder="inserisci il cognome" class="">
+                            <div class="col m-1">
+                                <div class="row m-1">
+                                    <label for="email">Email:</label>
+                                    <input type="text" id="email" name="email" placeholder="inserisci la mail" class="">
+                                </div>
+                                <div class="row"></div>
+                                <div class="row m-1">
+                                    <label for="telephone">Telefono:</label>
+                                    <input type="text" id="telephone" name="telephone" placeholder="inserisci il telefono" class="">
+                                </div>
                             </div>
                         </div>
-                        <div class="col m-1">
-                            <div class="row m-1">
-                                <label for="email">Email:</label>
-                                <input type="text" id="email" name="email" placeholder="inserisci la mail" class="">
-                            </div>
-                            <div class="row"></div>
-                            <div class="row m-1">
-                                <label for="telephone">Telefono:</label>
-                                <input type="text" id="telephone" name="telephone" placeholder="inserisci il telefono" class="">
-                            </div>
+                        <div class="col d-grid m-2">
+                            <label for="info">Telefono:</label>
+                            <textarea name="richiesta" id="info"  cols="30" rows="5"
+                                placeholder="scrivi la tua richiesta"></textarea>
                         </div>
                     </div>
-                    <div class="col d-grid m-2">
-                        <label for="info">Telefono:</label>
-                        <textarea name="richiesta" id="info"  cols="30" rows="5"
-                            placeholder="scrivi la tua richiesta"></textarea>
-                    </div>
+                </fieldset>
+    
+                <div class="text-center py-2">
+                    <button>ricevi informazioni</button>
                 </div>
-            </fieldset>
-
-            <div class="text-center py-2">
-                <button>ricevi informazioni</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
+    
 
     <footer class="fixed-bottom">
         <p></p>
