@@ -1,6 +1,4 @@
-
-
-/*css reset*/
+/*UA reset*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -11,16 +9,16 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 
@@ -31,40 +29,43 @@ body, html {
     margin: 0;
     padding: 0;
     height: auto;
+    width: auto;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.corsivo{
+.corsivo {
     font-style: italic;
-    font-weight:600;
+    font-weight: 600;
 }
 
-.emoticon{
+.emoticon {
     font-style: normal;
 }
 
-img{
-    width: auto;  
+img {
+    width: auto;
     height: auto;
-    border-radius: 7px;   
+    border-radius: 7px;
 }
 
-.bRadius{
+.bRadius {
     border-radius: 7px;
 }
 
 /*Navbar responsive*/
-#navWrapper{
+#navWrapper {
     height: 3.5vh;
 }
-.ombra{
+
+.ombra {
     box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);
 }
+
 header {
-    box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);    
+    box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);
 }
 
 /* ======================== */
@@ -80,10 +81,10 @@ header {
 /* .hamburger{
     margin-right: 8vh;
 } */
-.ri-menu-line{
-    color:white;
+.ri-menu-line {
+    color: white;
     /* color:rgb(33, 173, 224) ; */
-   background-color: #800000;
+    background-color: #800000;
     width: 100%;
     border-radius: 5px;
 }
@@ -97,7 +98,7 @@ header {
     /*Centers the children of a flex container vertically.*/
     justify-content: space-between;
     /*Adds space between each child of a flex container.*/
-    background-color: rgb(33, 173, 224);
+    background-color: #00bdd0;
 }
 
 .navbar a {
@@ -131,31 +132,31 @@ header {
 
 /*slideshow Fano*/
 
-#banner{
+#banner {
     width: auto;
     height: 768px;
-    
+
     /* box-shadow: 0px 0px 1.5vh rgb(56, 55, 55); */
     border-radius: 5px;
 }
 
 /*form*/
 
-form{
+form {
     color: white;
-    background-color: #800000; 
+    background-color: #800000;
     border-radius: 5px;
-    box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);   
+    box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);
 }
 
-input, textarea{
+input, textarea {
     border-radius: 5px;
 }
 
 /*footer*/
-footer{
+footer {
     height: 40px;
-    background-color: rgb(33, 173, 224);
+    background-color: #00bdd0;
 }
 
 /*Breakpoint set at 600px, once it is 600px or smaller 
@@ -167,20 +168,21 @@ the layout changes to use the following styles overriding the old ones.*/
         /*Makes the max-height 0 to side the expanded menu.*/
         overflow: hidden;
         /*Hides the overflowing content.*/
-    }     
+    }
 
     .list {
         flex-direction: column;
         /*Chances the direction of the flex container.
         By default it is a row so we change it to column in small screens.*/
         align-items: flex-end;
-        padding: 20px;        
+        padding: 20px;
         font-size: large;
-        font-weight:700;
+        font-weight: 700;
     }
-    .toggler{
+
+    .toggler {
         margin-right: 100px;
-    }   
+    }
 
     .navbar label {
         display: inline-flex;
@@ -193,7 +195,7 @@ the layout changes to use the following styles overriding the old ones.*/
         color: white;
     }
 
-   
+
 
     /* 
         The general sibling selector (~) 
@@ -204,12 +206,9 @@ the layout changes to use the following styles overriding the old ones.*/
     #toggler:checked~.menu {
         max-height: 100%;
     }
-    .logo{
+
+    .logo {
         margin-right: 2rem;
     }
-    
+
 }
-
-
-
-
