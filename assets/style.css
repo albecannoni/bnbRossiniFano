@@ -119,6 +119,7 @@ img {
     margin-top: 6px;
     margin-right: 9rem;
     font-weight: bold;
+    color: #800000;
 }
 
 .list {
@@ -128,6 +129,7 @@ img {
     font-weight: bold;
     display: flex;
     gap: 1vh;
+    color: #800000;
     /*Applies right and bottom spacing between 
     children inside a flex or grid container.*/
 }
