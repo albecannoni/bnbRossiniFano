@@ -21,7 +21,9 @@ time, mark, audio, video {
     vertical-align: baseline;
 }
 
-
+.panna{
+    background-color: #f6f4ea;;
+}
 
 /*generale*/
 
@@ -30,6 +32,7 @@ body, html {
     padding: 0;
     height: auto;
     width: auto;
+    background-color: #f3eed9;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
@@ -55,20 +58,22 @@ img {
     border-radius: 7px;
 }
 
-/*Navbar responsive*/
-#navWrapper {
-    height: 3.5vh;
-}
 
 .ombra {
     box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);
 }
 
-header {
-    box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);
+.ombraGranata {
+    box-shadow: 1px 1px 2.6vh #800000;
 }
 
+
 /* ======================== */
+
+#navWrapper {
+    height: 3.5vh;
+} 
+
 .contenitore {
     max-width: 100%;
     /*Limits the width of the container but let's it get smaller if needed.*/
@@ -82,11 +87,12 @@ header {
     margin-right: 8vh;
 } */
 .ri-menu-line {
-    color: white;
+    color:#f3eed9;;
     /* color:rgb(33, 173, 224) ; */
     background-color: #800000;
     width: 100%;
     border-radius: 5px;
+    margin-top: 6px;
 }
 
 .navbar {
@@ -98,7 +104,8 @@ header {
     /*Centers the children of a flex container vertically.*/
     justify-content: space-between;
     /*Adds space between each child of a flex container.*/
-    background-color: #00bdd0;
+    background-color: #62a8e5;
+    /*  babyBlue 62a8e5*/
 }
 
 .navbar a {
@@ -109,11 +116,13 @@ header {
 }
 
 .logo {
+    margin-top: 6px;
     margin-right: 9rem;
     font-weight: bold;
 }
 
 .list {
+    margin-top: 6px;
     font-size: large;
     list-style: none;
     font-weight: bold;
@@ -156,8 +165,64 @@ input, textarea {
 /*footer*/
 footer {
     height: 40px;
-    background-color: #00bdd0;
+    background-color: #62a8e5;
 }
+
+/*bottone info*/
+button {
+    font-family: inherit;
+    font-size: 20px;
+    background:white;
+    color: black;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+   }
+   
+   button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+   }
+   
+   button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+   }
+   
+   button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+   }
+   
+   button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+   }
+   
+   button:hover span {
+    transform: translateX(5em);
+   }
+   
+   button:active {
+    transform: scale(0.95);
+   }
+   
+   @keyframes fly-1 {
+    from {
+     transform: translateY(0.1em);
+    }
+   
+    to {
+     transform: translateY(-0.1em);
+    }
+   }
+   
+   
 
 /*Breakpoint set at 600px, once it is 600px or smaller 
 the layout changes to use the following styles overriding the old ones.*/
@@ -171,6 +236,7 @@ the layout changes to use the following styles overriding the old ones.*/
     }
 
     .list {
+        
         flex-direction: column;
         /*Chances the direction of the flex container.
         By default it is a row so we change it to column in small screens.*/
@@ -181,6 +247,7 @@ the layout changes to use the following styles overriding the old ones.*/
     }
 
     .toggler {
+        
         margin-right: 100px;
     }
 
@@ -192,7 +259,7 @@ the layout changes to use the following styles overriding the old ones.*/
         align-items: center;
         cursor: pointer;
         width: 100px;
-        color: white;
+        color: #f3eed9;;
     }
 
 

@@ -29,28 +29,33 @@
 </head>
 
 <body>
-    <header class="ombra">
+    <header class="ombraGranata">
         <!--navbar-->
         <nav class="navbar container-fluid  fixed-top ombra">
             <div class=" w-100 d-flex justify-content-center">
                 <div class="row ">
-                    <div class="d-flex">
+                    <div class="d-flex justify-content-center align-content-center">
                         <div class="logo">
                             <h5>
                                 <a href="#" class="logo">Casa Rossini | Fano</a>
                             </h5>
                         </div>
-                        <div>
+                        <div class="">
+                            <div>
+                                
+                            </div>
                             <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
                             <input type="checkbox" id="toggler">
                             <label for="toggler"><i class="ri-menu-line hamburger text-center w-100"></i></label>
-                            <div class="menu">
-                                <ul class="list">
-                                    <li><a href="/index.html">Home</a></li>
-                                    <li><a href="/contatti.html">contatti</a></li>
-                                    <li><a href="stanze">stanze</a></li>
-                                    <li><a href="servizi">servizi</a></li>
-                                </ul>
+                            <div class="menu h-100 d-flex justify-content-center align-items-center">
+                                <div>
+                                    <ul class="list">
+                                        <li><a href="/index.html">Home</a></li>
+                                        <li><a href="/contatti.html">contatti</a></li>
+                                        <li><a href="stanze">stanze</a></li>
+                                        <li><a href="servizi">servizi</a></li>
+                                    </ul>
+                                </div>                               
                             </div>
                         </div>
                     </div>
@@ -63,7 +68,7 @@
             <p></p>
         </div>
     </header>
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center panna">
         <div class="d-grid col-sm-10 col-md-6">
             <div class="text-center mt-5 mb-4 py-2 ">
                 <P class="corsivo m-2 m-sm-0">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio ad dolorem
@@ -75,7 +80,7 @@
 
 
     <!--slideshow-->
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center panna">
         <div class="d-flex col-md-8 justify-content-center align-items-center">
             <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
                 <div class="d-flex justify-content-center align-content-center col-sm-10">
@@ -123,17 +128,17 @@
     </div>
 
 
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center panna">
         <div class="text-center mt-5 w-75 corsivo">
             <p>Compila i campi per ricevere informazioni riguardo il tuo soggiorno!<span class="emoticon">&nbsp;
                     &#127773;&nbsp;</span></p>
         </div>
     </div>
 
-    <div id="alert"></div>
+    <div id="alert" class="panna"></div>
 
     <!--form-->
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-center panna">
         <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  py-4 m-sm-2 m-md-0">
             <form class="w-100 d-grid py-md-2 px-md-2">
                 <fieldset>
@@ -170,9 +175,18 @@
                     </div>
                 </fieldset>
 
-                <div class="text-center py-2">
-                    <button id="bottone" type="button" class="bRadius bg-light"> &nbsp;ricevi
-                        informazioni&nbsp;</button>
+                <div class="d-flex justify-content-center align-items-center py-2">
+                    <button type="button"  class="bRadius">
+                        <div class="svg-wrapper-1">
+                          <div class="svg-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                              <path fill="none" d="M0 0h24v24H0z"></path>
+                              <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <span>Invia</span>
+                      </button>
                 </div>
             </form>
         </div>
