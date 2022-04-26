@@ -10,6 +10,7 @@
     <title>Casa Rossini | Fano</title>
     <!--favicon-->
     <link rel="icon" type="image/x-icon" href="./assets/images/hnet.com-image.ico">
+    <script src="https://kit.fontawesome.com/92b4624bd5.js" crossorigin="anonymous"></script>
     <!--CSS-->
     <link rel="stylesheet" href="assets/style.css">
 
@@ -21,6 +22,13 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -42,7 +50,7 @@
                         </div>
                         <div class="">
                             <div>
-                                
+
                             </div>
                             <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
                             <input type="checkbox" id="toggler">
@@ -51,11 +59,19 @@
                                 <div>
                                     <ul class="list">
                                         <li><a href="/index.html">Home</a></li>
-                                        <li><a href="/contatti.html">contatti</a></li>
-                                        <li><a href="stanze">stanze</a></li>
-                                        <li><a href="servizi">servizi</a></li>
+                                        <li><a href="/contatti.html">Contatti</a></li>
+                                        <li><a href="stanze">Stanze</a></li>
+                                        <li><a href="servizi">Servizi</a></li>
+                                        <li class="allinea">
+                                            <div class="icons-wrapper d-flex"><a
+                                                    href="https://www.airbnb.it/users/show/34354561"
+                                                    target="blank"><div>&nbsp;Airbnb&nbsp;&nbsp;</div><div><i
+                                                        class="fa-brands fa-airbnb"></a></i></div>
+                                            </div>
+
+                                        </li>
                                     </ul>
-                                </div>                               
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -68,11 +84,12 @@
             <p></p>
         </div>
     </header>
-    <div class="d-flex justify-content-center align-items-center panna">
+    <div class="d-flex justify-content-center align-items-center  panna">
         <div class="d-grid col-sm-10 col-md-6">
-            <div class="text-center mt-5 mb-4 py-2 ">
-                <P class="corsivo m-2 m-sm-0">"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio ad dolorem
-                    eligendi beatae illo quaerat officia hic distinctio laborum? Fugit molestiae expedita quo et iusto.
+            <div class="text-center mt-4 mt-md-5 mb-3 mb-md-4 py-2 ">
+                <P class="corsivo m-2 m-sm-0">"Cristina è stata una persona disponibile e solare , accogliente e sempre
+                    disponibile. Camera pulita e confortevole. Estremamente disponibile nell'accogliere anche il mio
+                    cane. Consiglio senza riserve questa possibilità. Davvero ottima esperienza
                     "</P>
             </div>
         </div>
@@ -169,33 +186,34 @@
                         </div>
                         <div class="col d-grid m-2">
                             <label for="info">Telefono:</label>
-                            <textarea name="richiesta" id="info" cols="30" rows="4"
+                            <textarea name="richiesta" id="info" cols="..." rows="4"
                                 placeholder="scrivi la tua richiesta"></textarea>
                         </div>
                     </div>
                 </fieldset>
 
                 <div class="d-flex justify-content-center align-items-center py-2">
-                    <button type="button"  class="bRadius">
+                    <button type="button" class="bRadius">
                         <div class="svg-wrapper-1">
-                          <div class="svg-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                              <path fill="none" d="M0 0h24v24H0z"></path>
-                              <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
-                            </svg>
-                          </div>
+                            <div class="svg-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor"
+                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                    </path>
+                                </svg>
+                            </div>
                         </div>
                         <span>Invia</span>
-                      </button>
+                    </button>
                 </div>
             </form>
         </div>
     </div>
 
 
-    <footer class="fixed-bottom ombra">
-        <p></p>
-        <div></div>
+    <footer class="fixed-bottom ombra ">
+        
     </footer>
     <div id="navWrapper">
         <p></p>
