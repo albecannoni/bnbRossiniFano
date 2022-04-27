@@ -45,6 +45,8 @@ function check() {
     else {
         arrayLocale.push(nome.value, cognome.value, email.value, testo.value);
         console.log(arrayLocale);
+        console.log(email)
+        alert('bene '+ nome.value + '!'+' la tua richiesta è stata inviata')
     }
 }
 
