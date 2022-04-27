@@ -47,7 +47,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 }
 
 .testoAlert{
-    color: red;
+    color: #800000;
     font-size: 1.5em;
     background-color: #62a8e5;
 }

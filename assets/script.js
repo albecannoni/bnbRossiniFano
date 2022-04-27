@@ -1,6 +1,6 @@
 let nome = document.querySelector('#fname');
 let cognome = document.querySelector('#lname');
-let email = document.querySelector('#email');
+let posta = document.querySelector('#posta');
 let telefono = document.querySelector('#telephone');
 let testo = document.querySelector('#info')
 let btn = document.querySelector('#infoBtn');
@@ -14,7 +14,7 @@ window.addEventListener('load', init);
 function init() {
     nome.value = '';
     cognome.value = '';
-    email.value = '';
+    posta.value = '';
     telefono.value = '';
     testo.value = '';
     errore.innerHTML = '';
@@ -33,7 +33,7 @@ function check() {
     else if (cognome.value == '') {
         errore.innerHTML = 'inserisci il tuo cognome';
     }
-    else if (email.value = '') {
+    else if (posta.value == '') {
         errore.innerHTML = 'inserisci la tua mail';
     }
     else if (telefono.value == '') {
@@ -43,10 +43,10 @@ function check() {
         errore.innerHTML = 'inserisci la tua richiesta';
     }
     else {
-        arrayLocale.push(nome.value, cognome.value, email.value, testo.value);
+        arrayLocale.push(nome.value, cognome.value, posta.value, testo.value);
         console.log(arrayLocale);
-        console.log(email)
-        alert('bene '+ nome.value + '!'+' la tua richiesta è stata inviata')
+       
+        alert('Bene '+ nome.value + '!'+' la tua richiesta è stata inviata')
     }
 }
 
