@@ -46,6 +46,12 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     font-weight: 600;
 }
 
+.testoAlert{
+    color: red;
+    font-size: 1.5em;
+    background-color: #62a8e5;
+}
+
 .emoticon {
     font-style: normal;
 }
