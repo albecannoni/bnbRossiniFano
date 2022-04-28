@@ -45,8 +45,7 @@ function check() {
     else {
         arrayLocale.push(nome.value, cognome.value, posta.value, testo.value);
         console.log(arrayLocale);
-       
-        alert('Bene '+ nome.value + '!'+' la tua richiesta è stata inviata')
+        btn.type = "submit";
     }
 }
 
