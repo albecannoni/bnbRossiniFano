@@ -28,7 +28,7 @@ function init() {
     servicesPage.addEventListener('click', servicesPageGen)
 }
 
-/*controllo form*/
+//controllo form
 
 function check() {
 
@@ -63,12 +63,20 @@ function svuotaPool() {
 }
 function contactPageGen() {
     svuotaPool();
-    newDiv = document.createElement("div");
-    newDiv.setAttribute('id', 'listaContatti');
-    pool.innerHTML = `<div id="elencocontatti" class="pt-5 d-flex justify-content-center align-items-center"></div>`;
+
+    pool.innerHTML = `<div id="elencocontatti" class="pt-5 d-flex justify-content-center align-items-center"></div>
+                      <div id="listacontatti" class=""></div>`;
     boxContatti = document.querySelector('#elencocontatti');
-    boxContatti.classList.add("bg-danger", "corsivo");
-    boxContatti.innerHTML = `<h3>testo di prova</h3>`;
+    boxContatti.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+    boxContatti.innerHTML = `<div class="d-grid col-sm-10 col-md-6">
+                                <p>La nostra casa ha due magiche stanze: accoglienti e dotate di tutto ciò che può servire!
+                                per maggiori dettagli clicca sulle anteprime qua sotto!</p>
+                            </div>`;
+
+    boxCard = document.querySelector('#listacontatti');
+    boxCard.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+    boxCard.innerHTML = '<p>testo di prova</p>'
+
     console.log('pagina contatti generata');
 }
 
