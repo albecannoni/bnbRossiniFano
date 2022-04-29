@@ -63,9 +63,8 @@ function svuotaPool() {
 }
 function contactPageGen() {
     svuotaPool();
-
     pool.innerHTML = `<div id="elencocontatti" class="pt-5 d-flex justify-content-center align-items-center"></div>
-                      <div id="listacontatti" class=""></div>`;
+                      <div id="listacontatti" class=""></div>`;    
     boxContatti = document.querySelector('#elencocontatti');
     boxContatti.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
     boxContatti.innerHTML = `<div class="d-grid col-sm-10 col-md-6">
@@ -75,7 +74,13 @@ function contactPageGen() {
 
     boxCard = document.querySelector('#listacontatti');
     boxCard.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-    boxCard.innerHTML = '<p>testo di prova</p>'
+    boxCard.innerHTML = '<p>testo di prova</p>';
+
+    //fare tutto sopra come sotto!! (sei una bestia!!)
+    let divGenerato = document.createElement("div");
+    pool.append(divGenerato);
+    divGenerato.innerHTML='FESTAGROSSA!!';
+    divGenerato.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
 
     console.log('pagina contatti generata');
 }
