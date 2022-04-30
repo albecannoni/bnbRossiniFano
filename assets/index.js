@@ -56,40 +56,43 @@ function check() {
     }
 }
 
-/*============================================= */
+/*=============Funzioni DOM============== */
 function svuotaPool() {
     pool.innerHTML = ``;
+}
+
+function homePageGen(){
 
 }
+
 function contactPageGen() {
     svuotaPool();
-    pool.innerHTML = `<div id="elencocontatti" class="pt-5 d-flex justify-content-center align-items-center"></div>
-                      <div id="listacontatti" class=""></div>`;    
-    boxContatti = document.querySelector('#elencocontatti');
-    boxContatti.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-    boxContatti.innerHTML = `<div class="d-grid col-sm-10 col-md-6">
-                                <p>La nostra casa ha due magiche stanze: accoglienti e dotate di tutto ciò che può servire!
-                                per maggiori dettagli clicca sulle anteprime qua sotto!</p>
-                            </div>`;
-
-    boxCard = document.querySelector('#listacontatti');
-    boxCard.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-    boxCard.innerHTML = '<p>testo di prova</p>';
-
-    //fare tutto sopra come sotto!! (sei una bestia!!)
-    let divGenerato = document.createElement("div");
-    pool.append(divGenerato);
-    divGenerato.innerHTML='FESTAGROSSA!!';
-    divGenerato.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+    //(sei una bestia!!)
+    let newDiv = document.createElement("div");
+    pool.append(newDiv);    
+    newDiv.innerHTML='inserire elenco contatti!!';
+    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
 
     console.log('pagina contatti generata');
 }
 
 function roomPageGen() {
+    svuotaPool();
+    //(sei una bestia!!)
+    let newDiv = document.createElement("div");
+    pool.append(newDiv);    
+    newDiv.innerHTML='inserire introduzione + card con stanze!!';
+    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
     console.log('pagina stanze generata');
 }
 
 function servicesPageGen() {
+    svuotaPool();
+    //(sei una bestia!!)
+    let newDiv = document.createElement("div");
+    pool.append(newDiv);    
+    newDiv.innerHTML='inserire introduzione + anteprima servizi!!';
+    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
     console.log('pagina servizi generata');
 }
 
