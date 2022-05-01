@@ -83,8 +83,8 @@ function roomPageGen() {
     resetPool();
     //generazione blocchi
     let quoteBox = document.createElement("div");
-        quoteBox.setAttribute('id', 'quoteBox');
-        quoteBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+    quoteBox.setAttribute('id', 'quoteBox');
+    quoteBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
 
     let gridBox = document.createElement("div");
     gridBox.setAttribute('id', 'gridBox');
@@ -99,24 +99,37 @@ function roomPageGen() {
 
     let slideBox = document.createElement("div");
     slideBox.setAttribute('id', 'slideBox');
+    slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
 
-    let teaserBox= document.createElement('div')
+    let teaserBox = document.createElement('div');
+    teaserBox.setAttribute('id', 'teaserBox');
+    teaserBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+
+    let textBox2 = document.createElement("div");
+    textBox2.setAttribute('id', 'textBox2');
+    textBox2.classList.add('text-center', 'mt-5', 'w-75', 'corsivo');
+
+    let textP2 = document.createElement("p");
+    textP2.classList.add('corsivo', 'm-2', 'm-sm-0');
 
     //posizionamento
     pool.append(quoteBox);
     quoteBox.append(gridBox);
     gridBox.append(textBox);
     textBox.append(textP);
+    teaserBox.append(textBox2);
+    textBox2.append(textP2);
+    textP2.innerHTML ='Compila i campi per ricevere informazioni riguardo il tuo soggiorno! '
     textP.innerHTML = '&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile. Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane. Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;';
 
-    
-    
-    
-    
-    
+
+
+
+
+
     //generazione blocco slideshow
     pool.appendChild(slideBox);
-    slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+    
     slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
     <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
         <div class="d-flex justify-content-center align-content-center col-sm-10">
@@ -161,6 +174,7 @@ function roomPageGen() {
     </div>
                           </div>`
     //generazione blocco teaser
+    pool.appendChild(teaserBox);
     console.log('pagina stanze generata');
 }
 
