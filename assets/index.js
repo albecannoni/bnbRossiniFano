@@ -3,7 +3,7 @@ let nome = document.querySelector('#fname');
 let cognome = document.querySelector('#lname');
 let posta = document.querySelector('#posta');
 let telefono = document.querySelector('#telephone');
-let testo = document.querySelector('#info')
+let testo = document.querySelector('#info');
 let btn = document.querySelector('#infoBtn');
 let errore = document.querySelector('#alert');
 let pool = document.querySelector('#pool');
@@ -14,18 +14,22 @@ let contatti = document.querySelector('#listaContatti');
 
 window.addEventListener('load', init);
 
-// pulizia campi e listener bottone form
+
 function init() {
+    //pulizia campi form
     nome.value = '';
     cognome.value = '';
     posta.value = '';
     telefono.value = '';
     testo.value = '';
     errore.innerHTML = '';
+    //listener bottone form
     btn.addEventListener('click', check);
+    //listener click menu
     contactPage.addEventListener('click', contactPageGen);
-    roomPage.addEventListener('click', roomPageGen)
-    servicesPage.addEventListener('click', servicesPageGen)
+    roomPage.addEventListener('click', roomPageGen);
+    servicesPage.addEventListener('click', servicesPageGen);
+    //roomPageGen();
 }
 
 //controllo form
@@ -77,21 +81,39 @@ function contactPageGen() {
 
 function roomPageGen() {
     resetPool();
-    //generazione blocco feedback
-    let newDiv = document.createElement("div");
+    //generazione blocchi
+    let quoteBox = document.createElement("div");
+        quoteBox.setAttribute('id', 'quoteBox');
+        quoteBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+
     let gridBox = document.createElement("div");
+    gridBox.setAttribute('id', 'gridBox');
+    gridBox.classList.add('d-grid', 'col-sm-10', 'col-md-6');
+
     let textBox = document.createElement("div");
+    textBox.setAttribute('id', 'textBox');
+    textBox.classList.add('text-center', 'mt-4', 'mt-md-5', 'mb-3', 'mb-md-4', 'py-2');
+
     let textP = document.createElement("p");
+    textP.classList.add('corsivo', 'm-2', 'm-sm-0');
+
     let slideBox = document.createElement("div");
-    pool.append(newDiv);
-    newDiv.append(gridBox);
+    slideBox.setAttribute('id', 'slideBox');
+
+    let teaserBox= document.createElement('div')
+
+    //posizionamento
+    pool.append(quoteBox);
+    quoteBox.append(gridBox);
     gridBox.append(textBox);
     textBox.append(textP);
-    newDiv.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
-    gridBox.classList.add('d-grid', 'col-sm-10', 'col-md-6');
-    textBox.classList.add('text-center', 'mt-4', 'mt-md-5', 'mb-3', 'mb-md-4', 'py-2');
-    textP.classList.add('corsivo', 'm-2', 'm-sm-0');
     textP.innerHTML = '&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile. Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane. Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;';
+
+    
+    
+    
+    
+    
     //generazione blocco slideshow
     pool.appendChild(slideBox);
     slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
