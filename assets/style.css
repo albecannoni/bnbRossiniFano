@@ -22,8 +22,9 @@ time, mark, audio, video {
     font-family: 'Lato', sans-serif;
 }
 
-.panna{
-    background-color: #f6f4ea;;
+.panna {
+    background-color: #f6f4ea;
+    ;
 }
 
 /*generale*/
@@ -46,7 +47,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     font-weight: 600;
 }
 
-.testoAlert{
+.testoAlert {
     color: #800000;
     font-size: 1.5em;
     background-color: #62a8e5;
@@ -80,11 +81,12 @@ img {
 
 #navWrapper {
     height: 3.5vh;
-} 
+}
+
 #footerWrapper {
     height: 5.5vh;
     position: absolute;
-} 
+}
 
 .contenitore {
     max-width: 100%;
@@ -99,7 +101,8 @@ img {
     margin-right: 8vh;
 } */
 .ri-menu-line {
-    color:#f3eed9;;
+    color: #f3eed9;
+    ;
     /* color:rgb(33, 173, 224) ; */
     background-color: #800000;
     width: 100%;
@@ -129,14 +132,15 @@ img {
 
 .logo {
     margin-top: 6px;
-    
+    font-size: x-large;
+
     font-weight: bold;
     color: #800000;
 }
 
 .list {
     margin-top: 6px;
-    font-size: large;
+    font-size: x-large;
     list-style: none;
     font-weight: bold;
     display: flex;
@@ -188,7 +192,7 @@ footer {
 button {
     font-family: inherit;
     font-size: 20px;
-    background:white;
+    background: white;
     color: black;
     padding: 0.7em 1em;
     padding-left: 0.9em;
@@ -198,68 +202,71 @@ button {
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.2s;
-   }
-   
-   button span {
+}
+
+button span {
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
-   }
-   
-   button svg {
+}
+
+button svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
-   }
-   
-   button:hover .svg-wrapper {
+}
+
+button:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
-   }
-   
-   button:hover svg {
+}
+
+button:hover svg {
     transform: translateX(1.2em) rotate(45deg) scale(1.1);
-   }
-   
-   button:hover span {
+}
+
+button:hover span {
     transform: translateX(5em);
-   }
-   
-   button:active {
+}
+
+button:active {
     transform: scale(0.95);
-   }
-   
-   @keyframes fly-1 {
+}
+
+@keyframes fly-1 {
     from {
-     transform: translateY(0.1em);
+        transform: translateY(0.1em);
     }
-   
+
     to {
-     transform: translateY(-0.1em);
+        transform: translateY(-0.1em);
     }
-   }
+}
 
 
-   /*logo airbnb Footer*/
-   .icons-wrapper{
+/*logo airbnb Footer*/
+.icons-wrapper {
     position: relative;
 }
 
-.fa-airbnb{
-    background: #800000;/*(circle at 30% 107%, #800000 0%, #fdf497 5%, #d649fd 45%, #d6249f 60%, #d496f1 90%);*/
+.fa-airbnb {
+    background: #800000;
+    /*(circle at 30% 107%, #800000 0%, #fdf497 5%, #d649fd 45%, #d6249f 60%, #d496f1 90%);*/
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     /* This is the first item so no animation delay needed.*/
 }
 
-.fa-brands{
-    display: inline-block; /*Makes the icons inline block level elements. This will let us animate the transform property.*/ 
+.fa-brands {
+    display: inline-block;
+    /*Makes the icons inline block level elements. This will let us animate the transform property.*/
     font-size: 25px;
-    
-    animation: float 1.5s ease-in-out infinite; /*Applies the float keyframe animation over 5s and makes it run infinitely.*/
-    
+
+    animation: float 1.5s ease-in-out infinite;
+    /*Applies the float keyframe animation over 5s and makes it run infinitely.*/
+
 }
 
-.icons-wrapper::after{
+.icons-wrapper::after {
     position: absolute;
     width: 100%;
     height: 5px;
@@ -267,25 +274,31 @@ button {
     border-radius: 10px;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0;}
+    bottom: 0;
+}
 
-    @keyframes float {
-        0%{
-            transform: translateY(0); /*The starting point of the animation is 0.*/
-        }
-        50%{
-            transform: translateY(-4px); /*The middle point of the animation is -15xp. This will move the element up.*/
-        }
-        100%{
-            transform: translateY(0); /*The last point of the animation is going back to the starting state of 0.*/
-        }
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        /*The starting point of the animation is 0.*/
     }
 
-#airbnb{
+    50% {
+        transform: translateY(-4px);
+        /*The middle point of the animation is -15xp. This will move the element up.*/
+    }
+
+    100% {
+        transform: translateY(0);
+        /*The last point of the animation is going back to the starting state of 0.*/
+    }
+}
+
+#airbnb {
     margin-right: 20rem;
 }
-   
-#smCol{
+
+#smCol {
     display: none;
 }
 
@@ -300,26 +313,33 @@ the layout changes to use the following styles overriding the old ones.*/
         /*Hides the overflowing content.*/
     }
 
-    #smCol{
+    #smCol {
         display: grid;
     }
 
-    
 
-  
+    .logo {
+        margin-top: 6px;
+        font-size: large;
+        font-weight: bold;
+        color: #800000;
+    }   
+
+
 
     .list {
-        
+
         flex-direction: column;
         /*Chances the direction of the flex container.
         By default it is a row so we change it to column in small screens.*/
         align-items: flex-end;
         padding: 20px;
+        margin-left: 1rem;
         font-size: large;
         font-weight: 700;
     }
 
-    
+
 
     .navbar label {
         display: inline-flex;
@@ -329,8 +349,10 @@ the layout changes to use the following styles overriding the old ones.*/
         align-items: center;
         cursor: grab;
         width: 100px;
-        color: #f3eed9;;
+        color: #f3eed9;
+        ;
     }
+
     /* 
         The general sibling selector (~) 
         selects all elements that are next siblings of #toggler.
@@ -341,6 +363,6 @@ the layout changes to use the following styles overriding the old ones.*/
         max-height: 100%;
     }
 
-    
+
 
 }
