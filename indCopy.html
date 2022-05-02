@@ -29,7 +29,7 @@
         rel="stylesheet">
 
 
-   
+
 </head>
 
 <body class="panna">
@@ -38,43 +38,42 @@
     <header class="ombraGranata">
         <!--navbar-->
         <nav class="navbar container-fluid  fixed-top ombra">
-            <div class=" w-100 d-flex justify-content-center">
-                <div class="row ">
-                    <div class="d-flex justify-content-center align-content-center">
+            <div class=" d-flex justify-content-center">
+                <div class="row">
+                    <div class="col-6 justify-content-center align-content-center ">
                         <div class="logo">
                             <h5>
                                 <a href="#" class="logo">Casa Rossini | Fano</a>
                             </h5>
                         </div>
-                        <div class="">
+                    </div>
+                    <div class="centraturaNavbar col-6">
+                        <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
+                        <input type="checkbox" id="toggler">
+                        <label for="toggler"><i class="ri-menu-line hamburger text-center"></i></label>
+                        <div class="menu h-100 d-flex justify-content-center align-items-center">
                             <div>
-
+                                <ul class="list">
+                                    <li><a href="/index.html">Home</a></li>
+                                    <li><a id="contactPage" href="#casarossini/Contatti">Contatti</a></li>
+                                    <li><a id="roomPage" href="#casarossini/Stanze">Stanze</a></li>
+                                    <li><a id="servicesPage" href="#casarossini/Servizi">Servizi</a></li>
+                                    <li class="allinea">
+                                        <div class="icons-wrapper d-flex"><a
+                                                href="https://www.airbnb.it/users/show/34354561" target="blank">
+                                                <div>&nbsp;Airbnb&nbsp;&nbsp;</div>
+                                                <div><i class="fa-brands fa-airbnb">
+                                                    </i>
+                                            </a></div>
                             </div>
-                            <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
-                            <input type="checkbox" id="toggler">
-                            <label for="toggler"><i class="ri-menu-line hamburger text-center w-100"></i></label>
-                            <div class="menu h-100 d-flex justify-content-center align-items-center">
-                                <div>
-                                    <ul class="list">
-                                        <li><a href="/index.html">Home</a></li>
-                                        <li><a id="contactPage" href="#casarossini/Contatti">Contatti</a></li>
-                                        <li><a id="roomPage" href="#casarossini/Stanze">Stanze</a></li>
-                                        <li><a id="servicesPage" href="#casarossini/Servizi">Servizi</a></li>
-                                        <li class="allinea">
-                                            <div class="icons-wrapper d-flex"><a
-                                                    href="https://www.airbnb.it/users/show/34354561" target="blank">
-                                                    <div>&nbsp;Airbnb&nbsp;&nbsp;</div>
-                                                    <div><i class="fa-brands fa-airbnb">
-                                                        </i>
-                                                </a></div>
-                                </div>
 
-                                </li>
-                                </ul>
-                            </div>
+                            </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+            </div>
             </div>
             </div>
         </nav>
@@ -181,18 +180,21 @@
                                     <div class="row"></div>
                                     <div class="row m-1">
                                         <label for="lname">Cognome:</label>
-                                        <input type="text" id="lname" name="lname" placeholder="..." class="" required autocomplete="off">
+                                        <input type="text" id="lname" name="lname" placeholder="..." class="" required
+                                            autocomplete="off">
                                     </div>
                                 </div>
                                 <div class="col m-1">
                                     <div class="row m-1">
                                         <label for="email">Email:</label>
-                                        <input type="text" id="posta" name="email" placeholder="..." class="" required autocomplete="off">
+                                        <input type="text" id="posta" name="email" placeholder="..." class="" required
+                                            autocomplete="off">
                                     </div>
                                     <div class="row"></div>
                                     <div class="row m-1">
                                         <label for="telephone">Telefono:</label>
-                                        <input type="tel" id="telephone" name="telephone" placeholder="..." class="" required autocomplete="off">
+                                        <input type="tel" id="telephone" name="telephone" placeholder="..." class=""
+                                            required autocomplete="off">
                                     </div>
                                 </div>
                             </div>

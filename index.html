@@ -29,53 +29,66 @@
         rel="stylesheet">
 
 
-   
+
 </head>
 
 <body class="panna">
 
     <!--header-->
-    <header class="ombraGranata">
+    <header class="ombraGranata text-center">
         <!--navbar-->
-        <nav class="navbar container-fluid  fixed-top ombra">
-            <div class=" w-100 d-flex justify-content-center">
-                <div class="row ">
-                    <div class="d-flex justify-content-center align-content-center">
-                        <div class="logo">
-                            <h5>
-                                <a href="#" class="logo">Casa Rossini | Fano</a>
-                            </h5>
-                        </div>
-                        <div class="">
-                            <div>
-
-                            </div>
-                            <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
-                            <input type="checkbox" id="toggler">
-                            <label for="toggler"><i class="ri-menu-line hamburger text-center w-100"></i></label>
-                            <div class="menu h-100 d-flex justify-content-center align-items-center">
-                                <div>
-                                    <ul class="list">
-                                        <li><a href="/index.html">Home</a></li>
-                                        <li><a id="contactPage" href="#casarossini/Contatti">Contatti</a></li>
-                                        <li><a id="roomPage" href="#casarossini/Stanze">Stanze</a></li>
-                                        <li><a id="servicesPage" href="#casarossini/Servizi">Servizi</a></li>
-                                        <li class="allinea">
-                                            <div class="icons-wrapper d-flex"><a
-                                                    href="https://www.airbnb.it/users/show/34354561" target="blank">
-                                                    <div>&nbsp;Airbnb&nbsp;&nbsp;</div>
-                                                    <div><i class="fa-brands fa-airbnb">
-                                                        </i>
-                                                </a></div>
+        <nav class="navbar container-fluid d-flex fixed-top ombra justify-content-center">
+            <div class=" col-sm-10 d-flex justify-content-sm-center">
+                <div class="w-100">
+                    <div class="d-flex justify-content-center">
+                        <div class="row w-100">
+                            <div class="col-md-1 col-sm"></div>
+                            <div class="d-flex justify-content-md-between align-content-center row col-md-10 m-0 p-0">
+                                <div class="logo col-6 ">
+                                    <h5 class="d-md-flex align-content-md-start">
+                                        <a href="#" class="logo">Casa Rossini | Fano</a>
+                                    </h5>
                                 </div>
+                                <div id="smCol" class="col-2"></div>
 
-                                </li>
-                                </ul>
+                                <div class="col-4">
+                                    <div class="w-100 justify-content-end">
+                                        <div>
+
+                                        <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
+                                        <input type="checkbox" id="toggler" class=" justify-content-end">
+                                        <label for="toggler"><i
+                                                class="ri-menu-line hamburger text-center w-100  allineaToogler"></i></label>
+                                                
+                                        <div class="menu h-100 d-flex justify-content-center align-items-center">
+                                            <div>
+                                                <ul class="list">
+                                                    <li><a id="homePage" href="#casarossini/Homepage">Home</a></li>
+                                                    <li><a id="contactPage" href="#casarossini/Contatti">Contatti</a>
+                                                    </li>
+                                                    <li><a id="roomPage" href="#casarossini/Stanze">Stanze</a></li>
+                                                    <li><a id="servicesPage" href="#casarossini/Servizi">Servizi</a>
+                                                    </li>
+                                                    <li class="allinea">
+                                                        <div class="icons-wrapper d-flex"><a
+                                                                href="https://www.airbnb.it/users/show/34354561"
+                                                                target="blank">
+                                                                <div>&nbsp;Airbnb&nbsp;&nbsp;</div>
+                                                                <div><i class="fa-brands fa-airbnb">
+                                                                    </i>
+                                                            </a></div>
+
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </nav>
 
@@ -86,90 +99,13 @@
     </header>
 
     <!--POOL-->
-    <div id="pool">
-        
-
-
-
-        <!--teaserBox-->
-        <!-- <div class="d-flex justify-content-center align-items-center panna">
-            <div class="text-center mt-5 w-75 corsivo">
-                <p>Compila i campi per ricevere informazioni riguardo il tuo soggiorno!<span class="emoticon">&nbsp;
-                        &#127773;&nbsp;</span></p>
-            </div>
-        </div> -->
-
-        <!--alertBox-->
-        <!-- <div class="d-flex justify-content-center align-items-center">
-            <div id="alert" class="d-flex justify-content-center align-items-center panna w-50  testoAlert bRadius">
-            </div>
-        </div> -->
-
-
-        <!--form-->
-        <!-- <div class="d-flex justify-content-center align-items-center panna">
-            <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  py-4 m-sm-2 m-md-0">
-                <form action="mailto:alberto.cannoni@outlook.it" method="post" enctype="text/plain"
-                    class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
-                    <fieldset>
-                        <div class="col-12">
-                            <div class="row">
-                                <div class="col m-1">
-                                    <div class="row m-1">
-                                        <label for="fname">Nome:</label>
-                                        <input type="text" id="fname" name="fname" placeholder="..." class="">
-                                    </div>
-                                    <div class="row"></div>
-                                    <div class="row m-1">
-                                        <label for="lname">Cognome:</label>
-                                        <input type="text" id="lname" name="lname" placeholder="..." class="" required autocomplete="off">
-                                    </div>
-                                </div>
-                                <div class="col m-1">
-                                    <div class="row m-1">
-                                        <label for="email">Email:</label>
-                                        <input type="text" id="posta" name="email" placeholder="..." class="" required autocomplete="off">
-                                    </div>
-                                    <div class="row"></div>
-                                    <div class="row m-1">
-                                        <label for="telephone">Telefono:</label>
-                                        <input type="tel" id="telephone" name="telephone" placeholder="..." class="" >
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col d-grid m-2">
-                                <label for="info">Richiesta:</label>
-                                <textarea name="richiesta" id="info" cols="..." rows="4"
-                                    placeholder="scrivi la tua richiesta"></textarea>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <div class="d-flex justify-content-center align-items-center py-2">
-                        <button type="button" value="send" class="bRadius" id="infoBtn">
-                            <div class="svg-wrapper-1">
-                                <div class="svg-wrapper">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                                        <path fill="none" d="M0 0h24v24H0z"></path>
-                                        <path fill="currentColor"
-                                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
-                                        </path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <span>Invia</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div> -->
-    </div>
+    <div id="pool" class="py-5"></div>
 
     <!--footer-->
-    <footer class="fixed-bottom ombra ">
+    <footer class="fixed-bottom ombra pt-3 ">
 
     </footer>
-    <div id="footerWrapper" class="bottom ">
+    <div id="footerWrapper" class="bottom pt-3">
         <p></p>
     </div>
 

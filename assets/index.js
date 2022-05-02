@@ -1,8 +1,4 @@
 //variabili globali
-
-
-let errore = document.querySelector('#alert');
-
 let pool = document.querySelector('#pool');
 let contactPage = document.querySelector('#contactPage');
 let roomPage = document.querySelector('#roomPage');
@@ -14,37 +10,19 @@ window.addEventListener('load', init);
 
 function init() {
     homePageGen();
-
-
-    //pulizia campi form
-    //nome.value = '';
-    //cognome.value = '';
-    //posta.value = '';
-    //telefono.value = '';
-    //testo.value = '';
-    //errore.innerHTML = '';
-
-    //listener bottone form
-    //S btn.addEventListener('click', check);
-
-
-    //listener click menu
+    homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
-
 }
 
-
-
-/*=========Funzioni DOM========== */
+/*========= manipolazione DOM ========== */
 function resetPool() {
     pool.innerHTML = ``;
 }
 function homePageGen() {
-
     resetPool();
-
+    
     //generazione blocchi
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
@@ -56,7 +34,7 @@ function homePageGen() {
 
     let textBox = document.createElement("div");
     textBox.setAttribute('id', 'textBox');
-    textBox.classList.add('text-center', 'mt-4', 'mt-md-5', 'mb-3', 'mb-md-4', 'py-2');
+    textBox.classList.add('text-center', 'mb-3', 'mb-md-4', 'py-2');
 
     let textP = document.createElement("p");
     textP.classList.add('corsivo', 'm-2', 'm-sm-0');
@@ -67,14 +45,14 @@ function homePageGen() {
 
     let teaserBox = document.createElement('div');
     teaserBox.setAttribute('id', 'teaserBox');
-    teaserBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+    teaserBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'panna');
 
     let textBox2 = document.createElement("div");
     textBox2.setAttribute('id', 'textBox2');
-    textBox2.classList.add('text-center', 'mt-5', 'w-75', 'corsivo');
+    textBox2.classList.add('text-center', 'my-3', 'w-75', 'corsivo');
 
     let textP2 = document.createElement("p");
-    textP2.classList.add('corsivo', 'm-2', 'm-sm-0');
+    textP2.classList.add('corsivo', 'm-sm-0');
 
     let alertBox = document.createElement('div');
     alertBox.setAttribute('id', 'alertBox');
@@ -82,15 +60,12 @@ function homePageGen() {
 
     let alertInnerBox = document.createElement('div');
     alertInnerBox.setAttribute('id', 'alertInnerBox');
-    alertInnerBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'w-50',  'testoAlert', 'bRadius');
-    
+    alertInnerBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'w-50', 'testoAlert', 'bRadius');
+
 
     let formBox = document.createElement('div');
     formBox.setAttribute('id', 'formBox');
     formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
-
-
-
 
     //posizionamento
     pool.append(quoteBox);
@@ -213,21 +188,11 @@ function homePageGen() {
                         </div>
                         </div>`;
 
-
-
-    //pulizia campi form
-    // nome.value = '';
-    // cognome.value = '';
-    // posta.value = '';
-    // telefono.value = '';
-    // testo.value = '';
-    // errore.innerHTML = '';
-
     //listener bottone form
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
 
-
+    //conferma esecuzione
     console.log('Home Page generata');
 }
 
@@ -254,17 +219,15 @@ function servicesPageGen() {
     console.log('pagina servizi generata');
 }
 
-
 //controllo form
-
 function check() {
     let nome = document.querySelector('#fname');
     let cognome = document.querySelector('#lname');
     let posta = document.querySelector('#posta');
     let telefono = document.querySelector('#telephone');
     let testo = document.querySelector('#info');
-
     let alertInnerBox = document.querySelector('#alertInnerBox')
+    let btn = document.querySelector('#infoBtn');
 
     //listener bottone form
     // btn.addEventListener('click', check);
