@@ -12,8 +12,8 @@ let roomPage = document.querySelector('#roomPage');
 let servicesPage = document.querySelector('#servicesPage');
 let contatti = document.querySelector('#listaContatti');
 
+//funzione init
 window.addEventListener('load', init);
-
 
 function init() {
     //pulizia campi form
@@ -23,8 +23,10 @@ function init() {
     telefono.value = '';
     testo.value = '';
     errore.innerHTML = '';
+
     //listener bottone form
     btn.addEventListener('click', check);
+
     //listener click menu
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
@@ -60,12 +62,11 @@ function check() {
     }
 }
 
-/*=============Funzioni DOM============== */
+/*=========Funzioni DOM========== */
 function resetPool() {
     pool.innerHTML = ``;
 }
 function homePageGen() {
-
 }
 
 function contactPageGen() {
@@ -75,12 +76,12 @@ function contactPageGen() {
     pool.append(newDiv);
     newDiv.innerHTML = 'inserire elenco contatti!!';
     newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-
     console.log('pagina contatti generata');
 }
 
 function roomPageGen() {
     resetPool();
+
     //generazione blocchi
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
@@ -121,11 +122,6 @@ function roomPageGen() {
     textBox2.append(textP2);
     textP2.innerHTML ='Compila i campi per ricevere informazioni riguardo il tuo soggiorno! '
     textP.innerHTML = '&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile. Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane. Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;';
-
-
-
-
-
 
     //generazione blocco slideshow
     pool.appendChild(slideBox);
