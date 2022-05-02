@@ -1,12 +1,8 @@
 //variabili globali
-let nome = document.querySelector('#fname');
-let cognome = document.querySelector('#lname');
-let posta = document.querySelector('#posta');
-let telefono = document.querySelector('#telephone');
-let testo = document.querySelector('#info');
-let btn = document.querySelector('#infoBtn');
+
+
 let errore = document.querySelector('#alert');
-let alertInnerBox = document.querySelector('#alertInnerBox')
+
 let pool = document.querySelector('#pool');
 let contactPage = document.querySelector('#contactPage');
 let roomPage = document.querySelector('#roomPage');
@@ -17,13 +13,26 @@ let contatti = document.querySelector('#listaContatti');
 window.addEventListener('load', init);
 
 function init() {
-    homePageGen();    
+    homePageGen();
+
+
+    //pulizia campi form
+    //nome.value = '';
+    //cognome.value = '';
+    //posta.value = '';
+    //telefono.value = '';
+    //testo.value = '';
+    //errore.innerHTML = '';
+
+    //listener bottone form
+    //S btn.addEventListener('click', check);
+
 
     //listener click menu
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
-    
+
 }
 
 
@@ -33,7 +42,7 @@ function resetPool() {
     pool.innerHTML = ``;
 }
 function homePageGen() {
-    
+
     resetPool();
 
     //generazione blocchi
@@ -73,12 +82,14 @@ function homePageGen() {
 
     let alertInnerBox = document.createElement('div');
     alertInnerBox.setAttribute('id', 'alertInnerBox');
+    alertInnerBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'w-50',  'testoAlert', 'bRadius');
+    
 
     let formBox = document.createElement('div');
     formBox.setAttribute('id', 'formBox');
     formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
 
-    
+
 
 
     //posizionamento
@@ -136,7 +147,7 @@ function homePageGen() {
         </div>
     </div>
                           </div>`
-    
+
     //generazione blocco teaser
     pool.appendChild(teaserBox);
 
@@ -202,6 +213,21 @@ function homePageGen() {
                         </div>
                         </div>`;
 
+
+
+    //pulizia campi form
+    // nome.value = '';
+    // cognome.value = '';
+    // posta.value = '';
+    // telefono.value = '';
+    // testo.value = '';
+    // errore.innerHTML = '';
+
+    //listener bottone form
+    let btn = document.querySelector('#infoBtn');
+    btn.addEventListener('click', check);
+
+
     console.log('Home Page generata');
 }
 
@@ -216,7 +242,6 @@ function contactPageGen() {
 }
 
 function roomPageGen() {
-    console.log('pagina stanze generata')
 }
 
 function servicesPageGen() {
@@ -230,6 +255,42 @@ function servicesPageGen() {
 }
 
 
+//controllo form
 
+function check() {
+    let nome = document.querySelector('#fname');
+    let cognome = document.querySelector('#lname');
+    let posta = document.querySelector('#posta');
+    let telefono = document.querySelector('#telephone');
+    let testo = document.querySelector('#info');
+
+    let alertInnerBox = document.querySelector('#alertInnerBox')
+
+    //listener bottone form
+    // btn.addEventListener('click', check);
+
+    arrayLocale = []
+
+    if (nome.value == '') {
+        alertInnerBox.innerHTML = 'inserisci il tuo nome';
+    }
+    else if (cognome.value == '') {
+        alertInnerBox.innerHTML = 'inserisci il tuo cognome';
+    }
+    else if (posta.value == '') {
+        alertInnerBox.innerHTML = 'inserisci la tua mail';
+    }
+    else if (telefono.value == '') {
+        alertInnerBox.innerHTML = 'inserisci il tuo numero di telefono';
+    }
+    else if (testo.value == '') {
+        alertInnerBox.innerHTML = 'inserisci la tua richiesta';
+    }
+    else {
+        arrayLocale.push(nome.value, cognome.value, posta.value, testo.value);
+        console.log(arrayLocale);
+        btn.type = "submit";
+    }
+}
 
 
