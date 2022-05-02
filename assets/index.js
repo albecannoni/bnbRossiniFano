@@ -6,6 +6,7 @@ let telefono = document.querySelector('#telephone');
 let testo = document.querySelector('#info');
 let btn = document.querySelector('#infoBtn');
 let errore = document.querySelector('#alert');
+let alertInnerBox = document.querySelector('#alertInnerBox')
 let pool = document.querySelector('#pool');
 let contactPage = document.querySelector('#contactPage');
 let roomPage = document.querySelector('#roomPage');
@@ -16,70 +17,23 @@ let contatti = document.querySelector('#listaContatti');
 window.addEventListener('load', init);
 
 function init() {
-    //pulizia campi form
-    nome.value = '';
-    cognome.value = '';
-    posta.value = '';
-    telefono.value = '';
-    testo.value = '';
-    errore.innerHTML = '';
-
-    //listener bottone form
-    btn.addEventListener('click', check);
+    homePageGen();    
 
     //listener click menu
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
-    //roomPageGen();
+    
 }
 
-//controllo form
 
-function check() {
-
-    arrayLocale = []
-
-    if (nome.value == '') {
-        errore.innerHTML = 'inserisci il tuo nome';
-    }
-    else if (cognome.value == '') {
-        errore.innerHTML = 'inserisci il tuo cognome';
-    }
-    else if (posta.value == '') {
-        errore.innerHTML = 'inserisci la tua mail';
-    }
-    else if (telefono.value == '') {
-        errore.innerHTML = 'inserisci il tuo numero di telefono';
-    }
-    else if (testo.value == '') {
-        errore.innerHTML = 'inserisci la tua richiesta';
-    }
-    else {
-        arrayLocale.push(nome.value, cognome.value, posta.value, testo.value);
-        console.log(arrayLocale);
-        btn.type = "submit";
-    }
-}
 
 /*=========Funzioni DOM========== */
 function resetPool() {
     pool.innerHTML = ``;
 }
 function homePageGen() {
-}
-
-function contactPageGen() {
-    resetPool();
-    //(sei una bestia!!)
-    let newDiv = document.createElement("div");
-    pool.append(newDiv);
-    newDiv.innerHTML = 'inserire elenco contatti!!';
-    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-    console.log('pagina contatti generata');
-}
-
-function roomPageGen() {
+    
     resetPool();
 
     //generazione blocchi
@@ -113,6 +67,20 @@ function roomPageGen() {
     let textP2 = document.createElement("p");
     textP2.classList.add('corsivo', 'm-2', 'm-sm-0');
 
+    let alertBox = document.createElement('div');
+    alertBox.setAttribute('id', 'alertBox');
+    alertBox.classList.add('d-flex', 'justify-content-center', 'align-items-center');
+
+    let alertInnerBox = document.createElement('div');
+    alertInnerBox.setAttribute('id', 'alertInnerBox');
+
+    let formBox = document.createElement('div');
+    formBox.setAttribute('id', 'formBox');
+    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
+
+    
+
+
     //posizionamento
     pool.append(quoteBox);
     quoteBox.append(gridBox);
@@ -120,12 +88,11 @@ function roomPageGen() {
     textBox.append(textP);
     teaserBox.append(textBox2);
     textBox2.append(textP2);
-    textP2.innerHTML ='Compila i campi per ricevere informazioni riguardo il tuo soggiorno! '
+    textP2.innerHTML = 'Compila i campi per ricevere informazioni riguardo il tuo soggiorno! '
     textP.innerHTML = '&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile. Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane. Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;';
 
     //generazione blocco slideshow
     pool.appendChild(slideBox);
-    
     slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
     <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
         <div class="d-flex justify-content-center align-content-center col-sm-10">
@@ -169,9 +136,87 @@ function roomPageGen() {
         </div>
     </div>
                           </div>`
+    
     //generazione blocco teaser
     pool.appendChild(teaserBox);
-    console.log('pagina stanze generata');
+
+    //generazione blocco alert
+    pool.appendChild(alertBox);
+    alertBox.append(alertInnerBox);
+
+    //generazione Form(da rendere sicuro)
+    pool.appendChild(formBox);
+    formBox.innerHTML = ` <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
+                            <form action="mailto:alberto.cannoni@outlook.it" method="post" enctype="text/plain"
+                                class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
+                                <fieldset>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col m-1">
+                                                <div class="row m-1">
+                                                    <label for="fname">Nome:</label>
+                                                    <input type="text" id="fname" name="fname" placeholder="..." class="">
+                                                </div>
+                                                <div class="row"></div>
+                                                <div class="row m-1">
+                                                    <label for="lname">Cognome:</label>
+                                                    <input type="text" id="lname" name="lname" placeholder="..." class="" required autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col m-1">
+                                                <div class="row m-1">
+                                                    <label for="email">Email:</label>
+                                                    <input type="text" id="posta" name="email" placeholder="..." class="" required autocomplete="off">
+                                                </div>
+                                                <div class="row"></div>
+                                                <div class="row m-1">
+                                                    <label for="telephone">Telefono:</label>
+                                                    <input type="tel" id="telephone" name="telephone" placeholder="..." class="" required autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col d-grid m-2">
+                                            <label for="info">Richiesta:</label>
+                                            <textarea name="richiesta" id="info" cols="..." rows="4"
+                                                placeholder="scrivi la tua richiesta" required autocomplete="off"></textarea>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <div class="d-flex justify-content-center align-items-center py-2">
+                                    <button type="button" value="send" class="bRadius" id="infoBtn">
+                                        <div class="svg-wrapper-1">
+                                            <div class="svg-wrapper">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                                    <path fill="currentColor"
+                                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <span>Invia</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        </div>`;
+
+    console.log('Home Page generata');
+}
+
+function contactPageGen() {
+    resetPool();
+    //(sei una bestia!!)
+    let newDiv = document.createElement("div");
+    pool.append(newDiv);
+    newDiv.innerHTML = 'inserire elenco contatti!!';
+    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+    console.log('pagina contatti generata');
+}
+
+function roomPageGen() {
+    console.log('pagina stanze generata')
 }
 
 function servicesPageGen() {
@@ -183,5 +228,8 @@ function servicesPageGen() {
     newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
     console.log('pagina servizi generata');
 }
+
+
+
 
 
