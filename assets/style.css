@@ -47,6 +47,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     font-weight: 600;
 }
 
+.boldText {
+    font-weight: 600;
+}
+
 .testoAlert {
     color: #800000;
     font-size: 1.5em;
@@ -79,17 +83,17 @@ img {
 
 /* ======================== */
 
-#navWrapper {
+.navWrapper {
     height: 3.5vh;
 }
 
-#footerWrapper {
+.footerWrapper {
     height: 5.5vh;
     position: absolute;
 }
 
 .contenitore {
-    max-width: 100%;
+    max-width: 99%;
     /*Limits the width of the container but let's it get smaller if needed.*/
     margin: 0 auto;
     /*Center the container horizontally in the middle of the page.*/
@@ -102,7 +106,6 @@ img {
 } */
 .ri-menu-line {
     color: #f3eed9;
-    ;
     /* color:rgb(33, 173, 224) ; */
     background-color: #800000;
     width: 100%;
@@ -243,7 +246,7 @@ button:active {
 }
 
 
-/*logo airbnb Footer*/
+/*ICONA AIRBNB*/
 .icons-wrapper {
     position: relative;
 }
@@ -260,9 +263,9 @@ button:active {
     display: inline-block;
     /*Makes the icons inline block level elements. This will let us animate the transform property.*/
     font-size: 25px;
-
-    animation: float 1.5s ease-in-out infinite;
     /*Applies the float keyframe animation over 5s and makes it run infinitely.*/
+    animation: float 1.5s ease-in-out infinite;
+    
 
 }
 
@@ -302,6 +305,8 @@ button:active {
     display: none;
 }
 
+
+/*MEDIA QUERIES*/
 /*Breakpoint set at 600px, once it is 600px or smaller 
 the layout changes to use the following styles overriding the old ones.*/
 @media screen and (max-width: 600px) {
@@ -317,29 +322,31 @@ the layout changes to use the following styles overriding the old ones.*/
         display: grid;
     }
 
-
     .logo {
         margin-top: 6px;
         font-size: large;
         font-weight: bold;
         color: #800000;
-    }   
+    }
+    
+    .contrai{
+        display: none;
+    }
 
 
 
     .list {
 
         flex-direction: column;
+        justify-content: center;
         /*Chances the direction of the flex container.
         By default it is a row so we change it to column in small screens.*/
-        align-items: flex-end;
+        align-items: flex-end;        
         padding: 20px;
-        margin-left: 1rem;
+        margin-left: auto;
         font-size: large;
         font-weight: 700;
     }
-
-
 
     .navbar label {
         display: inline-flex;
@@ -350,7 +357,7 @@ the layout changes to use the following styles overriding the old ones.*/
         cursor: grab;
         width: 100px;
         color: #f3eed9;
-        ;
+        
     }
 
     /* 
@@ -362,6 +369,7 @@ the layout changes to use the following styles overriding the old ones.*/
     #toggler:checked~.menu {
         max-height: 100%;
     }
+
 
 
 

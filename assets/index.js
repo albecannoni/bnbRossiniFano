@@ -5,24 +5,29 @@ let roomPage = document.querySelector('#roomPage');
 let servicesPage = document.querySelector('#servicesPage');
 let contatti = document.querySelector('#listaContatti');
 
+
 //funzione init
 window.addEventListener('load', init);
 
 function init() {
-    homePageGen();
+    //homePageGen();
+    roomPageGen();
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
+    
 }
 
 /*========= manipolazione DOM ========== */
 function resetPool() {
     pool.innerHTML = ``;
 }
+
+
 function homePageGen() {
     resetPool();
-    
+
     //generazione blocchi
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
@@ -196,6 +201,58 @@ function homePageGen() {
     console.log('Home Page generata');
 }
 
+function roomPageGen() {
+    resetPool();
+    //(sei una bestia!!)
+    let descriptionBox = document.createElement("div");
+    descriptionBox.setAttribute('id', 'descriptionBox');
+    descriptionBox.classList.add('d-flex', 'justify-content-center','text-center', 'align-items-center', 'panna');
+    
+    let textBox = document.createElement("p");
+    textBox.setAttribute('id', 'textBox');
+    textBox.classList.add('d-flex','justify-content-center','boldText', 'm-2', 'm-sm-0','w-75');
+    
+    
+
+    let cardBox = document.createElement("div");
+    cardBox.setAttribute('id', 'cardBox');
+    cardBox.classList.add('d-flex','justify-content-center', 'w-100', 'm-sm-0');
+
+    let card1 = document.createElement("div");
+    card1.setAttribute('id', 'card1');
+    card1.classList.add('d-flex','justify-content-center', 'm-2', 'm-sm-0');
+
+    let card2 = document.createElement("div");
+    card2.setAttribute('id', 'card2');
+    card2.classList.add('d-flex','justify-content-center','m-2', 'm-sm-0');
+
+    pool.append(descriptionBox);
+    descriptionBox.append(textBox);
+    textBox.innerHTML='descrizione generica delle stanzedescrizione generica delle stanze descrizione generica delle stanze descrizione generica delle stanze';
+
+    pool.appendChild(cardBox);
+    cardBox.append(card1)
+    card1.innerHTML=`<div class="card text-dark bg-info my-3" style="max-width: 80%;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Info card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>`;
+
+    cardBox.appendChild(card2)
+    card2.innerHTML=`<div class="card text-dark bg-info my-3" style="max-width: 80%;">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <h5 class="card-title">Info card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>`
+    
+
+    console.log('pagina contatti generata');
+}
+
 function contactPageGen() {
     resetPool();
     //(sei una bestia!!)
@@ -204,9 +261,6 @@ function contactPageGen() {
     newDiv.innerHTML = 'inserire elenco contatti!!';
     newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
     console.log('pagina contatti generata');
-}
-
-function roomPageGen() {
 }
 
 function servicesPageGen() {
