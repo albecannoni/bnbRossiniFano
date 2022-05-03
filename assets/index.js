@@ -211,8 +211,6 @@ function roomPageGen() {
     let textBox = document.createElement("p");
     textBox.setAttribute('id', 'textBox');
     textBox.classList.add('d-flex','justify-content-center','boldText', 'm-2', 'm-sm-0','w-75');
-    
-    
 
     let cardBox = document.createElement("div");
     cardBox.setAttribute('id', 'cardBox');
