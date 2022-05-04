@@ -203,7 +203,7 @@ function homePageGen() {
 
 function roomPageGen() {
     resetPool();
-    //(sei una bestia!!)
+    //generazione blocchi
     let descriptionBox = document.createElement("div");
     descriptionBox.setAttribute('id', 'descriptionBox');
     descriptionBox.classList.add('d-flex', 'justify-content-center','text-center', 'align-items-center', 'panna');
@@ -212,40 +212,54 @@ function roomPageGen() {
     textBox.setAttribute('id', 'textBox');
     textBox.classList.add('d-flex','justify-content-center','boldText', 'm-2', 'm-sm-0','w-75');
 
+    let cardAlign = document.createElement("div");
+    cardAlign.setAttribute('id', 'cardAlign');
+    cardAlign.classList.add('d-flex', 'justify-content-center', 'h-70');
+
     let cardBox = document.createElement("div");
     cardBox.setAttribute('id', 'cardBox');
-    cardBox.classList.add('d-flex','justify-content-center', 'w-100', 'm-sm-0');
+    cardBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'm-sm-0', 'w-80');
 
     let card1 = document.createElement("div");
     card1.setAttribute('id', 'card1');
-    card1.classList.add('d-flex','justify-content-center', 'm-2', 'm-sm-0');
+    card1.classList.add('myCard', 'd-flex', 'justify-content-center', 'mx-md-5', 'm-sm-0');
 
     let card2 = document.createElement("div");
     card2.setAttribute('id', 'card2');
-    card2.classList.add('d-flex','justify-content-center','m-2', 'm-sm-0');
+    card2.classList.add('myCard', 'd-flex', 'justify-content-center', 'mx-md-5', 'm-sm-0');
 
     pool.append(descriptionBox);
     descriptionBox.append(textBox);
     textBox.innerHTML='descrizione generica delle stanzedescrizione generica delle stanze descrizione generica delle stanze descrizione generica delle stanze';
 
-    pool.appendChild(cardBox);
+    pool.appendChild(cardAlign);
+    cardAlign.append(cardBox)
     cardBox.append(card1)
-    card1.innerHTML=`<div class="card text-dark bg-info my-3" style="max-width: 80%;">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-      <h5 class="card-title">Info card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>`;
+    card1.innerHTML=`<div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
+    height: auto;">
+        <div class="card-header m-1 boldText">Stanza Bruschino</div>
+        <div class=" m-3">
+            <div class="">
+                <img onclick="expandRoom()" src="assets/images/bruschino1.png" class="d-block w-100 cardImg" alt="...">
+            </div>
+            <h5 class="card-header bRadius my-2">Info card title</h5>
+            <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 4 persone, clicca sull'iimagine per ulteriori informazioni!</p>
+        </div>
+    </div>`;
 
     cardBox.appendChild(card2)
-    card2.innerHTML=`<div class="card text-dark bg-info my-3" style="max-width: 80%;">
-    <div class="card-header">Header</div>
-    <div class="card-body">
-      <h5 class="card-title">Info card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>`
+    card2.innerHTML=` <div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
+    height: auto;">
+        <div class="card-header m-1 boldText bRadius">Stanza Armida</div>
+        <div class="h-70 m-3">
+            <div class="">
+                <img onclick="expandRoom()" src="assets/images/armida1.png" class="d-block w-100 cardImg" alt="...">
+            </div>
+            <h5 class="card-header bRadius my-2 ">Info card title</h5>
+            <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 2 persone, clicca sull'iimagine per ulteriori informazioni!
+                </p>
+        </div>
+    </div>`
     
 
     console.log('pagina contatti generata');

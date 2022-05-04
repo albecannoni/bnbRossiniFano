@@ -29,73 +29,115 @@
 </head>
 
 <body>
-    <header class="ombra">
+    <header class="ombraGranata text-center">
         <!--navbar-->
-        <nav class="navbar container-fluid  fixed-top ombra">
-            <div class=" w-100 d-flex justify-content-center">
-                <div class="row ">
-                    <div class="d-flex">
-                        <div class="logo">
-                            <h5>
-                                <a href="#" class="logo">Casa Rossini | Fano</a>
-                            </h5>
-                        </div>
-                        <div>
-                            <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
-                            <input type="checkbox" id="toggler">
-                            <label for="toggler"><i class="ri-menu-line hamburger text-center w-100"></i></label>
-                            <div class="menu">
-                                <ul class="list">
-                                    <li><a href="/index.html">Home</a></li>
-                                    <li><a href="contatti">contatti</a></li>
-                                    <li><a href="stanze">stanze</a></li>
-                                    <li><a href="servizi">servizi</a></li>
-                                </ul>
+        <nav class="navbar container-fluid d-flex fixed-top ombra justify-content-center">
+            <div class=" col-sm-10 d-flex justify-content-sm-center">
+                <div class="w-100">
+                    <div class="d-flex justify-content-center">
+                        <div class="row w-100">
+                            <div class="col-md-1 col-sm"></div>
+                            <div class="d-flex justify-content-md-between align-content-center row col-md-10 m-0 p-0">
+                                <div class="logo col-6 mt-sm-1 mt-md-0 ">
+                                    <h5 class="d-md-flex align-content-md-start align-content-sm-end">
+                                        <a href="#" class="logo">Casa Rossini Fano</a>
+                                    </h5>
+                                </div>
+                                <div id="smCol" class="col-2"></div>
+
+                                <div class="col-4">
+                                    <div class="w-100 justify-content-end">
+                                        <div>
+
+                                            <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
+                                            <input type="checkbox" id="toggler" class=" justify-content-end">
+                                            <label for="toggler"><i
+                                                    class="ri-menu-line hamburger text-center w-100  allineaToogler"></i></label>
+
+                                            <div class="menu h-100 d-flex justify-content-center align-items-center">
+                                                <div class="d-sm-flex justify-content-sm-end">
+                                                    <ul id="ulMenu" class="list px-sm-1 w-100">
+                                                        <li class="elementiMenu"><a id="homePage"
+                                                                href="#casarossini/Homepage">Home</a></li>
+                                                        <li class="elementiMenu"><a id="roomPage"
+                                                                href="#casarossini/Stanze">Stanze</a></li>
+                                                        <li class="elementiMenu"><a id="contactPage"
+                                                                href="#casarossini/Contatti">Contatti</a></li>
+                                                        <li class="elementiMenu"><a id="servicesPage"
+                                                                href="#casarossini/Servizi">Servizi</a>
+                                                        </li>
+                                                        <li class="allinea elementiMenu">
+                                                            <div class="icons-wrapper d-flex"><a
+                                                                    href="https://www.airbnb.it/users/show/34354561"
+                                                                    target="blank">
+                                                                    <div>&nbsp;Airbnb&nbsp;&nbsp;</div>
+                                                                    <div><i class="fa-brands fa-airbnb">
+                                                                        </i>
+                                                                </a></div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </nav>
 
         <!--wrapper-->
-        <div id="navWrapper">
+        <div class="navWrapper">
             <p></p>
         </div>
     </header>
     <div class="py-md-5 py-sm-4">
+        <div class="d-flex justify-content-center align-items-center py-3">
+            <p style="height: 50px;" class="boldText w-75 text-center d-flex justify-content-center align-items-center">La nostra casa ha a disposizione per voi ospiti
+                due stanze accoglienti e fornite di ogni comodità</p>
+        </div>
 
-        <p style="height: 50px;" class=""></p>
+
 
         <!--Card-->
-        <div id="cardBox" class="d-flex justify-content-center w-100 m-sm-0">
-            <div id="card1" class="d-flex justify-content-center m-2 m-sm-0">
-                <div class="card text-dark bg-info my-3" style="max-width: 80%;
-                height: 25rem;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Info card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+<div id="cardAlign" class="d-flex justify-content-center h-70">
+    <div id="cardBox" class="d-flex justify-content-center align-items-center m-sm-0 w-80">
+        <div id="card1" class="myCard d-flex justify-content-center mx-md-5 m-sm-0">
+            <div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
+            height: auto;">
+                <div class="card-header m-1 boldText">Stanza Bruschino</div>
+                <div class=" m-3">
+                    <div class="">
+                        <img onclick="expandRoom()" src="assets\images\bruschino1.png" class="d-block w-100 cardImg" alt="...">
                     </div>
+                    <h5 class="card-header bRadius my-2">Info card title</h5>
+                    <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 4 persone, clicca sull'iimagine per ulteriori informazioni!</p>
                 </div>
             </div>
-
-            <!--<div id="card2" class="d-flex justify-content-center m-2 m-sm-0" >
-                <div class="card text-dark bg-info my-3" style="max-width: 80%;">
-                    <div class="card-header">Header</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Info card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                </div>
-            </div>-->
-
-
         </div>
+
+        <div id="card2" class="myCard d-flex justify-content-center m-md-5 m-sm-0">
+            <div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
+            height: auto;">
+                <div class="card-header m-1 boldText bRadius">Stanza Armida</div>
+                <div class="h-70 m-3">
+                    <div class="">
+                        <img onclick="expandRoom()" src="assets\images\armida1.png" class="d-block w-100 cardImg" alt="...">
+                    </div>
+                    <h5 class="card-header bRadius my-2 ">Info card title</h5>
+                    <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 2 persone, clicca sull'iimagine per ulteriori informazioni!
+                        </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+        
     </div>
 
 
