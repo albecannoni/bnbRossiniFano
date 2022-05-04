@@ -6,7 +6,7 @@ let servicesPage = document.querySelector('#servicesPage');
 let contatti = document.querySelector('#listaContatti');
 
 
-//funzione init
+//innesco init
 window.addEventListener('load', init);
 
 function init() {
