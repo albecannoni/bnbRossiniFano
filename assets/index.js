@@ -15,15 +15,13 @@ function init() {
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
-    servicesPage.addEventListener('click', servicesPageGen);
-    
+    servicesPage.addEventListener('click', servicesPageGen);    
 }
 
 /*========= manipolazione DOM ========== */
 function resetPool() {
     pool.innerHTML = ``;
 }
-
 
 function homePageGen() {
     resetPool();
@@ -227,6 +225,10 @@ function roomPageGen() {
     let card2 = document.createElement("div");
     card2.setAttribute('id', 'card2');
     card2.classList.add('myCard', 'd-flex', 'justify-content-center', 'mx-md-5', 'm-sm-0');
+    
+    let formBox = document.createElement('div');
+    formBox.setAttribute('id', 'formBox');
+    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
 
     pool.append(descriptionBox);
     descriptionBox.append(textBox);
@@ -260,9 +262,71 @@ function roomPageGen() {
                 </p>
         </div>
     </div>`
+
+    //generazione Form(da rendere sicuro)
+    pool.appendChild(formBox);
+    formBox.innerHTML = ` <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
+                            <form action="mailto:alberto.cannoni@outlook.it" method="post" enctype="text/plain"
+                                class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
+                                <fieldset>
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col m-1">
+                                                <div class="row m-1">
+                                                    <label for="fname">Nome:</label>
+                                                    <input type="text" id="fname" name="fname" placeholder="..." class="">
+                                                </div>
+                                                <div class="row"></div>
+                                                <div class="row m-1">
+                                                    <label for="lname">Cognome:</label>
+                                                    <input type="text" id="lname" name="lname" placeholder="..." class="" required autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="col m-1">
+                                                <div class="row m-1">
+                                                    <label for="email">Email:</label>
+                                                    <input type="text" id="posta" name="email" placeholder="..." class="" required autocomplete="off">
+                                                </div>
+                                                <div class="row"></div>
+                                                <div class="row m-1">
+                                                    <label for="telephone">Telefono:</label>
+                                                    <input type="tel" id="telephone" name="telephone" placeholder="..." class="" required autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col d-grid m-2">
+                                            <label for="info">Richiesta:</label>
+                                            <textarea name="richiesta" id="info" cols="..." rows="4"
+                                                placeholder="scrivi la tua richiesta" required autocomplete="off"></textarea>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <div class="d-flex justify-content-center align-items-center py-2">
+                                    <button type="button" value="send" class="bRadius" id="infoBtn">
+                                        <div class="svg-wrapper-1">
+                                            <div class="svg-wrapper">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                                    <path fill="currentColor"
+                                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <span>Invia</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        </div>`;
+
+    //listener bottone form
+    let btn = document.querySelector('#infoBtn');
+    btn.addEventListener('click', check);
     
 
-    console.log('pagina contatti generata');
+    console.log('pagina stanze generata');
 }
 
 function contactPageGen() {
