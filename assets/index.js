@@ -7,7 +7,9 @@ let contatti = document.querySelector('#listaContatti');
 
 //classi
 class InfoRequest {
-    constructor(nome, cognome, email, telefono, richiesta) {
+    id=1;
+    constructor(id,nome, cognome, email, telefono, richiesta) {
+        this.id= id++
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
