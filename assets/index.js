@@ -17,7 +17,9 @@ class InfoRequest {
 }
 
 class RoomCard {
-    constructor(titolo, immagine, descrizione) {
+    id = 1;
+    constructor(id, titolo, immagine, descrizione) {
+        this.id = id++;
         this.titolo = titolo;
         this.immagine = immagine;
         this.descrizione = descrizione;
