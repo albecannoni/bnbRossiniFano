@@ -5,6 +5,26 @@ let roomPage = document.querySelector('#roomPage');
 let servicesPage = document.querySelector('#servicesPage');
 let contatti = document.querySelector('#listaContatti');
 
+//classi
+
+class InfoRequest{
+    constructor(nome, cognome, email, telefono, richiesta){
+        this.nome= nome;
+        this.cognome = cognome;
+        this.email = email;
+        this.telefono = telefono;
+        this.richiesta = richiesta;
+    }
+}
+
+class Card {
+    constructor(titolo, immagine, descrizione){
+        this.titolo = titolo;
+        this.immagine = immagine;
+        this.descrizione = descrizione;
+    }
+}
+
 
 //innesco init
 window.addEventListener('load', init);
@@ -221,6 +241,7 @@ function roomPageGen() {
     let card1 = document.createElement("div");
     card1.setAttribute('id', 'card1');
     card1.classList.add('myCard', 'd-flex', 'justify-content-center', 'mx-md-5', 'm-sm-0');
+    
 
     let card2 = document.createElement("div");
     card2.setAttribute('id', 'card2');
@@ -228,7 +249,7 @@ function roomPageGen() {
 
     let formBox = document.createElement('div');
     formBox.setAttribute('id', 'formBox');
-    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
+    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1','w-100');
 
     pool.append(descriptionBox);
     descriptionBox.append(textBox);
@@ -238,9 +259,13 @@ function roomPageGen() {
     pool.appendChild(cardAlign);
     cardAlign.append(cardBox)
     cardBox.append(card1)
+
+    card1Content= new Card;
+    card1Content.titolo = 'Stanza Brischino';
+
     card1.innerHTML = `<div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
     height: auto;">
-        <div class="card-header m-1 boldText">Stanza Bruschino</div>
+        <div class="card-header m-1 boldText">${card1Content.titolo}</div>
         <div class=" m-3">
             <div class="">
                 <img onclick="expandRoom()" src="assets/images/bruschino1.png" class="d-block w-100 cardImg" alt="...">
@@ -266,7 +291,8 @@ function roomPageGen() {
 
     //generazione Form(da rendere sicuro)
     pool.appendChild(formBox);
-    formBox.innerHTML = ` <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
+    formBox.innerHTML = ` <div class="d-flex justify-content-center align-items-center w-70">
+                            <div class="container justify-content-center align-content-center  w-100  pb-5 pt-2 m-sm-2 m-md-0">
                             <form action="mailto:alberto.cannoni@outlook.it" method="post" enctype="text/plain"
                                 class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
                                 <fieldset>
@@ -280,7 +306,7 @@ function roomPageGen() {
                                                 <div class="row"></div>
                                                 <div class="row m-1">
                                                     <label for="lname">Cognome:</label>
-                                                    <input type="text" id="lname" name="lname" placeholder="..." class="" required autocomplete="off">
+                                                    <input type="text" id="lname" name="lname" placeholder="..." class="" required autocomplete="on">
                                                 </div>
                                             </div>
                                             <div class="col m-1">
@@ -320,11 +346,13 @@ function roomPageGen() {
                                 </div>
                             </form>
                         </div>
-                        </div>`;
+                        </div></div>`;
 
     //listener bottone form
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
+
+   
 
 
     console.log('pagina stanze generata');
@@ -427,7 +455,6 @@ function check() {
     let posta = document.querySelector('#posta');
     let telefono = document.querySelector('#telephone');
     let testo = document.querySelector('#info');
-    let alertInnerBox = document.querySelector('#alertInnerBox')
     let btn = document.querySelector('#infoBtn');
 
     //listener bottone form
@@ -436,19 +463,19 @@ function check() {
     arrayLocale = []
 
     if (nome.value == '') {
-        alertInnerBox.innerHTML = 'inserisci il tuo nome';
+        alert('compila tutti i campi');
     }
     else if (cognome.value == '') {
-        alertInnerBox.innerHTML = 'inserisci il tuo cognome';
+        alert('compila tutti i campi');
     }
     else if (posta.value == '') {
-        alertInnerBox.innerHTML = 'inserisci la tua mail';
+        alert('compila tutti i campi');
     }
     else if (telefono.value == '') {
-        alertInnerBox.innerHTML = 'inserisci il tuo numero di telefono';
+        alert('compila tutti i campi');
     }
     else if (testo.value == '') {
-        alertInnerBox.innerHTML = 'inserisci la tua richiesta';
+        alert('compila tutti i campi');
     }
     else {
         arrayLocale.push(nome.value, cognome.value, posta.value, testo.value);
