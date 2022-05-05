@@ -6,10 +6,9 @@ let servicesPage = document.querySelector('#servicesPage');
 let contatti = document.querySelector('#listaContatti');
 
 //classi
-
-class InfoRequest{
-    constructor(nome, cognome, email, telefono, richiesta){
-        this.nome= nome;
+class InfoRequest {
+    constructor(nome, cognome, email, telefono, richiesta) {
+        this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.telefono = telefono;
@@ -17,8 +16,8 @@ class InfoRequest{
     }
 }
 
-class Card {
-    constructor(titolo, immagine, descrizione){
+class RoomCard {
+    constructor(titolo, immagine, descrizione) {
         this.titolo = titolo;
         this.immagine = immagine;
         this.descrizione = descrizione;
@@ -241,7 +240,7 @@ function roomPageGen() {
     let card1 = document.createElement("div");
     card1.setAttribute('id', 'card1');
     card1.classList.add('myCard', 'd-flex', 'justify-content-center', 'mx-md-5', 'm-sm-0');
-    
+
 
     let card2 = document.createElement("div");
     card2.setAttribute('id', 'card2');
@@ -249,7 +248,7 @@ function roomPageGen() {
 
     let formBox = document.createElement('div');
     formBox.setAttribute('id', 'formBox');
-    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1','w-100');
+    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1', 'w-100');
 
     pool.append(descriptionBox);
     descriptionBox.append(textBox);
@@ -257,21 +256,23 @@ function roomPageGen() {
                             descrizione generica delle stanze descrizione generica delle stanze`;
 
     pool.appendChild(cardAlign);
-    cardAlign.append(cardBox)
-    cardBox.append(card1)
+    cardAlign.append(cardBox);
+    cardBox.append(card1);
 
-    card1Content= new Card;
-    card1Content.titolo = 'Stanza Brischino';
+    card1Content = new RoomCard;
+    card1Content.titolo = 'Stanza Bruschino';
+    card1Content.immagine = 'assets/images/bruschino1.png';
+    card1Content.descrizione = `Questa stanze può ospitare da 1 a 4 persone, clicca sull'imagine per ulteriori dettagli!`;
 
     card1.innerHTML = `<div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
     height: auto;">
         <div class="card-header m-1 boldText">${card1Content.titolo}</div>
         <div class=" m-3">
             <div class="">
-                <img onclick="expandRoom()" src="assets/images/bruschino1.png" class="d-block w-100 cardImg" alt="...">
+                <img onclick="expandRoom()" src="${card1Content.immagine}" class="d-block w-100 cardImg" alt="...">
             </div>
-            <h6 class="card-header bRadius my-2 boldText">Stanza quadrupla con bagno privato</h6>
-            <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 4 persone, clicca sull'iimagine per ulteriori dettagli!</p>
+            
+            <p class="card-header m-sm-0 p-sm-1 bRadius">${card1Content.descrizione}</p>
         </div>
     </div>`;
 
@@ -283,7 +284,7 @@ function roomPageGen() {
             <div class="">
                 <img onclick="expandRoom()" src="assets/images/armida1.png" class="d-block w-100 cardImg" alt="...">
             </div>
-            <h6 class="card-header bRadius my-2 boldText">Stanza doppia con bagno privato</h6>
+            
             <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 2 persone, clicca sull'iimagine per ulteriori dettagli!
                 </p>
         </div>
@@ -352,7 +353,7 @@ function roomPageGen() {
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
 
-   
+
 
 
     console.log('pagina stanze generata');
@@ -450,6 +451,7 @@ function servicesPageGen() {
 
 //controllo form
 function check() {
+    let richiesta = new InfoRequest
     let nome = document.querySelector('#fname');
     let cognome = document.querySelector('#lname');
     let posta = document.querySelector('#posta');
@@ -461,6 +463,12 @@ function check() {
     // btn.addEventListener('click', check);
 
     arrayLocale = []
+
+    richiesta.nome = nome.value;
+    richiesta.cognome = cognome.value;
+    richiesta.posta = posta.value;
+    richiesta.telefono = telefono.value;
+    richiesta.richiesta = testo.value;
 
     if (nome.value == '') {
         alert('compila tutti i campi');
@@ -478,7 +486,7 @@ function check() {
         alert('compila tutti i campi');
     }
     else {
-        arrayLocale.push(nome.value, cognome.value, posta.value, testo.value);
+        arrayLocale.push(richiesta);
         console.log(arrayLocale);
         btn.type = "submit";
     }
