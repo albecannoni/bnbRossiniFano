@@ -354,7 +354,7 @@ button:active {
 
 /* ========== MEDIA QUERIES MOBILE ============== */
 /*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .menu {
         width: 100%;
         max-height: 0;
@@ -368,7 +368,7 @@ button:active {
     }
 
     .myCard {
-        height: 26rem;
+        height: auto;
     }
 
     .logo {

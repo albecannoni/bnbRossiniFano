@@ -15,7 +15,7 @@ function init() {
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
-    servicesPage.addEventListener('click', servicesPageGen);    
+    servicesPage.addEventListener('click', servicesPageGen);
 }
 
 /*========= manipolazione DOM ========== */
@@ -124,7 +124,7 @@ function homePageGen() {
             </div>
         </div>
     </div>
-                          </div>`
+                          </div>`;
 
     //generazione blocco teaser
     pool.appendChild(teaserBox);
@@ -204,11 +204,11 @@ function roomPageGen() {
     //generazione blocchi
     let descriptionBox = document.createElement("div");
     descriptionBox.setAttribute('id', 'descriptionBox');
-    descriptionBox.classList.add('d-flex', 'justify-content-center','text-center', 'align-items-center', 'panna');
-    
+    descriptionBox.classList.add('d-flex', 'justify-content-center', 'text-center', 'align-items-center', 'panna');
+
     let textBox = document.createElement("p");
     textBox.setAttribute('id', 'textBox');
-    textBox.classList.add('d-flex','justify-content-center','boldText', 'm-2', 'm-sm-0','w-75');
+    textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'm-sm-0', 'w-75');
 
     let cardAlign = document.createElement("div");
     cardAlign.setAttribute('id', 'cardAlign');
@@ -225,40 +225,41 @@ function roomPageGen() {
     let card2 = document.createElement("div");
     card2.setAttribute('id', 'card2');
     card2.classList.add('myCard', 'd-flex', 'justify-content-center', 'mx-md-5', 'm-sm-0');
-    
+
     let formBox = document.createElement('div');
     formBox.setAttribute('id', 'formBox');
     formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
 
     pool.append(descriptionBox);
     descriptionBox.append(textBox);
-    textBox.innerHTML='descrizione generica delle stanzedescrizione generica delle stanze descrizione generica delle stanze descrizione generica delle stanze';
+    textBox.innerHTML = `descrizione generica delle stanzedescrizione generica delle stanze 
+                            descrizione generica delle stanze descrizione generica delle stanze`;
 
     pool.appendChild(cardAlign);
     cardAlign.append(cardBox)
     cardBox.append(card1)
-    card1.innerHTML=`<div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
+    card1.innerHTML = `<div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
     height: auto;">
         <div class="card-header m-1 boldText">Stanza Bruschino</div>
         <div class=" m-3">
             <div class="">
                 <img onclick="expandRoom()" src="assets/images/bruschino1.png" class="d-block w-100 cardImg" alt="...">
             </div>
-            <h5 class="card-header bRadius my-2">Info card title</h5>
-            <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 4 persone, clicca sull'iimagine per ulteriori informazioni!</p>
+            <h6 class="card-header bRadius my-2 boldText">Stanza quadrupla con bagno privato</h6>
+            <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 4 persone, clicca sull'iimagine per ulteriori dettagli!</p>
         </div>
     </div>`;
 
     cardBox.appendChild(card2)
-    card2.innerHTML=` <div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
+    card2.innerHTML = ` <div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
     height: auto;">
         <div class="card-header m-1 boldText bRadius">Stanza Armida</div>
         <div class="h-70 m-3">
             <div class="">
                 <img onclick="expandRoom()" src="assets/images/armida1.png" class="d-block w-100 cardImg" alt="...">
             </div>
-            <h5 class="card-header bRadius my-2 ">Info card title</h5>
-            <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 2 persone, clicca sull'iimagine per ulteriori informazioni!
+            <h6 class="card-header bRadius my-2 boldText">Stanza doppia con bagno privato</h6>
+            <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 2 persone, clicca sull'iimagine per ulteriori dettagli!
                 </p>
         </div>
     </div>`
@@ -324,9 +325,79 @@ function roomPageGen() {
     //listener bottone form
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
-    
+
 
     console.log('pagina stanze generata');
+}
+
+function expandRoom() {
+    resetPool();
+
+    //generazione blocchi 
+    let descriptionBox = document.createElement("div");
+    descriptionBox.setAttribute('id', 'descriptionBox');
+    descriptionBox.classList.add('d-flex', 'justify-content-center', 'text-center', 'align-items-center', 'panna');
+
+    let textBox = document.createElement("p");
+    textBox.setAttribute('id', 'textBox');
+    textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'm-sm-0', 'w-75');
+
+    let slideBox = document.createElement("div");
+    slideBox.setAttribute('id', 'slideBox');
+    slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+
+    //generazione blocco slideshow
+
+    pool.append(descriptionBox);
+    descriptionBox.append(textBox);
+    textBox.innerHTML = `descrizione generica delle stanzedescrizione generica delle stanze 
+                            descrizione generica delle stanze descrizione generica delle stanze`;
+
+    pool.appendChild(slideBox);
+    slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
+    <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
+        <div class="d-flex justify-content-center align-content-center col-sm-10">
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
+                data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/images/bruschino1.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/images/bruschino2.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/images/caruosel3.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/images/caruosel4.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+                          </div>`;
+
 }
 
 function contactPageGen() {
