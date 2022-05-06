@@ -79,7 +79,7 @@ img {
 
 /*ombre*/
 .ombra {
-    box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);
+    box-shadow: 0px 0px 1vh rgb(56, 55, 55);
 }
 
 .ombra2 {
@@ -96,7 +96,7 @@ img {
 }
 
 .bg-mio {
-    background-color: #7fb6e6;
+    background-color: #a0cff8;
 }
 
 /*larghezze*/

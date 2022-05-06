@@ -4,12 +4,14 @@ let contactPage = document.querySelector('#contactPage');
 let roomPage = document.querySelector('#roomPage');
 let servicesPage = document.querySelector('#servicesPage');
 let contatti = document.querySelector('#listaContatti');
+let arrayRichieste = []
 
 //classi
 class InfoRequest {
-    id=1;
-    constructor(id,nome, cognome, email, telefono, richiesta) {
-        this.id= id++
+    
+    constructor(id, nome, cognome, email, telefono, richiesta) {
+        id = 1
+        this.id = id++
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
@@ -19,8 +21,8 @@ class InfoRequest {
 }
 
 class RoomCard {
-    id = 1;
-    constructor(id, titolo, immagine, descrizione) {
+    
+    constructor(id, titolo, immagine, descrizione) {        
         this.id = id++;
         this.titolo = titolo;
         this.immagine = immagine;
@@ -458,7 +460,7 @@ function check() {
     let richiesta = new InfoRequest
     let nome = document.querySelector('#fname');
     let cognome = document.querySelector('#lname');
-    let posta = document.querySelector('#posta');
+    let email = document.querySelector('#posta');
     let telefono = document.querySelector('#telephone');
     let testo = document.querySelector('#info');
     let btn = document.querySelector('#infoBtn');
@@ -466,11 +468,11 @@ function check() {
     //listener bottone form
     // btn.addEventListener('click', check);
 
-    arrayLocale = []
+    
 
     richiesta.nome = nome.value;
     richiesta.cognome = cognome.value;
-    richiesta.posta = posta.value;
+    richiesta.email = email.value;
     richiesta.telefono = telefono.value;
     richiesta.richiesta = testo.value;
 
@@ -480,7 +482,7 @@ function check() {
     else if (cognome.value == '') {
         alert('compila tutti i campi');
     }
-    else if (posta.value == '') {
+    else if (email.value == '') {
         alert('compila tutti i campi');
     }
     else if (telefono.value == '') {
@@ -490,10 +492,43 @@ function check() {
         alert('compila tutti i campi');
     }
     else {
-        arrayLocale.push(richiesta);
-        console.log(arrayLocale);
+        arrayRichieste.push(richiesta);
+        console.log(arrayRichieste);
         btn.type = "submit";
     }
 }
 
+function chiamataStanze(){
 
+}
+// /*chiamata ajax*/
+// let urlAPI = 'assets/json/catalogo.json'
+// let xhr = new XMLHttpRequest();
+// xhr.open('GET', urlAPI);
+// xhr.send();
+// xhr.onreadystatechange = function () {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//         let items = JSON.parse(xhr.responseText);
+//         /*popolamento pagina */
+//         catalogo = document.querySelector('#aside');
+//         lista.innerHTML = '';
+//         items.forEach(ele => {
+//             let div = document.createElement('div');
+//             this.ele = new Prodotto;
+//             div.innerHTML = `<div id="miaCard" class="card text-center m-2">
+//                         <img style= "display: block" src="https://doodleipsum.com/160x160?bg=2f5694&i=fdd9dc261e18ddc044aab7240951e98f" class="card-img-top h-50 p-2 bg-light" alt="...">
+//                         <div class="card-body ">
+//                         <h5 class="card-text">${ele.nome}</h5>
+//                         <p class="card-text lh-sm">${ele.descrizione}</p>
+//                         <p class="card-text">${ele.prezzo}</p></div>
+//                         <div><button onclick="addCarrello(${ele.id})" type="button" class="btn btn-danger btn-rounded btn-floating m-2 shadow-5-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+//                         <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+//                         </svg></button></div></div>`
+//             catalogo.appendChild(div);
+//             popolamento(ele);
+
+//             //./assets/images/prodotto${ele.id}.png 
+//         });
+//     }
+
+// }
