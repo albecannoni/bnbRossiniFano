@@ -91,9 +91,9 @@ function homePageGen() {
     alertInnerBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'w-50', 'testoAlert', 'bRadius');
 
 
-    let formBox = document.createElement('div');
-    formBox.setAttribute('id', 'formBox');
-    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
+    // let formBox = document.createElement('div');
+    // formBox.setAttribute('id', 'formBox');
+    // formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
 
     //posizionamento
     pool.append(quoteBox);
@@ -158,7 +158,16 @@ function homePageGen() {
     pool.appendChild(alertBox);
     alertBox.append(alertInnerBox);
 
-    //generazione Form(da rendere sicuro)
+    
+    console.log('Home Page generata');
+}
+ 
+//generazione Form(da rendere sicuro)
+function formGen(){
+    let formBox = document.createElement('div');
+    formBox.setAttribute('id', 'formBox');
+    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
+   
     pool.appendChild(formBox);
     formBox.innerHTML = ` <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
                             <form action="mailto:alberto.cannoni@outlook.it" method="post" enctype="text/plain"
@@ -219,9 +228,6 @@ function homePageGen() {
     //listener bottone form
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
-
-    //conferma esecuzione
-    console.log('Home Page generata');
 }
 
 function roomPageGen() {
@@ -443,6 +449,7 @@ function contactPageGen() {
     newDiv.innerHTML = 'inserire elenco contatti!!';
     newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
     console.log('pagina contatti generata');
+    formGen();
 }
 
 function servicesPageGen() {
