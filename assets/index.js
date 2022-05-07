@@ -8,10 +8,10 @@ let arrayRichieste = []
 
 //classi
 class InfoRequest {
-    
+
     constructor(id, nome, cognome, email, telefono, richiesta) {
-        id = 1
-        this.id = id++
+        id = arrayRichieste.length;
+        this.id = InfoRequest.id;
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
@@ -21,8 +21,9 @@ class InfoRequest {
 }
 
 class RoomCard {
-    
-    constructor(id, titolo, immagine, descrizione) {        
+
+    constructor(id, titolo, immagine, descrizione) {
+
         this.id = id++;
         this.titolo = titolo;
         this.immagine = immagine;
@@ -35,8 +36,9 @@ class RoomCard {
 window.addEventListener('load', init);
 
 function init() {
-    homePageGen();
+    // homePageGen();
     // roomPageGen();
+    contactPageGen();
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
@@ -91,9 +93,6 @@ function homePageGen() {
     alertInnerBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'w-50', 'testoAlert', 'bRadius');
 
 
-    // let formBox = document.createElement('div');
-    // formBox.setAttribute('id', 'formBox');
-    // formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
 
     //posizionamento
     pool.append(quoteBox);
@@ -158,16 +157,16 @@ function homePageGen() {
     pool.appendChild(alertBox);
     alertBox.append(alertInnerBox);
 
-    
+
     console.log('Home Page generata');
 }
- 
+
 //generazione Form(da rendere sicuro)
-function formGen(){
+function formGen() {
     let formBox = document.createElement('div');
     formBox.setAttribute('id', 'formBox');
     formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
-   
+
     pool.appendChild(formBox);
     formBox.innerHTML = ` <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
                             <form action="mailto:alberto.cannoni@outlook.it" method="post" enctype="text/plain"
@@ -302,68 +301,7 @@ function roomPageGen() {
         </div>
     </div>`
 
-    //generazione Form(da rendere sicuro)
-    pool.appendChild(formBox);
-    formBox.innerHTML = ` <div class="d-flex justify-content-center align-items-center w-70">
-                            <div class="container justify-content-center align-content-center  w-100  pb-5 pt-2 m-sm-2 m-md-0">
-                            <form action="mailto:alberto.cannoni@outlook.it" method="post" enctype="text/plain"
-                                class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
-                                <fieldset>
-                                    <div class="col-12">
-                                        <div class="row">
-                                            <div class="col m-1">
-                                                <div class="row m-1">
-                                                    <label for="fname">Nome:</label>
-                                                    <input type="text" id="fname" name="fname" placeholder="..." class="">
-                                                </div>
-                                                <div class="row"></div>
-                                                <div class="row m-1">
-                                                    <label for="lname">Cognome:</label>
-                                                    <input type="text" id="lname" name="lname" placeholder="..." class="" required autocomplete="on">
-                                                </div>
-                                            </div>
-                                            <div class="col m-1">
-                                                <div class="row m-1">
-                                                    <label for="email">Email:</label>
-                                                    <input type="text" id="posta" name="email" placeholder="..." class="" required autocomplete="off">
-                                                </div>
-                                                <div class="row"></div>
-                                                <div class="row m-1">
-                                                    <label for="telephone">Telefono:</label>
-                                                    <input type="tel" id="telephone" name="telephone" placeholder="..." class="" required autocomplete="off">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col d-grid m-2">
-                                            <label for="info">Richiesta:</label>
-                                            <textarea name="richiesta" id="info" cols="..." rows="4"
-                                                placeholder="scrivi la tua richiesta" required autocomplete="off"></textarea>
-                                        </div>
-                                    </div>
-                                </fieldset>
 
-                                <div class="d-flex justify-content-center align-items-center py-2">
-                                    <button type="button" value="send" class="bRadius" id="infoBtn">
-                                        <div class="svg-wrapper-1">
-                                            <div class="svg-wrapper">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                                    <path fill="currentColor"
-                                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
-                                                    </path>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <span>Invia</span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        </div></div>`;
-
-    //listener bottone form
-    let btn = document.querySelector('#infoBtn');
-    btn.addEventListener('click', check);
 
 
 
@@ -381,7 +319,7 @@ function expandRoom() {
 
     let textBox = document.createElement("p");
     textBox.setAttribute('id', 'textBox');
-    textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2',  'w-100');
+    textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100');
 
     let slideBox = document.createElement("div");
     slideBox.setAttribute('id', 'slideBox');
@@ -472,31 +410,26 @@ function check() {
     let testo = document.querySelector('#info');
     let btn = document.querySelector('#infoBtn');
 
-    //listener bottone form
-    // btn.addEventListener('click', check);
-
-    
-
     richiesta.nome = nome.value;
     richiesta.cognome = cognome.value;
     richiesta.email = email.value;
     richiesta.telefono = telefono.value;
     richiesta.richiesta = testo.value;
 
-    if (nome.value == '') {
-        alert('compila tutti i campi');
+    if (nome.value == String) {
+        alert('compila tutti i campi 1');
     }
-    else if (cognome.value == '') {
-        alert('compila tutti i campi');
+    else if (cognome.value == String) {
+        alert('compila tutti i campi 2');
     }
-    else if (email.value == '') {
-        alert('compila tutti i campi');
+    else if (email.value == '@') {
+        alert('compila tutti i campi 3');
     }
-    else if (telefono.value == '') {
-        alert('compila tutti i campi');
+    else if (telefono.value === Number) {
+        alert('inserisci un numero valido');
     }
-    else if (testo.value == '') {
-        alert('compila tutti i campi');
+    else if (testo.value == String) {
+        alert('compila tutti i campi 4');
     }
     else {
         arrayRichieste.push(richiesta);
@@ -505,7 +438,7 @@ function check() {
     }
 }
 
-function chiamataStanze(){
+function chiamataStanze() {
 
 }
 // /*chiamata ajax*/
@@ -534,7 +467,7 @@ function chiamataStanze(){
 //             catalogo.appendChild(div);
 //             popolamento(ele);
 
-//             //./assets/images/prodotto${ele.id}.png 
+//             //./assets/images/prodotto${ele.id}.png
 //         });
 //     }
 
