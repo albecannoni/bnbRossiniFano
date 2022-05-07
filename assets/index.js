@@ -35,8 +35,8 @@ class RoomCard {
 window.addEventListener('load', init);
 
 function init() {
-    //homePageGen();
-    roomPageGen();
+    homePageGen();
+    // roomPageGen();
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
@@ -109,7 +109,7 @@ function homePageGen() {
     pool.appendChild(slideBox);
     slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
     <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
-        <div class="d-flex justify-content-center align-content-center col-sm-10">
+        <div class="d-flex justify-content-center align-content-center col-sm-11">
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
                 data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -375,7 +375,7 @@ function expandRoom() {
 
     let textBox = document.createElement("p");
     textBox.setAttribute('id', 'textBox');
-    textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'm-sm-0', 'w-75');
+    textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2',  'w-100');
 
     let slideBox = document.createElement("div");
     slideBox.setAttribute('id', 'slideBox');
@@ -389,8 +389,8 @@ function expandRoom() {
                             descrizione generica delle stanze descrizione generica delle stanze`;
 
     pool.appendChild(slideBox);
-    slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
-    <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
+    slideBox.innerHTML = `<div  class="d-flex col-md-8 justify-content-center p-4 align-items-center">
+    <div class="container-fluid row justify-content-center align-items-center  h-100 w-100  " id="banner">
         <div class="d-flex justify-content-center align-content-center col-sm-10">
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
                 data-bs-ride="carousel">
@@ -408,14 +408,14 @@ function expandRoom() {
                     <div class="carousel-item active">
                         <img src="assets/images/bruschino1.png" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item">
+                    <div  class="carousel-item">
                         <img src="assets/images/bruschino2.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/caruosel3.png" class="d-block w-100" alt="...">
+                        <img src="assets/images/bruschino1.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/caruosel4.png" class="d-block w-100" alt="...">
+                        <img src="assets/images/bruschino2.png" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button"

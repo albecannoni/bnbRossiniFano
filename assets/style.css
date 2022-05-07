@@ -65,7 +65,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 img {
     width: auto;
     height: auto;
-    border-radius: 7px;
+    
 }
 
 .cardImg{
@@ -76,6 +76,7 @@ img {
 .panna {
     background-color: #f6f4ea;
 }
+
 
 /*ombre*/
 .ombra {
@@ -93,6 +94,7 @@ img {
 /* ========== card stanze ============== */
 .myCard {
     height: auto;
+    
 }
 
 .bg-mio {
@@ -143,6 +145,23 @@ img {
     height: 5.5vh;
     position: absolute;
 }
+.logo {
+   /* background-color: aqua; */
+    
+}
+
+#imgLogo {
+    width: 75%;
+    height: auto;
+    border-radius: 0px;
+    margin-right: 6em;
+    margin-bottom:7px;
+    /* background-color: blueviolet; */
+}
+
+#ulMenu{
+    margin-right: 150px;
+}
 
 .contenitore {
     max-width: 99%;
@@ -190,17 +209,29 @@ img {
     color: #800000;
 }
 
+.elementiMenu{
+    font-size: 1em;
+}
+
 .list {
-    margin-top: 6px;
+    margin-top: 0.5em;
     font-size: x-large;
     list-style: none;
     font-weight: bold;
     display: flex;
     gap: 1vh;
     color: #800000;
+    flex-direction: row;
+    justify-content: start;
+    margin:0 auto;
     /*Applies right and bottom spacing between 
     children inside a flex or grid container.*/
 }
+
+
+
+
+
 
 
 
@@ -234,7 +265,7 @@ input, textarea {
 /* ========== footer ============== */
 footer {
     height: 3rem;
-    background-color: #62a8e5;
+    background-color: #a0cff8;
 }
 
 /*bottone info*/
@@ -382,6 +413,12 @@ button:active {
         display: none;
     }
 
+    img {
+        width: auto;
+        height: auto;
+        border-radius: 7px;
+    }
+
 
 
     .list {
@@ -395,6 +432,10 @@ button:active {
         margin-left: auto;
         font-size: large;
         font-weight: 700;
+    }
+
+    #ulMenu{
+        margin-right: 0;
     }
 
     .navbar label {
@@ -417,6 +458,7 @@ button:active {
     */
     #toggler:checked~.menu {
         max-height: 100%;
+        min-height: 10%;
     }
 
 
