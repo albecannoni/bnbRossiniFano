@@ -5,14 +5,15 @@ let roomPage = document.querySelector('#roomPage');
 let servicesPage = document.querySelector('#servicesPage');
 let contatti = document.querySelector('#listaContatti');
 
+
 let arrayRichieste = []
 
 //classi
 class InfoRequest {
 
     constructor(id, nome, cognome, email, telefono, richiesta) {
-        id = arrayRichieste.length;
-        this.id = InfoRequest.id;
+        
+        this.id = id++;
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
@@ -37,9 +38,9 @@ class RoomCard {
 window.addEventListener('load', init);
 
 function init() {
-    // homePageGen();
+     homePageGen();
     // roomPageGen();
-    contactPageGen();
+    //contactPageGen();
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
@@ -411,31 +412,33 @@ function check() {
     let testo = document.querySelector('#info');
     let btn = document.querySelector('#infoBtn');
 
+    richiesta.id = arrayRichieste.length+1;
     richiesta.nome = nome.value;
     richiesta.cognome = cognome.value;
     richiesta.email = email.value;
     richiesta.telefono = telefono.value;
     richiesta.richiesta = testo.value;
 
-    if (nome.value == String) {
+    if (nome.value == '') {
         alert('compila tutti i campi 1');
     }
-    else if (cognome.value == String) {
+    else if (cognome.value == '') {
         alert('compila tutti i campi 2');
     }
-    else if (email.value == '@') {
+    else if (email.value === '') {
         alert('compila tutti i campi 3');
     }
-    else if (telefono.value === Number) {
+    else if (telefono.value == '') {
         alert('inserisci un numero valido');
     }
-    else if (testo.value == String) {
+    else if (testo.value == '') {
         alert('compila tutti i campi 4');
     }
     else {
         arrayRichieste.push(richiesta);
         console.log(arrayRichieste);
         btn.type = "submit";
+        return (arrayRichieste);
     }
 }
 
@@ -452,11 +455,8 @@ function contraiMenu(){
 function espandiMenu(){
     menu = document.querySelector('#ulMenu');
     menu.classList.add('mostra');
-    menu.classList.remove('nascondi');
-    
+    menu.classList.remove('nascondi');    
     menu.classList.remove('mostra');
-    
-    
     console.log('test espandi')
 }
 // /*chiamata ajax*/
