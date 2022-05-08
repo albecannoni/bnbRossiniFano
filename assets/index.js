@@ -4,6 +4,7 @@ let contactPage = document.querySelector('#contactPage');
 let roomPage = document.querySelector('#roomPage');
 let servicesPage = document.querySelector('#servicesPage');
 let contatti = document.querySelector('#listaContatti');
+
 let arrayRichieste = []
 
 //classi
@@ -440,6 +441,23 @@ function check() {
 
 function chiamataStanze() {
 
+}
+
+function contraiMenu(){
+    menu = document.querySelector('#ulMenu');
+    menu.classList.add('nascondi')
+    
+    console.log('test onclick')
+}
+function espandiMenu(){
+    menu = document.querySelector('#ulMenu');
+    menu.classList.add('mostra');
+    menu.classList.remove('nascondi');
+    
+    menu.classList.remove('mostra');
+    
+    
+    console.log('test espandi')
 }
 // /*chiamata ajax*/
 // let urlAPI = 'assets/json/catalogo.json'

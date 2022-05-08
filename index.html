@@ -59,23 +59,23 @@
 
                                             <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
                                             <input type="checkbox" id="toggler" class=" justify-content-end">
-                                            <label for="toggler"><i
+                                            <label id="box" for="toggler" onclick="espandiMenu()"><i
                                                     class="ri-menu-line hamburger text-center w-100  allineaToogler"></i></label>
 
                                             <div
                                                 class="menu w-100 h-100 d-flex justify-content-center align-items-center">
                                                 <div class="w-100 h-100 d-sm-flex justify-content-sm-end justify-content-md-center align-items-md-end">
                                                     <ul id="ulMenu" class="list  px-sm-1 px-md-0 w-100">
-                                                        <li class="elementiMenu"><a id="homePage"
+                                                        <li onclick="contraiMenu()" class="elementiMenu"><a id="homePage"
                                                                 href="#casarossini/Homepage">Home</a></li>
-                                                        <li class="elementiMenu"><a id="roomPage"
+                                                        <li onclick="contraiMenu()" class="elementiMenu"><a id="roomPage"
                                                                 href="#casarossini/Stanze">Stanze</a></li>
-                                                        <li class="elementiMenu"><a id="contactPage"
+                                                        <li onclick="contraiMenu()" class="elementiMenu"><a id="contactPage"
                                                                 href="#casarossini/Contatti">Contatti</a></li>
-                                                        <li class="elementiMenu"><a id="servicesPage"
+                                                        <li onclick="contraiMenu()" class="elementiMenu"><a id="servicesPage"
                                                                 href="#casarossini/Servizi">Servizi</a>
                                                         </li>
-                                                        <li class="allinea elementiMenu">
+                                                        <li  onclick="contraiMenu()"class="allinea elementiMenu">
                                                             <div class="icons-wrapper d-flex w-100"><a
                                                                     href="https://www.airbnb.it/users/show/34354561"
                                                                     target="blank">

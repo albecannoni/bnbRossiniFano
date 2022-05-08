@@ -146,6 +146,11 @@ img {
     height: 3.5vh;
 }
 
+.nascondi{
+    display: none;
+
+}
+
 .footerWrapper {
     height: 5.5vh;
     position: bottom;
@@ -216,6 +221,7 @@ img {
 .elementiMenu{
     font-size: 1em;
 }
+
 
 .list {
     margin-top: 0.5em;
@@ -462,8 +468,21 @@ button:active {
     */
     #toggler:checked~.menu {
         max-height: 100%;
-        min-height: 10%;
+       
     }
+    .nascondi {        
+        display: none;       
+    }
+    .mostra {
+        display: flex;
+        max-height: 100%;      
+    }
+    
+    
+
+    
+
+   
 
 
 
