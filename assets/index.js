@@ -12,7 +12,7 @@ let arrayRichieste = []
 class InfoRequest {
 
     constructor(id, nome, cognome, email, telefono, richiesta) {
-        
+
         this.id = id++;
         this.nome = nome;
         this.cognome = cognome;
@@ -38,7 +38,7 @@ class RoomCard {
 window.addEventListener('load', init);
 
 function init() {
-     homePageGen();
+    homePageGen();
     // roomPageGen();
     //contactPageGen();
     homePage.addEventListener('click', homePageGen);
@@ -103,8 +103,11 @@ function homePageGen() {
     textBox.append(textP);
     teaserBox.append(textBox2);
     textBox2.append(textP2);
-    textP2.innerHTML = 'Compila i campi per ricevere informazioni riguardo il tuo soggiorno! '
-    textP.innerHTML = '&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile. Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane. Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;';
+    textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
+                        Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
+                        Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;`;
+    
+                        textP.innerHTML = 'Compila i campi per ricevere informazioni riguardo il tuo soggiorno! '
 
     //generazione blocco slideshow
     pool.appendChild(slideBox);
@@ -159,8 +162,70 @@ function homePageGen() {
     pool.appendChild(alertBox);
     alertBox.append(alertInnerBox);
 
+    buttonGen();
+
 
     console.log('Home Page generata');
+}
+//generazione blocco button
+function buttonGen(){
+    let buttonBox = document.createElement('div');
+    buttonBox.setAttribute('id', 'buttonBox');
+    buttonBox.classList.add('row', 'pt-4');
+    
+
+    pool.appendChild(buttonBox);
+    
+    buttonBox.innerHTML=`<div class="col p-0 m-0">
+                            <div class="d-flex justify-content-end align-content-center ">
+                                <button type="button" class="btn3D text-black verdeLime ">
+                                <a class="text-black" href="tel:+393890172024">
+                                    <div class="d-flex justify-content-end align-items-center"></div>
+                                    <div class="d-flex  justify-content-center">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            
+                                            <div class="col justify-content-center align-items-center h-100">
+                                                <p class="h-100 px-1 m-0 ">chiamaci!</p>
+                                            </div>
+                                            <div style="margin-top: 5px; margin-right: 5px;"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill"
+                                                    viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+<!--div di impaginazione-->
+            <div class="col-2"></div>
+
+                        <div class="col p-0 m-0">
+                            <div class="d-flex justify-content-start align-content-center ">
+                                <button type="button" class="btn3D text-white bluMail ">
+                                <a class="text-white" href="mailto:a.cannoni@hotmail.com">
+                                    <div class="d-flex justify-content-center align-items-center">                                        
+                                        <div class="col justify-content-center align-items-center h-100">
+                                            <p class="h-100 px-1 m-0 ">scrivici!</p>
+                                        </div>
+                                        <div style="margin-top: 6px; margin-right: 5px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="16" fill="white" class="bi bi-send" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </button>
+                            </div>
+                        </div> `
+    
+
+
 }
 
 //generazione Form(da rendere sicuro)
@@ -412,21 +477,21 @@ function check() {
     let testo = document.querySelector('#info');
     let btn = document.querySelector('#infoBtn');
 
-    richiesta.id = arrayRichieste.length+1;
+    richiesta.id = arrayRichieste.length + 1;
     richiesta.nome = nome.value;
     richiesta.cognome = cognome.value;
     richiesta.email = email.value;
     richiesta.telefono = telefono.value;
     richiesta.richiesta = testo.value;
 
-    if (nome.value == '') {
+    if (nome.value == 'inserisci un nome valido') {
         alert('compila tutti i campi 1');
     }
     else if (cognome.value == '') {
-        alert('compila tutti i campi 2');
+        alert('inserisci un cognome valido');
     }
     else if (email.value === '') {
-        alert('compila tutti i campi 3');
+        alert('inserisci un indirizzo mail valido');
     }
     else if (telefono.value == '') {
         alert('inserisci un numero valido');
@@ -437,56 +502,58 @@ function check() {
     else {
         arrayRichieste.push(richiesta);
         console.log(arrayRichieste);
-        btn.type = "submit";
+
         return (arrayRichieste);
     }
 }
 
 function chiamataStanze() {
+    // /*chiamata ajax*/
+    // let urlAPI = 'assets/json/catalogo.json'
+    // let xhr = new XMLHttpRequest();
+    // xhr.open('GET', urlAPI);
+    // xhr.send();
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState === 4 && xhr.status === 200) {
+    //         let items = JSON.parse(xhr.responseText);
+    //         /*popolamento pagina */
+    //         catalogo = document.querySelector('#aside');
+    //         lista.innerHTML = '';
+    //         items.forEach(ele => {
+    //             let div = document.createElement('div');
+    //             this.ele = new Prodotto;
+    //             div.innerHTML = `<div id="miaCard" class="card text-center m-2">
+    //                         <img style= "display: block" src="https://doodleipsum.com/160x160?bg=2f5694&i=fdd9dc261e18ddc044aab7240951e98f" class="card-img-top h-50 p-2 bg-light" alt="...">
+    //                         <div class="card-body ">
+    //                         <h5 class="card-text">${ele.nome}</h5>
+    //                         <p class="card-text lh-sm">${ele.descrizione}</p>
+    //                         <p class="card-text">${ele.prezzo}</p></div>
+    //                         <div><button onclick="addCarrello(${ele.id})" type="button" class="btn btn-danger btn-rounded btn-floating m-2 shadow-5-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+    //                         <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+    //                         </svg></button></div></div>`
+    //             catalogo.appendChild(div);
+    //             popolamento(ele);
 
+    //             //./assets/images/prodotto${ele.id}.png
+    //         });
+    //     }
+
+    // }
 }
 
-function contraiMenu(){
+function contraiMenu() {
     menu = document.querySelector('#ulMenu');
     menu.classList.add('nascondi')
-    
+
     console.log('test onclick')
 }
-function espandiMenu(){
+function espandiMenu() {
+    box = document.querySelector('#box')
     menu = document.querySelector('#ulMenu');
     menu.classList.add('mostra');
-    menu.classList.remove('nascondi');    
+    box.classList.add('mostra');
+    menu.classList.remove('nascondi');
     menu.classList.remove('mostra');
     console.log('test espandi')
 }
-// /*chiamata ajax*/
-// let urlAPI = 'assets/json/catalogo.json'
-// let xhr = new XMLHttpRequest();
-// xhr.open('GET', urlAPI);
-// xhr.send();
-// xhr.onreadystatechange = function () {
-//     if (xhr.readyState === 4 && xhr.status === 200) {
-//         let items = JSON.parse(xhr.responseText);
-//         /*popolamento pagina */
-//         catalogo = document.querySelector('#aside');
-//         lista.innerHTML = '';
-//         items.forEach(ele => {
-//             let div = document.createElement('div');
-//             this.ele = new Prodotto;
-//             div.innerHTML = `<div id="miaCard" class="card text-center m-2">
-//                         <img style= "display: block" src="https://doodleipsum.com/160x160?bg=2f5694&i=fdd9dc261e18ddc044aab7240951e98f" class="card-img-top h-50 p-2 bg-light" alt="...">
-//                         <div class="card-body ">
-//                         <h5 class="card-text">${ele.nome}</h5>
-//                         <p class="card-text lh-sm">${ele.descrizione}</p>
-//                         <p class="card-text">${ele.prezzo}</p></div>
-//                         <div><button onclick="addCarrello(${ele.id})" type="button" class="btn btn-danger btn-rounded btn-floating m-2 shadow-5-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
-//                         <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
-//                         </svg></button></div></div>`
-//             catalogo.appendChild(div);
-//             popolamento(ele);
 
-//             //./assets/images/prodotto${ele.id}.png
-//         });
-//     }
-
-// }

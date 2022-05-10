@@ -29,7 +29,8 @@ body, html {
     width: auto;
     background-color: #f3eed9;
 }
-#pool{
+
+#pool {
     height: 100vh;
     width: 100vw;
 
@@ -53,6 +54,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 .boldText {
     font-weight: 600;
 }
+
 .semiBoldText {
     font-weight: 500;
 }
@@ -70,10 +72,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 img {
     width: auto;
     height: auto;
-    
+
 }
 
-.cardImg{
+.cardImg {
     cursor: zoom-in;
 }
 
@@ -81,6 +83,15 @@ img {
 .panna {
     background-color: #f6f4ea;
 }
+
+.verdeLime {
+    background-color: #62e059;
+}
+
+.bluMail {
+    background-color: #3573ef;
+}
+
 
 
 /*ombre*/
@@ -99,7 +110,7 @@ img {
 /* ========== card stanze ============== */
 .myCard {
     height: auto;
-    
+
 }
 
 .bg-mio {
@@ -146,7 +157,7 @@ img {
     height: 3.5vh;
 }
 
-.nascondi{
+.nascondi {
     display: none;
 
 }
@@ -155,9 +166,10 @@ img {
     height: 5.5vh;
     position: bottom;
 }
+
 .logo {
-   /* background-color: aqua; */
-    
+    /* background-color: aqua; */
+
 }
 
 #imgLogo {
@@ -165,11 +177,11 @@ img {
     height: auto;
     border-radius: 0px;
     margin-right: 6em;
-    margin-bottom:7px;
+    margin-bottom: 7px;
     /* background-color: blueviolet; */
 }
 
-#ulMenu{
+#ulMenu {
     margin-right: 150px;
 }
 
@@ -218,7 +230,7 @@ img {
     color: #800000;
 }
 
-.elementiMenu{
+.elementiMenu {
     font-size: 1em;
 }
 
@@ -233,7 +245,7 @@ img {
     color: #800000;
     flex-direction: row;
     justify-content: start;
-    margin:0 auto;
+    margin: 0 auto;
     /*Applies right and bottom spacing between 
     children inside a flex or grid container.*/
 }
@@ -282,7 +294,7 @@ footer {
 button {
     font-family: inherit;
     font-size: 20px;
-    background: white;
+
     color: black;
     padding: 0.7em 1em;
     padding-left: 0.9em;
@@ -292,6 +304,25 @@ button {
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.2s;
+}
+
+.btn3D {
+    width: 23vw;
+    display: inline-block;
+    padding: 10px 28px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    border: rgba(27, 26, 26, 0.202) 1px solid;
+    box-shadow: 0 8px 0 #bcdab8, inset -5px 0 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+.btn3D.btn3D:hover {
+    transform: translate(4px);
+    box-shadow: 0 4px 0 #bcdab8;
+    scale: 1.15;
+
 }
 
 button span {
@@ -321,6 +352,8 @@ button:hover span {
 button:active {
     transform: scale(0.95);
 }
+
+
 
 @keyframes fly-1 {
     from {
@@ -444,7 +477,7 @@ button:active {
         font-weight: 700;
     }
 
-    #ulMenu{
+    #ulMenu {
         margin-right: 0;
     }
 
@@ -468,22 +501,23 @@ button:active {
     */
     #toggler:checked~.menu {
         max-height: 100%;
-       
+
     }
-  
-    .nascondi {        
-        display: none;       
+
+    .nascondi {
+        display: none;
     }
+
     .mostra {
-        display: flex;
-        max-height: 100%;      
+        display: inherit;
+        max-height: 100%;
     }
-    
-    
 
-    
 
-   
+
+
+
+
 
 
 
