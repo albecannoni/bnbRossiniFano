@@ -105,9 +105,11 @@ function homePageGen() {
     textBox2.append(textP2);
     textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
                         Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
-                        Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;`;
+                        Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;
+                        
+                        <span class="firma">Francesca</span>`;
     
-                        textP.innerHTML = 'Compila i campi per ricevere informazioni riguardo il tuo soggiorno! '
+                        textP.innerHTML = 'La nostra magica città ti sta aspettando!'
 
     //generazione blocco slideshow
     pool.appendChild(slideBox);
@@ -161,7 +163,7 @@ function homePageGen() {
     //generazione blocco alert
     pool.appendChild(alertBox);
     alertBox.append(alertInnerBox);
-
+    galleryGen();
     buttonGen();
 
 
@@ -294,6 +296,34 @@ function formGen() {
     //listener bottone form
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
+}
+
+function galleryGen(){
+    let galleryBox = document.createElement('div');
+    galleryBox.setAttribute('id', 'galleryBox');
+    galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap-1', 'justify-content-center', 'align-items-center', 'w-75', 'py-3', 'bRadius');
+
+    pool.appendChild(galleryBox);
+    galleryBox.innerHTML=`<div class="d-grid">
+                            <div class="row">
+                                <figure class="col">
+                                    <img class="ombra" style="width: 100%;" src="assets/images/bruschino1.png" alt="" >
+                                </figure>
+
+                                <figure class="col">
+                                    <img class="ombra" style="width: 100%;" src="assets/images/bruschino2.png" alt="" >
+                                </figure>
+                            </div>
+                            <div class="row">
+                                <figure class="col">
+                                    <img class="ombra" style="width: 100%;" src="assets/images/bruschino2.png" alt="" >
+                                </figure>
+
+                                <figure class="col">
+                                    <img class="ombra" style="width: 100%;" src="assets/images/bruschino2.png" alt="" >
+                                </figure>
+                            </div>
+                        </div>`
 }
 
 function roomPageGen() {
