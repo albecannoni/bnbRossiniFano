@@ -129,16 +129,16 @@ function teaserBox() {
 
     let teaserBox = document.createElement('div');
     teaserBox.setAttribute('id', 'teaserBox');
-    teaserBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'fondoContrasto', 'my-3', 'py-1');
+    teaserBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center',  'my-3', 'py-1');
     pool.appendChild(teaserBox);
 
     let textBox2 = document.createElement("div");
     textBox2.setAttribute('id', 'textBox2');
-    textBox2.classList.add('text-center', 'w-75', 'corsivo', 'fondoContrasto');
+    textBox2.classList.add('text-center', 'w-100', 'corsivo','d-flex','justify-content-center',  'align-items-center', );
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
-    textP2.classList.add('corsivo', 'm-sm-0', 'fondoContrasto');
+    textP2.classList.add('corsivo', 'm-sm-0', 'panna', 'w-75');
     textBox2.append(textP2);
     textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
                         Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
@@ -147,7 +147,6 @@ function teaserBox() {
 
 }
 
-//generazione blocco button
 function buttonGen() {
     let buttonBox = document.createElement('div');
     buttonBox.setAttribute('id', 'buttonBox');
@@ -279,10 +278,10 @@ function formGen() {
 function galleryGen() {
     let galleryBox = document.createElement('div');
     galleryBox.setAttribute('id', 'galleryBox');
-    galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap', 'justify-content-center', 'align-items-center', 'w-100', 'py-3', 'bRadius');
+    galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap', 'justify-content-center', 'align-items-center', 'w-100', 'py-3', 'bRadius','panna');
 
     pool.appendChild(galleryBox);
-    galleryBox.innerHTML = `<div class="d-grid ">
+    galleryBox.innerHTML = `<div class="d-grid">
                             <div class="row justify-content-center">
                                 <figure class="col-md-4 col-sm-6 ">
                                     <img onclick="" class="ombra" style="width: 100%;" src="assets/images/bruschino1.png" alt="" >
@@ -551,8 +550,7 @@ function chiamataStanze() {
 
 function contraiMenu() {
     menu = document.querySelector('#ulMenu');
-    menu.classList.toggle('nascondi')
-
+    menu.classList.toggle('nascondi');
     console.log('test onclick')
 }
 function espandiMenu() {

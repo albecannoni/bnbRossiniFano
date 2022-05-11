@@ -33,6 +33,7 @@ body, html {
 #pool {
     height: 100vh;
     width: 100vw;
+  background-color:   #f3eed9;
 
 }
 
@@ -89,8 +90,16 @@ img {
     background-color: #f6f4ea;
 }
 
+.panna2{
+    background-color: #bea6a0;
+}
+
+.bg-granata{
+    background-color: #800000;
+}
+
 .fondoContrasto{
-    background-color: #c0c0c0;
+    background-color: #ffe5d9;
 }
 
 .verdeLime {
