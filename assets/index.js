@@ -53,66 +53,32 @@ function resetPool() {
 }
 
 function homePageGen() {
+    //svuota tutto
     resetPool();
     
-
     //generazione blocchi
+    welcomeBox();
+    slideBox();
+    teaserBox()
+    
+    galleryGen();
+    buttonGen();
+    
+    console.log('Home Page generata');
+}
+
+function welcomeBox() {
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
-    quoteBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1', 'boldText');
+    pool.append(quoteBox);
+    quoteBox.innerHTML = `La nostra magica città ti sta aspettando!`;
+}
 
-    let gridBox = document.createElement("div");
-    gridBox.setAttribute('id', 'gridBox');
-    gridBox.classList.add('d-grid', 'col-sm-10', 'col-md-6');
-
-    let textBox = document.createElement("div");
-    textBox.setAttribute('id', 'textBox');
-    textBox.classList.add('text-center', 'mb-3', 'mb-md-4', 'py-2');
-
-    let textP = document.createElement("p");
-    textP.classList.add('corsivo', 'm-2', 'm-sm-0');
-
+function slideBox() {
     let slideBox = document.createElement("div");
     slideBox.setAttribute('id', 'slideBox');
     slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
-
-    let teaserBox = document.createElement('div');
-    teaserBox.setAttribute('id', 'teaserBox');
-    teaserBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'fondoContrasto', 'my-3','py-1');
-
-    let textBox2 = document.createElement("div");
-    textBox2.setAttribute('id', 'textBox2');
-    textBox2.classList.add('text-center',  'w-75', 'corsivo', 'fondoContrasto');
-
-    let textP2 = document.createElement("p");
-    textP2.classList.add('corsivo', 'm-sm-0', 'fondoContrasto');
-
-    let alertBox = document.createElement('div');
-    alertBox.setAttribute('id', 'alertBox');
-    alertBox.classList.add('d-flex', 'justify-content-center', 'align-items-center');
-
-    let alertInnerBox = document.createElement('div');
-    alertInnerBox.setAttribute('id', 'alertInnerBox');
-    alertInnerBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'w-50', 'testoAlert', 'bRadius');
-
-
-
-    //posizionamento
-    pool.append(quoteBox);
-    quoteBox.append(gridBox);
-    gridBox.append(textBox);
-    textBox.append(textP);
-    teaserBox.append(textBox2);
-    textBox2.append(textP2);
-    textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
-                        Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
-                        Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;
-                        
-                        <span class="firma">Francesca</span>`;
-
-    textP.innerHTML = 'La nostra magica città ti sta aspettando!'
-
-    //generazione blocco slideshow
     pool.appendChild(slideBox);
     slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
     <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
@@ -157,19 +123,30 @@ function homePageGen() {
         </div>
     </div>
                           </div>`;
+}
 
-    //generazione blocco teaser
+function teaserBox() {
+
+    let teaserBox = document.createElement('div');
+    teaserBox.setAttribute('id', 'teaserBox');
+    teaserBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'fondoContrasto', 'my-3', 'py-1');
     pool.appendChild(teaserBox);
 
-    //generazione blocco alert
-    pool.appendChild(alertBox);
-    alertBox.append(alertInnerBox);
-    galleryGen();
-    buttonGen();
+    let textBox2 = document.createElement("div");
+    textBox2.setAttribute('id', 'textBox2');
+    textBox2.classList.add('text-center', 'w-75', 'corsivo', 'fondoContrasto');
+    teaserBox.append(textBox2);
 
+    let textP2 = document.createElement("p");
+    textP2.classList.add('corsivo', 'm-sm-0', 'fondoContrasto');
+    textBox2.append(textP2);
+    textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
+                        Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
+                        Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;                        
+                        <span class="firma">Francesca</span>`;
 
-    console.log('Home Page generata');
 }
+
 //generazione blocco button
 function buttonGen() {
     let buttonBox = document.createElement('div');
@@ -424,7 +401,7 @@ function expandRoom() {
     slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
 
     //generazione blocco slideshow
-chiamataStanze();
+    chiamataStanze();
     // pool.append(descriptionBox);
     // descriptionBox.append(textBox);
     // textBox.innerHTML = `descrizione generica delle stanzedescrizione generica delle stanze 
@@ -565,7 +542,7 @@ function chiamataStanze() {
     //             catalogo.appendChild(div);
     //             popolamento(ele);
 
-                
+
     //         });
     //     }
 
