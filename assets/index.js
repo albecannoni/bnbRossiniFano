@@ -1,10 +1,5 @@
 //variabili globali
 let pool = document.querySelector('#pool');
-let contactPage = document.querySelector('#contactPage');
-let roomPage = document.querySelector('#roomPage');
-let servicesPage = document.querySelector('#servicesPage');
-let contatti = document.querySelector('#listaContatti');
-
 
 let arrayRichieste = [];
 let arrayStanze = [];
@@ -33,12 +28,13 @@ class RoomCard {
     }
 }
 
-
 //innesco init
 window.addEventListener('load', init);
 
 function init() {
+
     homePageGen();
+    chiamataStanze();
     //chiamataStanze();
     // roomPageGen();
     //contactPageGen();
@@ -48,6 +44,25 @@ function init() {
     servicesPage.addEventListener('click', servicesPageGen);
 }
 
+function chiamataStanze() {
+    /*chiamata ajax*/
+    let urlAPI = 'assets/json/stanze.json'
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', urlAPI);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            let arrayStanze = JSON.parse(xhr.responseText);
+            /*popolamento pagina */
+            console.log(arrayStanze);
+            
+
+
+        }
+    }
+}
+
+
 /*========= manipolazione DOM ========== */
 function resetPool() {
     pool.innerHTML = ``;
@@ -56,16 +71,13 @@ function resetPool() {
 function homePageGen() {
     //svuota tutto
     resetPool();
-
     //generazione blocchi
     welcomeBox();
     slideBox();
-    teaserBox()
-
+    teaserBox();
     galleryGen();
     buttonGen();
     formGen();
-
     console.log('Home Page generata');
 }
 
@@ -277,10 +289,10 @@ function formGen() {
     btn.addEventListener('click', check);
 }
 
-function galleryGen(arrayStanze) {
+function galleryGen() {
 
+    // console.log(a)
     stanza = new RoomCard;
-    arrayLocale = []
     let galleryBox = document.createElement('div');
     galleryBox.setAttribute('id', 'galleryBox');
     galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap', 'justify-content-center', 'align-items-center', 'w-100', 'py-3', 'bRadius', 'panna');
@@ -388,10 +400,9 @@ function roomPageGen() {
     console.log('pagina stanze generata');
 }
 
-function expandRoom(stanza) {
-
+function expandRoom() {
+    console.log(arrayStanze)
     resetPool();
-
     //generazione blocchi 
     let descriptionBox = document.createElement("div");
     descriptionBox.setAttribute('id', 'descriptionBox');
@@ -401,10 +412,8 @@ function expandRoom(stanza) {
     textBox.setAttribute('id', 'textBox');
     textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100');
 
-
-
     //generazione blocco slideshow
-    chiamataStanze();
+    chiamataStanze(ele);
     stanza = new RoomCard
 
     let slideBox = document.createElement("div");
@@ -431,7 +440,7 @@ function expandRoom(stanza) {
                         <img src="assets/images/caruosel1.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/'${stanza.immagine}'+'${stanza.id}'.png" class="d-block w-100" alt="...">
+                        <img src="assets/images/'${stanza.immagine}+'${stanza.id}'.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/caruosel3.png" class="d-block w-100" alt="...">
@@ -518,46 +527,6 @@ function check() {
         return (arrayRichieste);
     }
 }
-
-function chiamataStanze() {
-    slideBox();
-    /*chiamata ajax*/
-    let urlAPI = 'assets/json/stanze.json'
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', urlAPI);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            let arrayStanze = JSON.parse(xhr.responseText);
-            /*popolamento pagina */
-            slider = document.querySelector('#slider');
-            pool.innerHTML = '';
-            arrayStanze.forEach(ele => {
-                let div = document.createElement('div');
-                this.ele = new RoomCard;
-                div.innerHTML = `<div id="miaCard" class="card text-center m-2">
-                                              <img style= "display: block" src="${ele.immagine + ele.id}.png" class="card-img-top h-50 p-2 bg-light" alt="...">
-                                              <div class="card-body ">
-                                              
-                                              <p class="card-text">${ele.titolo}</p></div>
-                                              <div>`
-                pool.appendChild(div);
-                popolamento(stanza);
-                console.log(arrayStanze)
-
-            })
-
-        }
-
-    }
-}
-
-function popolamento(stanza) {
-    json = JSON.stringify(stanza);
-    arrayStanze.push(stanza);
-    return (arrayStanze);
-}
-
 function contraiMenu() {
     menu = document.querySelector('#ulMenu');
     menu.classList.toggle('nascondi');
@@ -572,4 +541,5 @@ function espandiMenu() {
     menu.classList.remove('mostra');
     console.log('test espandi')
 }
+
 
