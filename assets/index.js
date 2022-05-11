@@ -39,7 +39,7 @@ window.addEventListener('load', init);
 
 function init() {
     homePageGen();
-    chiamataStanze();
+    //chiamataStanze();
     // roomPageGen();
     //contactPageGen();
     homePage.addEventListener('click', homePageGen);
@@ -529,7 +529,7 @@ function chiamataStanze() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let arrayStanze = JSON.parse(xhr.responseText);
-            //         //         /*popolamento pagina */
+            /*popolamento pagina */
             slider = document.querySelector('#slider');
             pool.innerHTML = '';
             arrayStanze.forEach(ele => {
@@ -554,7 +554,6 @@ function chiamataStanze() {
 
 function popolamento(stanza) {
     json = JSON.stringify(stanza);
-    localStorage.setItem('catalogo', json)
     arrayStanze.push(stanza);
     return (arrayStanze);
 }
