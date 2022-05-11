@@ -89,12 +89,16 @@ img {
     background-color: #f6f4ea;
 }
 
+.fondoContrasto{
+    background-color: #c0c0c0;
+}
+
 .verdeLime {
-    background-color: #62e059;
+    background-color: #569b51;
 }
 
 .bluMail {
-    background-color: #3573ef;
+    background-color: #385eab;
 }
 
 .cielo{

@@ -54,6 +54,7 @@ function resetPool() {
 
 function homePageGen() {
     resetPool();
+    
 
     //generazione blocchi
     let quoteBox = document.createElement("div");
@@ -77,14 +78,14 @@ function homePageGen() {
 
     let teaserBox = document.createElement('div');
     teaserBox.setAttribute('id', 'teaserBox');
-    teaserBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'panna');
+    teaserBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'fondoContrasto', 'my-3','py-1');
 
     let textBox2 = document.createElement("div");
     textBox2.setAttribute('id', 'textBox2');
-    textBox2.classList.add('text-center', 'my-3', 'w-75', 'corsivo');
+    textBox2.classList.add('text-center',  'w-75', 'corsivo', 'fondoContrasto');
 
     let textP2 = document.createElement("p");
-    textP2.classList.add('corsivo', 'm-sm-0');
+    textP2.classList.add('corsivo', 'm-sm-0', 'fondoContrasto');
 
     let alertBox = document.createElement('div');
     alertBox.setAttribute('id', 'alertBox');
@@ -108,8 +109,8 @@ function homePageGen() {
                         Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;
                         
                         <span class="firma">Francesca</span>`;
-    
-                        textP.innerHTML = 'La nostra magica città ti sta aspettando!'
+
+    textP.innerHTML = 'La nostra magica città ti sta aspettando!'
 
     //generazione blocco slideshow
     pool.appendChild(slideBox);
@@ -170,15 +171,15 @@ function homePageGen() {
     console.log('Home Page generata');
 }
 //generazione blocco button
-function buttonGen(){
+function buttonGen() {
     let buttonBox = document.createElement('div');
     buttonBox.setAttribute('id', 'buttonBox');
     buttonBox.classList.add('row', 'pt-4');
-    
+
 
     pool.appendChild(buttonBox);
-    
-    buttonBox.innerHTML=`<div class="col p-0 m-0">
+
+    buttonBox.innerHTML = `<div class="col p-0 m-0">
                             <div class="d-flex justify-content-end align-content-center ">
                                 <button type="button" class="btn3D text-black verdeLime ">
                                 <a class="text-black" href="tel:+393890172024">
@@ -225,7 +226,7 @@ function buttonGen(){
                                 </button>
                             </div>
                         </div> `
-    
+
 
 
 }
@@ -298,29 +299,29 @@ function formGen() {
     btn.addEventListener('click', check);
 }
 
-function galleryGen(){
+function galleryGen() {
     let galleryBox = document.createElement('div');
     galleryBox.setAttribute('id', 'galleryBox');
-    galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap-1', 'justify-content-center', 'align-items-center', 'w-75', 'py-3', 'bRadius');
+    galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap', 'justify-content-center', 'align-items-center', 'w-100', 'py-3', 'bRadius');
 
     pool.appendChild(galleryBox);
-    galleryBox.innerHTML=`<div class="d-grid">
-                            <div class="row">
-                                <figure class="col">
-                                    <img class="ombra" style="width: 100%;" src="assets/images/bruschino1.png" alt="" >
+    galleryBox.innerHTML = `<div class="d-grid ">
+                            <div class="row justify-content-center">
+                                <figure class="col-md-4 col-sm-6 ">
+                                    <img onclick="" class="ombra" style="width: 100%;" src="assets/images/bruschino1.png" alt="" >
                                 </figure>
 
-                                <figure class="col">
+                                <figure class="col-md-4 col-sm-6">
                                     <img class="ombra" style="width: 100%;" src="assets/images/bruschino2.png" alt="" >
                                 </figure>
                             </div>
-                            <div class="row">
-                                <figure class="col">
-                                    <img class="ombra" style="width: 100%;" src="assets/images/bruschino2.png" alt="" >
+                            <div class="row justify-content-center">
+                                <figure class="col-md-4 col-sm-6">
+                                    <img class="ombra" style="width: 100%;" src="assets/images/armida1.png" alt="" >
                                 </figure>
 
-                                <figure class="col">
-                                    <img class="ombra" style="width: 100%;" src="assets/images/bruschino2.png" alt="" >
+                                <figure class="col-md-4 col-sm-6">
+                                    <img class="ombra" style="width: 100%;" src="assets/images/armida2.png" alt="" >
                                 </figure>
                             </div>
                         </div>`
@@ -423,56 +424,56 @@ function expandRoom() {
     slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
 
     //generazione blocco slideshow
+chiamataStanze();
+    // pool.append(descriptionBox);
+    // descriptionBox.append(textBox);
+    // textBox.innerHTML = `descrizione generica delle stanzedescrizione generica delle stanze 
+    //                         descrizione generica delle stanze descrizione generica delle stanze`;
 
-    pool.append(descriptionBox);
-    descriptionBox.append(textBox);
-    textBox.innerHTML = `descrizione generica delle stanzedescrizione generica delle stanze 
-                            descrizione generica delle stanze descrizione generica delle stanze`;
-
-    pool.appendChild(slideBox);
-    slideBox.innerHTML = `<div  class="d-flex col-md-8 justify-content-center p-4 align-items-center">
-    <div class="container-fluid row justify-content-center align-items-center  h-100 w-100  " id="banner">
-        <div class="d-flex justify-content-center align-content-center col-sm-10">
-            <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
-                data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/images/bruschino1.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div  class="carousel-item">
-                        <img src="assets/images/bruschino2.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/bruschino1.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/bruschino2.png" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button"
-                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button"
-                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </div>
-                          </div>`;
+    // pool.appendChild(slideBox);
+    // slideBox.innerHTML = `<div  class="d-flex col-md-8 justify-content-center p-4 align-items-center">
+    // <div class="container-fluid row justify-content-center align-items-center  h-100 w-100  " id="banner">
+    //     <div class="d-flex justify-content-center align-content-center col-sm-10">
+    //         <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
+    //             data-bs-ride="carousel">
+    //             <div class="carousel-indicators">
+    //                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+    //                     class="active" aria-current="true" aria-label="Slide 1"></button>
+    //                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+    //                     aria-label="Slide 2"></button>
+    //                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+    //                     aria-label="Slide 3"></button>
+    //                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+    //                     aria-label="Slide 4"></button>
+    //             </div>
+    //             <div class="carousel-inner">
+    //                 <div class="carousel-item active">
+    //                     <img src="assets/images/bruschino1.png" class="d-block w-100" alt="...">
+    //                 </div>
+    //                 <div  class="carousel-item">
+    //                     <img src="assets/images/bruschino2.png" class="d-block w-100" alt="...">
+    //                 </div>
+    //                 <div class="carousel-item">
+    //                     <img src="assets/images/bruschino1.png" class="d-block w-100" alt="...">
+    //                 </div>
+    //                 <div class="carousel-item">
+    //                     <img src="assets/images/bruschino2.png" class="d-block w-100" alt="...">
+    //                 </div>
+    //             </div>
+    //             <button class="carousel-control-prev" type="button"
+    //                 data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    //                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    //                 <span class="visually-hidden">Previous</span>
+    //             </button>
+    //             <button class="carousel-control-next" type="button"
+    //                 data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    //                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    //                 <span class="visually-hidden">Next</span>
+    //             </button>
+    //         </div>
+    //     </div>
+    // </div>
+    //                       </div>`;
 
 }
 
@@ -538,33 +539,33 @@ function check() {
 }
 
 function chiamataStanze() {
-    // /*chiamata ajax*/
-    // let urlAPI = 'assets/json/catalogo.json'
+    // // /*chiamata ajax*/
+    // let urlAPI = 'stanze.json'
     // let xhr = new XMLHttpRequest();
     // xhr.open('GET', urlAPI);
     // xhr.send();
     // xhr.onreadystatechange = function () {
     //     if (xhr.readyState === 4 && xhr.status === 200) {
     //         let items = JSON.parse(xhr.responseText);
-    //         /*popolamento pagina */
+    //         //         /*popolamento pagina */
     //         catalogo = document.querySelector('#aside');
-    //         lista.innerHTML = '';
+    //         pool.innerHTML = '';
     //         items.forEach(ele => {
     //             let div = document.createElement('div');
-    //             this.ele = new Prodotto;
+    //             this.ele = new RoomCard;
     //             div.innerHTML = `<div id="miaCard" class="card text-center m-2">
-    //                         <img style= "display: block" src="https://doodleipsum.com/160x160?bg=2f5694&i=fdd9dc261e18ddc044aab7240951e98f" class="card-img-top h-50 p-2 bg-light" alt="...">
-    //                         <div class="card-body ">
-    //                         <h5 class="card-text">${ele.nome}</h5>
-    //                         <p class="card-text lh-sm">${ele.descrizione}</p>
-    //                         <p class="card-text">${ele.prezzo}</p></div>
-    //                         <div><button onclick="addCarrello(${ele.id})" type="button" class="btn btn-danger btn-rounded btn-floating m-2 shadow-5-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
-    //                         <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
-    //                         </svg></button></div></div>`
+    //                                  <img style= "display: block" src="https://doodleipsum.com/160x160?bg=2f5694&i=fdd9dc261e18ddc044aab7240951e98f" class="card-img-top h-50 p-2 bg-light" alt="...">
+    //                                  <div class="card-body ">
+    //                                  <h5 class="card-text">${ele.id}</h5>
+    //                                  <p class="card-text lh-sm">${ele.immagine}</p>
+    //                                  <p class="card-text">${ele.titolo}</p></div>
+    //                                  <div><button onclick="addCarrello(${ele.id})" type="button" class="btn btn-danger btn-rounded btn-floating m-2 shadow-5-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+    //                                  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"/>
+    //                                  </svg></button></div></div>`
     //             catalogo.appendChild(div);
     //             popolamento(ele);
 
-    //             //./assets/images/prodotto${ele.id}.png
+                
     //         });
     //     }
 
@@ -573,7 +574,7 @@ function chiamataStanze() {
 
 function contraiMenu() {
     menu = document.querySelector('#ulMenu');
-    menu.classList.add('nascondi')
+    menu.classList.toggle('nascondi')
 
     console.log('test onclick')
 }
