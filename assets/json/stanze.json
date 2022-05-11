@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1",
+        "titolo":"bruschino",
+        "immagine": "../assets/images/bruschino"
+    },
+    {
+        "id": "2",
+        "titolo":"armida",
+        "immagine": "assets/images/bruschino"
+    }
+]
