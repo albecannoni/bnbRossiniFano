@@ -63,6 +63,7 @@ function homePageGen() {
     
     galleryGen();
     buttonGen();
+    formGen();
     
     console.log('Home Page generata');
 }
@@ -491,8 +492,8 @@ function check() {
     richiesta.telefono = telefono.value;
     richiesta.richiesta = testo.value;
 
-    if (nome.value == 'inserisci un nome valido') {
-        alert('compila tutti i campi 1');
+    if (nome.value == '') {
+        alert('inserisci un nome valido');
     }
     else if (cognome.value == '') {
         alert('inserisci un cognome valido');
@@ -509,7 +510,7 @@ function check() {
     else {
         arrayRichieste.push(richiesta);
         console.log(arrayRichieste);
-
+        btn.setAttribute("type", "submit")
         return (arrayRichieste);
     }
 }
