@@ -213,7 +213,7 @@ function galleryGen() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let arrayStanze = JSON.parse(xhr.responseText);
             console.log(arrayStanze);
-            
+
             //creazione blocco gallery
             let galleryBox = document.createElement('div');
             galleryBox.setAttribute('id', 'galleryBox');
@@ -237,16 +237,13 @@ function galleryGen() {
                                             <div class="d-flex justify-content-center flex-wrap">
                                                 <figure class="col-md-8 ">
                                                 <div class="d-flex gap-3">
-                                                    <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.cover}" alt="" >
+                                                    <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.cover}" alt="" >
                                                     <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
-                                                    <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
+                                                    
                                                 </div>    
                                                 </figure>
                                             </div>
                                         </div>`;
-                                        return galleryBox;
-
-
             });
         }
     }
@@ -398,143 +395,163 @@ function roomPageGen() {
 
     console.log('pagina stanze generata');
 }
-function expandRoom() {
-    console.log(arrayStanze)
+function expandRoom(id) {
+    element = new RoomCard
+    element.id = id
+    console.log(id)
+    arrayLocale=[]
     resetPool();
-    //generazione blocchi 
-    let descriptionBox = document.createElement("div");
-    descriptionBox.setAttribute('id', 'descriptionBox');
-    descriptionBox.classList.add('d-flex', 'justify-content-center', 'text-center', 'align-items-center', 'panna');
 
-    let textBox = document.createElement("p");
-    textBox.setAttribute('id', 'textBox');
-    textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100');
 
-    //generazione blocco slideshow
+    /*chiamata ajax*/
+    let urlAPI = 'assets/json/stanze.json'
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', urlAPI);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            let arrayStanze = JSON.parse(xhr.responseText);
+            console.log(arrayStanze);
 
-    stanza = new RoomCard
+            //generazione blocchi 
+            let descriptionBox = document.createElement("div");
+            descriptionBox.setAttribute('id', 'descriptionBox');
+            descriptionBox.classList.add('d-flex', 'justify-content-center', 'text-center', 'align-items-center', 'panna');
 
-    let slideBox = document.createElement("div");
-    slideBox.setAttribute('id', 'slideBox');
-    slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
-    pool.appendChild(slideBox);
-    slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
-    <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
-        <div class="d-flex justify-content-center align-content-center col-sm-11">
-            <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
-                data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                        aria-label="Slide 4"></button>
+            let textBox = document.createElement("p");
+            textBox.setAttribute('id', 'textBox');
+            textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100');
+
+            //generazione blocco slideshow
+            let slideBox = document.createElement("div");
+            slideBox.setAttribute('id', 'slideBox');
+            slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+            pool.appendChild(slideBox);
+            
+                
+           
+            arrayStanze.forEach(element=>{
+                let div = document.createElement('div');
+                slideBox.appendChild(div)
+                this.element = new RoomCard;
+                
+                div.innerHTML=`<div class="col-md-8 justify-content-center align-items-center">
+                <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
+                    <div class=" justify-content-center align-content-center col-sm-11">
+                        <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
+                            data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="${element.cover}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="${element.immagine2}" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/images/caruosel1.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/'...'.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/caruosel3.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/caruosel4.png" class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button"
-                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button"
-                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </div>
-                          </div>`;
+                                      </div>`;
+                                      console.log(arrayStanze)
+
+            }) 
+            
 
 
-}
-function contactPageGen() {
-    resetPool();
-    //(sei una bestia!!)
-    let newDiv = document.createElement("div");
-    pool.append(newDiv);
-    newDiv.innerHTML = 'inserire elenco contatti!!';
-    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-    console.log('pagina contatti generata');
-    formGen();
-}
-function servicesPageGen() {
-    resetPool();
-    //(sei una bestia!!)
-    let newDiv = document.createElement("div");
-    pool.append(newDiv);
-    newDiv.innerHTML = 'inserire introduzione + anteprima servizi!!';
-    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-    console.log('pagina servizi generata');
-}
-//controllo form
-function check() {
-    let richiesta = new InfoRequest
-    let nome = document.querySelector('#fname');
-    let cognome = document.querySelector('#lname');
-    let email = document.querySelector('#posta');
-    let telefono = document.querySelector('#telephone');
-    let testo = document.querySelector('#info');
-    let btn = document.querySelector('#infoBtn');
+        };
 
-    richiesta.id = arrayRichieste.length + 1;
-    richiesta.nome = nome.value;
-    richiesta.cognome = cognome.value;
-    richiesta.email = email.value;
-    richiesta.telefono = telefono.value;
-    richiesta.richiesta = testo.value;
+    }}
+    function contactPageGen() {
+        resetPool();
+        //(sei una bestia!!)
+        let newDiv = document.createElement("div");
+        pool.append(newDiv);
+        newDiv.innerHTML = 'inserire elenco contatti!!';
+        newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+        console.log('pagina contatti generata');
+        formGen();
+    }
+    function servicesPageGen() {
+        resetPool();
+        //(sei una bestia!!)
+        let newDiv = document.createElement("div");
+        pool.append(newDiv);
+        newDiv.innerHTML = 'inserire introduzione + anteprima servizi!!';
+        newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+        console.log('pagina servizi generata');
+    }
+    //controllo form
+    function check() {
+        let richiesta = new InfoRequest
+        let nome = document.querySelector('#fname');
+        let cognome = document.querySelector('#lname');
+        let email = document.querySelector('#posta');
+        let telefono = document.querySelector('#telephone');
+        let testo = document.querySelector('#info');
+        let btn = document.querySelector('#infoBtn');
 
-    if (nome.value == '') {
-        alert('inserisci un nome valido');
+        richiesta.id = arrayRichieste.length + 1;
+        richiesta.nome = nome.value;
+        richiesta.cognome = cognome.value;
+        richiesta.email = email.value;
+        richiesta.telefono = telefono.value;
+        richiesta.richiesta = testo.value;
+
+        if (nome.value == '') {
+            alert('inserisci un nome valido');
+        }
+        else if (cognome.value == '') {
+            alert('inserisci un cognome valido');
+        }
+        else if (email.value === '') {
+            alert('inserisci un indirizzo mail valido');
+        }
+        else if (telefono.value == '') {
+            alert('inserisci un numero valido');
+        }
+        else if (testo.value == '') {
+            alert('compila tutti i campi 4');
+        }
+        else {
+            arrayRichieste.push(richiesta);
+            console.log(arrayRichieste);
+            btn.setAttribute("type", "submit")
+            return (arrayRichieste);
+        }
     }
-    else if (cognome.value == '') {
-        alert('inserisci un cognome valido');
+    function contraiMenu() {
+        menu = document.querySelector('#ulMenu');
+        menu.classList.toggle('nascondi');
+        console.log('test onclick')
     }
-    else if (email.value === '') {
-        alert('inserisci un indirizzo mail valido');
+    function espandiMenu() {
+        box = document.querySelector('#box')
+        menu = document.querySelector('#ulMenu');
+        menu.classList.add('mostra');
+        box.classList.add('mostra');
+        menu.classList.remove('nascondi');
+        menu.classList.remove('mostra');
+        console.log('test espandi')
     }
-    else if (telefono.value == '') {
-        alert('inserisci un numero valido');
-    }
-    else if (testo.value == '') {
-        alert('compila tutti i campi 4');
-    }
-    else {
-        arrayRichieste.push(richiesta);
-        console.log(arrayRichieste);
-        btn.setAttribute("type", "submit")
-        return (arrayRichieste);
-    }
-}
-function contraiMenu() {
-    menu = document.querySelector('#ulMenu');
-    menu.classList.toggle('nascondi');
-    console.log('test onclick')
-}
-function espandiMenu() {
-    box = document.querySelector('#box')
-    menu = document.querySelector('#ulMenu');
-    menu.classList.add('mostra');
-    box.classList.add('mostra');
-    menu.classList.remove('nascondi');
-    menu.classList.remove('mostra');
-    console.log('test espandi')
-}
 
 
