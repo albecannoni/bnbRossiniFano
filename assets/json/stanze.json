@@ -3,14 +3,14 @@
         "id": "1",
         "titolo":"bruschino",
         "descrizione":"test descrizione",
-        "immagine1": "assets/images/bruschino1.png",
+        "cover": "assets/images/bruschino1.png",
         "immagine2": "assets/images/bruschino2.png"
     },
     {
         "id": "2",
         "titolo":"armida",
         "descrizione":"test descrizione",
-        "immagine1": "assets/images/armida1.png",
+        "cover": "assets/images/armida1.png",
         "immagine2": "assets/images/armida2.png"
     }
 ]

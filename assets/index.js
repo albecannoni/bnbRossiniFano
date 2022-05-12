@@ -54,11 +54,12 @@ function homePageGen() {
     //generazione blocchi
     welcomeBox();
     slideBox();
+    galleryGen();
     teaserBox();
     //formGen();
-     galleryGen();
-    // buttonGen();
-    
+
+    //buttonGen();
+
     console.log('Home Page generata');
 }
 
@@ -202,6 +203,7 @@ function buttonGen() {
 
 }
 function galleryGen() {
+
     /*chiamata ajax*/
     let urlAPI = 'assets/json/stanze.json'
     let xhr = new XMLHttpRequest();
@@ -211,28 +213,44 @@ function galleryGen() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let arrayStanze = JSON.parse(xhr.responseText);
             console.log(arrayStanze);
+            
+            //creazione blocco gallery
+            let galleryBox = document.createElement('div');
+            galleryBox.setAttribute('id', 'galleryBox');
+            galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'panna');
+            pool.appendChild(galleryBox);
+
+            //attesa gallery completata
+            if (galleryBox != '') {
+                buttonGen();
+            }
+
             /*popolamento pagina */
             arrayStanze.forEach(element => {
-                let galleryBox = document.createElement('div');
-                galleryBox.setAttribute('id', 'galleryBox');
-                galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap', 'justify-content-center', 'align-items-center', 'w-100', 'py-3', 'bRadius', 'panna');
-                pool.appendChild(galleryBox);
+
+                let roomBox = document.createElement('div');
+                roomBox.setAttribute('id', 'roomBox');
+                roomBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'panna');
+                galleryBox.append(roomBox);
                 this.element = new RoomCard;
-                galleryBox.innerHTML = `<div class="d-grid">
+                roomBox.innerHTML = `<div class="d-grid">
                                             <div class="d-flex justify-content-center flex-wrap">
                                                 <figure class="col-md-8 ">
                                                 <div class="d-flex gap-3">
-                                                    <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.immagine1}" alt="" >
+                                                    <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.cover}" alt="" >
+                                                    <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
                                                     <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
                                                 </div>    
                                                 </figure>
                                             </div>
                                         </div>`;
+                                        return galleryBox;
+
 
             });
         }
     }
-    
+
 }
 //generazione Form(da rendere sicuro)
 function formGen() {
