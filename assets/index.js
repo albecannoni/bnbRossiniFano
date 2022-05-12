@@ -1,6 +1,5 @@
 //variabili globali
 let pool = document.querySelector('#pool');
-
 let arrayRichieste = [];
 let arrayStanze = [];
 
@@ -20,11 +19,12 @@ class InfoRequest {
 
 class RoomCard {
 
-    constructor(id, nome, descrizione) {
+    constructor(id, nome, descrizione, immagine) {
 
         this.id = id++;
         this.nome = nome;
         this.descrizione = descrizione;
+        this.immagine = immagine;
     }
 }
 
@@ -32,9 +32,8 @@ class RoomCard {
 window.addEventListener('load', init);
 
 function init() {
-
     homePageGen();
-    chiamataStanze();
+
     //chiamataStanze();
     // roomPageGen();
     //contactPageGen();
@@ -43,25 +42,6 @@ function init() {
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
 }
-
-function chiamataStanze() {
-    /*chiamata ajax*/
-    let urlAPI = 'assets/json/stanze.json'
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', urlAPI);
-    xhr.send();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            let arrayStanze = JSON.parse(xhr.responseText);
-            /*popolamento pagina */
-            console.log(arrayStanze);
-            
-
-
-        }
-    }
-}
-
 
 /*========= manipolazione DOM ========== */
 function resetPool() {
@@ -75,9 +55,10 @@ function homePageGen() {
     welcomeBox();
     slideBox();
     teaserBox();
-    galleryGen();
-    buttonGen();
-    formGen();
+    //formGen();
+     galleryGen();
+    // buttonGen();
+    
     console.log('Home Page generata');
 }
 
@@ -220,7 +201,39 @@ function buttonGen() {
 
 
 }
+function galleryGen() {
+    /*chiamata ajax*/
+    let urlAPI = 'assets/json/stanze.json'
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', urlAPI);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            let arrayStanze = JSON.parse(xhr.responseText);
+            console.log(arrayStanze);
+            /*popolamento pagina */
+            arrayStanze.forEach(element => {
+                let galleryBox = document.createElement('div');
+                galleryBox.setAttribute('id', 'galleryBox');
+                galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap', 'justify-content-center', 'align-items-center', 'w-100', 'py-3', 'bRadius', 'panna');
+                pool.appendChild(galleryBox);
+                this.element = new RoomCard;
+                galleryBox.innerHTML = `<div class="d-grid">
+                                            <div class="d-flex justify-content-center flex-wrap">
+                                                <figure class="col-md-8 ">
+                                                <div class="d-flex gap-3">
+                                                    <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.immagine1}" alt="" >
+                                                    <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
+                                                </div>    
+                                                </figure>
+                                            </div>
+                                        </div>`;
 
+            });
+        }
+    }
+    
+}
 //generazione Form(da rendere sicuro)
 function formGen() {
     let formBox = document.createElement('div');
@@ -288,38 +301,6 @@ function formGen() {
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
 }
-
-function galleryGen() {
-
-    // console.log(a)
-    stanza = new RoomCard;
-    let galleryBox = document.createElement('div');
-    galleryBox.setAttribute('id', 'galleryBox');
-    galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'gap', 'justify-content-center', 'align-items-center', 'w-100', 'py-3', 'bRadius', 'panna');
-
-    pool.appendChild(galleryBox);
-    galleryBox.innerHTML = `<div class="d-grid">
-                            <div class="row justify-content-center">
-                                <figure class="col-md-4 col-sm-6 ">
-                                    <img onclick="expandRoom(${stanza.nome})" class="ombra" style="width: 100%;" src="assets/images/bruschino1.png" alt="" >
-                                </figure>
-
-                                <figure class="col-md-4 col-sm-6">
-                                    <img class="ombra" style="width: 100%;" src="assets/images/bruschino2.png" alt="" >
-                                </figure>
-                            </div>
-                            <div class="row justify-content-center">
-                                <figure class="col-md-4 col-sm-6">
-                                    <img class="ombra" style="width: 100%;" src="assets/images/armida1.png" alt="" >
-                                </figure>
-
-                                <figure class="col-md-4 col-sm-6">
-                                    <img class="ombra" style="width: 100%;" src="assets/images/armida2.png" alt="" >
-                                </figure>
-                            </div>
-                        </div>`
-}
-
 function roomPageGen() {
     resetPool();
     //generazione blocchi
@@ -399,7 +380,6 @@ function roomPageGen() {
 
     console.log('pagina stanze generata');
 }
-
 function expandRoom() {
     console.log(arrayStanze)
     resetPool();
@@ -413,7 +393,7 @@ function expandRoom() {
     textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100');
 
     //generazione blocco slideshow
-    chiamataStanze(ele);
+
     stanza = new RoomCard
 
     let slideBox = document.createElement("div");
@@ -440,7 +420,7 @@ function expandRoom() {
                         <img src="assets/images/caruosel1.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/'${stanza.immagine}+'${stanza.id}'.png" class="d-block w-100" alt="...">
+                        <img src="assets/images/'...'.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/caruosel3.png" class="d-block w-100" alt="...">
@@ -466,7 +446,6 @@ function expandRoom() {
 
 
 }
-
 function contactPageGen() {
     resetPool();
     //(sei una bestia!!)
@@ -477,7 +456,6 @@ function contactPageGen() {
     console.log('pagina contatti generata');
     formGen();
 }
-
 function servicesPageGen() {
     resetPool();
     //(sei una bestia!!)
@@ -487,7 +465,6 @@ function servicesPageGen() {
     newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
     console.log('pagina servizi generata');
 }
-
 //controllo form
 function check() {
     let richiesta = new InfoRequest
