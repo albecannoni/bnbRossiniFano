@@ -249,6 +249,7 @@ function galleryGen() {
     }
 
 }
+
 //generazione Form(da rendere sicuro)
 function formGen() {
     let formBox = document.createElement('div');
@@ -316,6 +317,7 @@ function formGen() {
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
 }
+
 function roomPageGen() {
     resetPool();
     //generazione blocchi
@@ -396,15 +398,13 @@ function roomPageGen() {
     console.log('pagina stanze generata');
 }
 function expandRoom(id) {
-    element = new RoomCard
-    element.id = id
-    console.log(id)
-    arrayLocale=[]
     resetPool();
-
+    element = new RoomCard;
+    element.id = id;
+    arrayLocale = [];
 
     /*chiamata ajax*/
-    let urlAPI = 'assets/json/stanze.json'
+    let urlAPI = 'assets/json/stanze.json';
     let xhr = new XMLHttpRequest();
     xhr.open('GET', urlAPI);
     xhr.send();
@@ -427,17 +427,23 @@ function expandRoom(id) {
             slideBox.setAttribute('id', 'slideBox');
             slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
             pool.appendChild(slideBox);
-            
-                
-           
-            arrayStanze.forEach(element=>{
+
+            arrayStanze.forEach(ele => {
+                if (ele.id == id) {
+                    arrayLocale.push(ele);
+                    console.log(ele);
+                }
+            });
+
+            arrayLocale.forEach(element => {
                 let div = document.createElement('div');
-                slideBox.appendChild(div)
+                div.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'p-5');
+                slideBox.appendChild(div);
                 this.element = new RoomCard;
-                
-                div.innerHTML=`<div class="col-md-8 justify-content-center align-items-center">
+
+                div.innerHTML = `<div  class="d-flex col-md-8 justify-content-center align-items-center">
                 <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
-                    <div class=" justify-content-center align-content-center col-sm-11">
+                    <div class="d-flex justify-content-center align-content-center col-sm-11">
                         <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
                             data-bs-ride="carousel">
                             <div class="carousel-indicators">
@@ -452,6 +458,12 @@ function expandRoom(id) {
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
+                                    <img src="${element.cover}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="${element.immagine2}" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
                                     <img src="${element.cover}" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
@@ -472,86 +484,83 @@ function expandRoom(id) {
                     </div>
                 </div>
                                       </div>`;
-                                      console.log(arrayStanze)
 
-            }) 
-            
-
-
+                console.log(arrayStanze);
+            })
         };
+    };
+}
+function contactPageGen() {
+    resetPool();
+    //(sei una bestia!!)
+    let newDiv = document.createElement("div");
+    pool.append(newDiv);
+    newDiv.innerHTML = 'inserire elenco contatti!!';
+    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+    console.log('pagina contatti generata');
+    formGen();
+}
+function servicesPageGen() {
+    resetPool();
+    //(sei una bestia!!)
+    let newDiv = document.createElement("div");
+    pool.append(newDiv);
+    newDiv.innerHTML = 'inserire introduzione + anteprima servizi!!';
+    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+    console.log('pagina servizi generata');
+}
+//controllo form
+function check() {
+    let richiesta = new InfoRequest
+    let nome = document.querySelector('#fname');
+    let cognome = document.querySelector('#lname');
+    let email = document.querySelector('#posta');
+    let telefono = document.querySelector('#telephone');
+    let testo = document.querySelector('#info');
+    let btn = document.querySelector('#infoBtn');
 
-    }}
-    function contactPageGen() {
-        resetPool();
-        //(sei una bestia!!)
-        let newDiv = document.createElement("div");
-        pool.append(newDiv);
-        newDiv.innerHTML = 'inserire elenco contatti!!';
-        newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-        console.log('pagina contatti generata');
-        formGen();
-    }
-    function servicesPageGen() {
-        resetPool();
-        //(sei una bestia!!)
-        let newDiv = document.createElement("div");
-        pool.append(newDiv);
-        newDiv.innerHTML = 'inserire introduzione + anteprima servizi!!';
-        newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-        console.log('pagina servizi generata');
-    }
-    //controllo form
-    function check() {
-        let richiesta = new InfoRequest
-        let nome = document.querySelector('#fname');
-        let cognome = document.querySelector('#lname');
-        let email = document.querySelector('#posta');
-        let telefono = document.querySelector('#telephone');
-        let testo = document.querySelector('#info');
-        let btn = document.querySelector('#infoBtn');
+    richiesta.id = arrayRichieste.length + 1;
+    richiesta.nome = nome.value;
+    richiesta.cognome = cognome.value;
+    richiesta.email = email.value;
+    richiesta.telefono = telefono.value;
+    richiesta.richiesta = testo.value;
 
-        richiesta.id = arrayRichieste.length + 1;
-        richiesta.nome = nome.value;
-        richiesta.cognome = cognome.value;
-        richiesta.email = email.value;
-        richiesta.telefono = telefono.value;
-        richiesta.richiesta = testo.value;
-
-        if (nome.value == '') {
-            alert('inserisci un nome valido');
-        }
-        else if (cognome.value == '') {
-            alert('inserisci un cognome valido');
-        }
-        else if (email.value === '') {
-            alert('inserisci un indirizzo mail valido');
-        }
-        else if (telefono.value == '') {
-            alert('inserisci un numero valido');
-        }
-        else if (testo.value == '') {
-            alert('compila tutti i campi 4');
-        }
-        else {
-            arrayRichieste.push(richiesta);
-            console.log(arrayRichieste);
-            btn.setAttribute("type", "submit")
-            return (arrayRichieste);
-        }
+    if (nome.value == '') {
+        alert('inserisci un nome valido');
     }
-    function contraiMenu() {
-        menu = document.querySelector('#ulMenu');
-        menu.classList.toggle('nascondi');
-        console.log('test onclick')
+    else if (cognome.value == '') {
+        alert('inserisci un cognome valido');
     }
-    function espandiMenu() {
-        box = document.querySelector('#box')
-        menu = document.querySelector('#ulMenu');
-        menu.classList.add('mostra');
-        box.classList.add('mostra');
-        menu.classList.remove('nascondi');
-        menu.classList.remove('mostra');
-        console.log('test espandi')
+    else if (email.value === '') {
+        alert('inserisci un indirizzo mail valido');
     }
+    else if (telefono.value == '') {
+        alert('inserisci un numero valido');
+    }
+    else if (testo.value == '') {
+        alert('compila tutti i campi 4');
+    }
+    else {
+        arrayRichieste.push(richiesta);
+        console.log(arrayRichieste);
+        btn.setAttribute("type", "submit")
+        return (arrayRichieste);
+    }
+}
+function contraiMenu() {
+    menu = document.querySelector('#ulMenu');
+    menu.classList.toggle('nascondi');
+    console.log('test onclick')
+}
+function espandiMenu() {
+    box = document.querySelector('#box')
+    menu = document.querySelector('#ulMenu');
+    menu.classList.add('mostra');
+    box.classList.add('mostra');
+    menu.classList.remove('nascondi');
+    menu.classList.remove('mostra');
+    console.log('test espandi');
+}
 
 
