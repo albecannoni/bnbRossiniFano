@@ -513,7 +513,7 @@ function expandRoom(id) {
                     </div>
                 </div>
             </div>
-                <ul  id="listaServizi" class="d-flex justify-content-center align-items-center w-100 h-100">
+                <ul  id="listaServizi" class="h-100">
                     
                 </ul>`;
 
@@ -525,15 +525,18 @@ function expandRoom(id) {
 
                 // console.log(element.caratteristiche);
                 servizi = element.caratteristiche;
-                arrayservizi.push(element);
+                arrayservizi.push(servizi);
                 console.log(element.caratteristiche)
                 let ul = document.querySelector('#listaServizi')
                 arrayservizi.forEach(element => {
-                    arrayservizi.caratteristiche = new Servizi;
-                    let li = document.createElement('li');
-                    ul.appendChild(li);
-                    li.innerHTML = `${element}`;
 
+                    // let li = document.createElement('li');
+                    // ul.appendChild(li);
+                    ul.innerHTML = `<li>${element.bagno}</li>
+                                    <li>${element.terrazzo}</li>
+                                    <li>${element.connessione}</li>
+                                    <li>${element.postazione}</li>
+                                    <li>${element.frigorifero}</li>`;
                 });
             })
 

@@ -2,12 +2,12 @@
     {
         "id": "1",
         "titolo": "Stanza bruschino",
-        "descrizione": "test descrizione",
+        "descrizione": "Questa stanza può ospitare da 1 a 4 persone.<br> Un luogo accogliente e luminoso, perfetto per coppie con figli piccoli al seguito",
         "cover": "assets/images/bruschino1.png",
         "immagine2": "assets/images/bruschino2.png",
         "caratteristiche": {
             "bagno": "bagno privato",
-            "terrazzo": "terrazzo privato",
+            "terrazzo": "",
             "armadio": "armadio",
             "connessione": "wifi e via cavo",
             "postazione": "postazione di lavoro",
@@ -16,17 +16,17 @@
     },
     {
         "id": "2",
-        "titolo": "Stanza armida",
-        "descrizione": "test descrizione",
+        "titolo":"Stanza armida",
+        "descrizione":"test descrizione",
         "cover": "assets/images/armida1.png",
         "immagine2": "assets/images/armida2.png",
         "caratteristiche": {
             "bagno": "bagno privato",
             "terrazzo": "terrazzo privato",
-            "armadio": "armadio",
-            "connessione": "wifi e via cavo",
+            "armadio": "guardaroba",
+            "connessione": "Wi-fi e via cavo",
             "postazione": "postazione di lavoro",
-            "frigorifero": "frigorifero"
+            "frigorifero": ""
         }
     }
 ]

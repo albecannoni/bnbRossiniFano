@@ -37,6 +37,10 @@ body, html {
 
 }
 
+li{
+    list-style: none;
+}
+
 .bRadius {
     border-radius: 7px;
 }
@@ -518,7 +522,6 @@ button:active {
         color: #f3eed9;
 
     }
-
     /* 
         The general sibling selector (~) 
         selects all elements that are next siblings of #toggler.
@@ -527,7 +530,6 @@ button:active {
     */
     #toggler:checked~.menu {
         max-height: 100%;
-
     }
 
     .nascondi {
