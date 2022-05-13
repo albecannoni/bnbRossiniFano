@@ -19,12 +19,24 @@ class InfoRequest {
 
 class RoomCard {
 
-    constructor(id, nome, descrizione, immagine) {
+    constructor(id, nome, descrizione, immagine, caratteristiche) {
 
         this.id = id++;
         this.nome = nome;
         this.descrizione = descrizione;
         this.immagine = immagine;
+        this.caratteristiche = new Servizi;
+    }
+}
+
+class Servizi {
+    constructor(bagno, terrazzo, armadio, connessione, postazione, frigorifero) {
+        this.bagno = bagno;
+        this.terrazzo = terrazzo;
+        this.armadio = armadio;
+        this.connessione = connessione;
+        this.postazione = postazione;
+        this.frigorifero = frigorifero;
     }
 }
 
@@ -238,7 +250,7 @@ function galleryGen() {
                                                 <figure class="col-md-8 ">
                                                 <div class="d-flex gap-3">
                                                     <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.cover}" alt="" >
-                                                    <img onclick="expandRoom()" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
+                                                    <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
                                                     
                                                 </div>    
                                                 </figure>
@@ -402,6 +414,8 @@ function expandRoom(id) {
     element = new RoomCard;
     element.id = id;
     arrayLocale = [];
+    arrayservizi = [];
+
 
     /*chiamata ajax*/
     let urlAPI = 'assets/json/stanze.json';
@@ -411,7 +425,7 @@ function expandRoom(id) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let arrayStanze = JSON.parse(xhr.responseText);
-            console.log(arrayStanze);
+
 
             //generazione blocchi 
             let descriptionBox = document.createElement("div");
@@ -425,11 +439,12 @@ function expandRoom(id) {
             //generazione blocco slideshow
             let slideBox = document.createElement("div");
             slideBox.setAttribute('id', 'slideBox');
-            slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+            // slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
             pool.appendChild(slideBox);
             pool.appendChild(descriptionBox);
             descriptionBox.append(textBox);
-            
+
+
 
             arrayStanze.forEach(ele => {
                 if (ele.id == id) {
@@ -438,19 +453,26 @@ function expandRoom(id) {
                 }
             });
 
-            
-
             arrayLocale.forEach(element => {
                 let div = document.createElement('div');
-                div.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'p-5');
+                div.classList.add('d-flex', 'flex-column', 'justify-content-center', 'align-items-center', 'panna', 'p-2');
                 slideBox.appendChild(div);
                 this.element = new RoomCard;
-                
-                textBox.innerHTML=`${element.descrizione}`
+                buttonGen();
 
-                div.innerHTML = `<div  class="d-flex col-md-8 justify-content-center align-items-center">
+
+
+
+                div.innerHTML = `
+                <p>${element.titolo}</p>     
+                <div class="d-flex justify-content-center align-items-center w-100 h-100">
+                                    <p>${element.descrizione}</p>
+                                </div>
+                <div  class="d-flex col-md-6 justify-content-center align-items-center">
+                           
                 <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
                     <div class="d-flex justify-content-center align-content-center col-sm-11">
+                    
                         <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
                             data-bs-ride="carousel">
                             <div class="carousel-indicators">
@@ -490,10 +512,32 @@ function expandRoom(id) {
                         </div>
                     </div>
                 </div>
-                                      </div>`;
+            </div>
+                <ul  id="listaServizi" class="d-flex justify-content-center align-items-center w-100 h-100">
+                    
+                </ul>`;
 
                 console.log(arrayStanze);
+
             })
+
+            arrayLocale.forEach(element => {
+
+                // console.log(element.caratteristiche);
+                servizi = element.caratteristiche;
+                arrayservizi.push(element);
+                console.log(element.caratteristiche)
+                let ul = document.querySelector('#listaServizi')
+                arrayservizi.forEach(element => {
+                    arrayservizi.caratteristiche = new Servizi;
+                    let li = document.createElement('li');
+                    ul.appendChild(li);
+                    li.innerHTML = `${element}`;
+
+                });
+            })
+
+
         };
     };
 }

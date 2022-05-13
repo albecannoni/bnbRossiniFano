@@ -1,16 +1,32 @@
 [
     {
         "id": "1",
-        "titolo":"bruschino",
-        "descrizione":"test descrizione",
+        "titolo": "Stanza bruschino",
+        "descrizione": "test descrizione",
         "cover": "assets/images/bruschino1.png",
-        "immagine2": "assets/images/bruschino2.png"
+        "immagine2": "assets/images/bruschino2.png",
+        "caratteristiche": {
+            "bagno": "bagno privato",
+            "terrazzo": "terrazzo privato",
+            "armadio": "armadio",
+            "connessione": "wifi e via cavo",
+            "postazione": "postazione di lavoro",
+            "frigorifero": "frigorifero"
+        }
     },
     {
         "id": "2",
-        "titolo":"armida",
-        "descrizione":"test descrizione",
+        "titolo": "Stanza armida",
+        "descrizione": "test descrizione",
         "cover": "assets/images/armida1.png",
-        "immagine2": "assets/images/armida2.png"
+        "immagine2": "assets/images/armida2.png",
+        "caratteristiche": {
+            "bagno": "bagno privato",
+            "terrazzo": "terrazzo privato",
+            "armadio": "armadio",
+            "connessione": "wifi e via cavo",
+            "postazione": "postazione di lavoro",
+            "frigorifero": "frigorifero"
+        }
     }
 ]
