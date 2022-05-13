@@ -427,6 +427,9 @@ function expandRoom(id) {
             slideBox.setAttribute('id', 'slideBox');
             slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
             pool.appendChild(slideBox);
+            pool.appendChild(descriptionBox);
+            descriptionBox.append(textBox);
+            
 
             arrayStanze.forEach(ele => {
                 if (ele.id == id) {
@@ -435,11 +438,15 @@ function expandRoom(id) {
                 }
             });
 
+            
+
             arrayLocale.forEach(element => {
                 let div = document.createElement('div');
                 div.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'p-5');
                 slideBox.appendChild(div);
                 this.element = new RoomCard;
+                
+                textBox.innerHTML=`${element.descrizione}`
 
                 div.innerHTML = `<div  class="d-flex col-md-8 justify-content-center align-items-center">
                 <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
@@ -470,14 +477,14 @@ function expandRoom(id) {
                                     <img src="${element.immagine2}" class="d-block w-100" alt="...">
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button"
+                            <button class="carousel-control-prev " type="button"
                                 data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="carousel-control-prev-icon btn-dark bRadius" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button"
+                            <button class="carousel-control-next " type="button"
                                 data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="carousel-control-next-icon btn-dark bRadius" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
