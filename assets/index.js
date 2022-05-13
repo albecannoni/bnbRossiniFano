@@ -80,7 +80,7 @@ function welcomeBox() {
     quoteBox.setAttribute('id', 'quoteBox');
     quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1', 'boldText');
     pool.append(quoteBox);
-    quoteBox.innerHTML = `La nostra magica città ti sta aspettando!`;
+    quoteBox.innerHTML = `<h3>La nostra magica città ti sta aspettando!</h3>`;
 }
 
 function slideBox() {
@@ -158,14 +158,14 @@ function teaserBox() {
 function buttonGen() {
     let buttonBox = document.createElement('div');
     buttonBox.setAttribute('id', 'buttonBox');
-    buttonBox.classList.add('row', 'pt-4');
+    buttonBox.classList.add('flex-md-row','flex-column', 'pt-4');
 
 
     pool.appendChild(buttonBox);
 
-    buttonBox.innerHTML = `<div class="col p-0 m-0">
-                            <div class="d-flex justify-content-end align-content-center ">
-                                <button type="button" class="btn3D text-black verdeLime ">
+    buttonBox.innerHTML = `<div class="'flex-md-row','flex-column'">
+                            <div class="d-flex justify-content-center align-content-center ">
+                                <button type="button" class="btn3D text-black verdeLime my-3 ">
                                 <a class="text-black" href="tel:+393890172024">
                                     <div class="d-flex justify-content-end align-items-center"></div>
                                     <div class="d-flex  justify-content-center">
@@ -191,7 +191,7 @@ function buttonGen() {
             <div class="col-2"></div>
 
                         <div class="col p-0 m-0">
-                            <div class="d-flex justify-content-start align-content-center ">
+                            <div class="d-flex justify-content-center align-content-center ">
                                 <button type="button" class="btn3D text-white bluMail ">
                                 <a class="text-white" href="mailto:a.cannoni@hotmail.com">
                                     <div class="d-flex justify-content-center align-items-center">                                        
@@ -215,7 +215,6 @@ function buttonGen() {
 
 }
 function galleryGen() {
-
     /*chiamata ajax*/
     let urlAPI = 'assets/json/stanze.json'
     let xhr = new XMLHttpRequest();
@@ -307,7 +306,7 @@ function formGen() {
                                 </fieldset>
 
                                 <div class="d-flex justify-content-center align-items-center py-2">
-                                    <button type="button" value="send" class="bRadius" id="infoBtn">
+                                    <button type="button" value="send" class="bRadius " id="infoBtn">
                                         <div class="svg-wrapper-1">
                                             <div class="svg-wrapper">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -416,7 +415,6 @@ function expandRoom(id) {
     arrayLocale = [];
     arrayservizi = [];
 
-
     /*chiamata ajax*/
     let urlAPI = 'assets/json/stanze.json';
     let xhr = new XMLHttpRequest();
@@ -439,10 +437,11 @@ function expandRoom(id) {
             //generazione blocco slideshow
             let slideBox = document.createElement("div");
             slideBox.setAttribute('id', 'slideBox');
-            // slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
-            pool.appendChild(slideBox);
             pool.appendChild(descriptionBox);
+            pool.appendChild(slideBox);
+            
             descriptionBox.append(textBox);
+            
 
 
 
@@ -455,70 +454,66 @@ function expandRoom(id) {
 
             arrayLocale.forEach(element => {
                 let div = document.createElement('div');
-                div.classList.add('d-flex', 'flex-column', 'justify-content-center', 'align-items-center', 'panna', 'p-2');
+                div.classList.add('d-flex', 'flex-md-row','flex-column', 'justify-content-center', 'align-items-center', 'panna', 'p-2');
                 slideBox.appendChild(div);
                 this.element = new RoomCard;
                 buttonGen();
-
-
-
-
-                div.innerHTML = `
-                <p>${element.titolo}</p>     
-                <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                                    <p>${element.descrizione}</p>
+                textBox.innerHTML=`
+                <div class="text-center w-100 h-100">
+                <h2 class="boldText">${element.titolo}</h2>
+                    <p>${element.descrizione}</p>
+                </div>`
+                div.innerHTML = `<div class="d-flex col-md-6 justify-content-center align-items-center">                           
+                                    <div class="container-fluid md-col d-flex justify-content-center align-items-center  h-100 w-100" id="banner">
+                                        <div class="d-flex justify-content-center align-content-center col-sm-11">                                        
+                                            <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
+                                                data-bs-ride="carousel">                                                
+                                                <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                                        aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                                        aria-label="Slide 3"></button>
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                                        aria-label="Slide 4"></button>
+                                                </div>
+                                                
+                                                <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                        <img src="${element.cover}" class="d-block w-100" alt="...">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="${element.immagine2}" class="d-block w-100" alt="...">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="${element.cover}" class="d-block w-100" alt="...">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img src="${element.immagine2}" class="d-block w-100" alt="...">
+                                                    </div>
+                                                </div>
+                                                
+                                                <button class="carousel-control-prev " type="button"
+                                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon btn-dark bRadius" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next " type="button"
+                                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon btn-dark bRadius" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                <div  class="d-flex col-md-6 justify-content-center align-items-center">
-                           
-                <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
-                    <div class="d-flex justify-content-center align-content-center col-sm-11">
-                    
-                        <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
-                            data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="${element.cover}" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="${element.immagine2}" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="${element.cover}" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="${element.immagine2}" class="d-block w-100" alt="...">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev " type="button"
-                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon btn-dark bRadius" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next " type="button"
-                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <span class="carousel-control-next-icon btn-dark bRadius" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                <ul  id="listaServizi" class="h-100">
-                    
-                </ul>`;
-
+                            <div class="col-md-2 my-3 p-0 text-center">
+                            <h5>In questa stanza:</h5>
+                                    <ul  id="listaServizi" class="">                                        
+                                    </ul>
+                                    </div>`;
                 console.log(arrayStanze);
-
             })
 
             arrayLocale.forEach(element => {
@@ -529,7 +524,6 @@ function expandRoom(id) {
                 console.log(element.caratteristiche)
                 let ul = document.querySelector('#listaServizi')
                 arrayservizi.forEach(element => {
-
                     // let li = document.createElement('li');
                     // ul.appendChild(li);
                     ul.innerHTML = `<li>${element.bagno}</li>

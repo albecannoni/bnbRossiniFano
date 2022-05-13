@@ -40,6 +40,10 @@ body, html {
 li{
     list-style: none;
 }
+ul{
+    padding-right: 2rem;
+    margin: 0;
+}
 
 .bRadius {
     border-radius: 7px;
@@ -286,6 +290,7 @@ img {
 #banner {
     width: auto;
     height: 40vh;
+    padding-left: 5vw;
 
     /* box-shadow: 0px 0px 1.5vh rgb(56, 55, 55); */
     border-radius: 5px;
@@ -458,7 +463,10 @@ button:active {
     #smCol {
         display: grid;
     }
+#banner{
+    padding-left: 0 auto;
 
+}
     .btn3D {
         width: 23vw;
         display: inline-block;
