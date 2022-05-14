@@ -20,12 +20,13 @@ class InfoRequest {
 class RoomCard {
 
     constructor(id, nome, descrizione, immagine, caratteristiche) {
-
+        
+        caratteristiche = new Servizi
         this.id = id++;
         this.nome = nome;
         this.descrizione = descrizione;
         this.immagine = immagine;
-        this.caratteristiche = new Servizi;
+        this.caratteristiche = caratteristiche;
     }
 }
 
@@ -54,18 +55,17 @@ function init() {
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
 }
-
 /*========= manipolazione DOM ========== */
 function resetPool() {
     pool.innerHTML = ``;
 }
-
 function homePageGen() {
     //svuota tutto
     resetPool();
     //generazione blocchi
     welcomeBox();
     slideBox();
+    slideHomeBox();
     galleryGen();
     teaserBox();
     //formGen();
@@ -74,7 +74,6 @@ function homePageGen() {
 
     console.log('Home Page generata');
 }
-
 function welcomeBox() {
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
@@ -82,7 +81,6 @@ function welcomeBox() {
     pool.append(quoteBox);
     quoteBox.innerHTML = `<h3>La nostra magica città ti sta aspettando!</h3>`;
 }
-
 function slideBox() {
     let slideBox = document.createElement("div");
     slideBox.setAttribute('id', 'slideBox');
@@ -132,7 +130,55 @@ function slideBox() {
     </div>
                           </div>`;
 }
-
+function slideHomeBox() {
+    let slideHomeBox = document.createElement("div");
+    slideHomeBox.setAttribute('id', 'slideHomeBox');
+    slideHomeBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-5');
+    pool.appendChild(slideHomeBox);
+    slideHomeBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
+    <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner2">
+        <div class="d-flex justify-content-center align-content-center col-sm-11">
+            <div id="carouselExampleIndicators1" class="carousel slide carousel-fade ombra bRadius"
+                data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="1"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="2"
+                        aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="3"
+                        aria-label="Slide 7"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://doodleipsum.com/1098x700/flat?i=eb82b7ba75b3a5086fff159602ef32f2" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://doodleipsum.com/1098x700/outline?i=ffd2040efe1ce06a127b90441fe179a1" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://doodleipsum.com/1098x700/abstract?i=f701b63cfe38e57fa0408c238af32027" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://doodleipsum.com/1098x700/avatar-5?i=c04b6e7f620fb608af9d369df1e4a9cc" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselExampleIndicators1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselExampleIndicators1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+                          </div>`;
+}
 function teaserBox() {
 
     let teaserBox = document.createElement('div');
@@ -154,11 +200,10 @@ function teaserBox() {
                         <span class="firma">Francesca</span>`;
 
 }
-
 function buttonGen() {
     let buttonBox = document.createElement('div');
     buttonBox.setAttribute('id', 'buttonBox');
-    buttonBox.classList.add('flex-md-row','flex-column', 'pt-4');
+    buttonBox.classList.add('flex-md-row', 'flex-column', 'pt-4');
 
 
     pool.appendChild(buttonBox);
@@ -260,7 +305,6 @@ function galleryGen() {
     }
 
 }
-
 //generazione Form(da rendere sicuro)
 function formGen() {
     let formBox = document.createElement('div');
@@ -328,84 +372,10 @@ function formGen() {
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
 }
-
 function roomPageGen() {
     resetPool();
-    //generazione blocchi
-    let descriptionBox = document.createElement("div");
-    descriptionBox.setAttribute('id', 'descriptionBox');
-    descriptionBox.classList.add('d-flex', 'justify-content-center', 'text-center', 'align-items-center', 'panna');
-
-    let textBox = document.createElement("p");
-    textBox.setAttribute('id', 'textBox');
-    textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'm-sm-0', 'w-75');
-
-    let cardAlign = document.createElement("div");
-    cardAlign.setAttribute('id', 'cardAlign');
-    cardAlign.classList.add('d-flex', 'justify-content-center', 'h-70');
-
-    let cardBox = document.createElement("div");
-    cardBox.setAttribute('id', 'cardBox');
-    cardBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'm-sm-0', 'w-80');
-
-    let card1 = document.createElement("div");
-    card1.setAttribute('id', 'card1');
-    card1.classList.add('myCard', 'd-flex', 'justify-content-center', 'mx-md-5', 'm-sm-0');
-
-
-    let card2 = document.createElement("div");
-    card2.setAttribute('id', 'card2');
-    card2.classList.add('myCard', 'd-flex', 'justify-content-center', 'mx-md-5', 'm-sm-0');
-
-    let formBox = document.createElement('div');
-    formBox.setAttribute('id', 'formBox');
-    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1', 'w-100');
-
-    pool.append(descriptionBox);
-    descriptionBox.append(textBox);
-    textBox.innerHTML = `descrizione generica delle stanzedescrizione generica delle stanze 
-                            descrizione generica delle stanze descrizione generica delle stanze`;
-
-    pool.appendChild(cardAlign);
-    cardAlign.append(cardBox);
-    cardBox.append(card1);
-
-    card1Content = new RoomCard;
-    card1Content.titolo = 'Stanza Bruschino';
-    card1Content.immagine = 'assets/images/bruschino1.png';
-    card1Content.descrizione = `Questa stanze può ospitare da 1 a 4 persone, clicca sull'imagine per ulteriori dettagli!`;
-
-    card1.innerHTML = `<div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
-    height: auto;">
-        <div class="card-header m-1 boldText">${card1Content.titolo}</div>
-        <div class=" m-3">
-            <div class="">
-                <img onclick="expandRoom()" src="${card1Content.immagine}" class="d-block w-100 cardImg" alt="...">
-            </div>
-            
-            <p class="card-header m-sm-0 p-sm-1 bRadius">${card1Content.descrizione}</p>
-        </div>
-    </div>`;
-
-    cardBox.appendChild(card2)
-    card2.innerHTML = ` <div class=" bRadius bg-mio my-3 mx-3 ombra2" style="max-width: 100%;
-    height: auto;">
-        <div class="card-header m-1 boldText bRadius">Stanza Armida</div>
-        <div class="h-70 m-3">
-            <div class="">
-                <img onclick="expandRoom()" src="assets/images/armida1.png" class="d-block w-100 cardImg" alt="...">
-            </div>
-            
-            <p class="card-header m-sm-0 p-sm-1 bRadius">Questa stanze può ospitare da 1 a 2 persone, clicca sull'iimagine per ulteriori dettagli!
-                </p>
-        </div>
-    </div>`
-
-
-
-
-
-
+    welcomeBox();
+    galleryGen();
     console.log('pagina stanze generata');
 }
 function expandRoom(id) {
@@ -439,9 +409,9 @@ function expandRoom(id) {
             slideBox.setAttribute('id', 'slideBox');
             pool.appendChild(descriptionBox);
             pool.appendChild(slideBox);
-            
+
             descriptionBox.append(textBox);
-            
+
 
 
 
@@ -454,11 +424,11 @@ function expandRoom(id) {
 
             arrayLocale.forEach(element => {
                 let div = document.createElement('div');
-                div.classList.add('d-flex', 'flex-md-row','flex-column', 'justify-content-center', 'align-items-center', 'panna', 'p-2');
+                div.classList.add('d-flex', 'flex-md-row', 'flex-column', 'justify-content-center', 'align-items-center', 'panna', 'p-2');
                 slideBox.appendChild(div);
                 this.element = new RoomCard;
                 buttonGen();
-                textBox.innerHTML=`
+                textBox.innerHTML = `
                 <div class="text-center w-100 h-100">
                 <h2 class="boldText">${element.titolo}</h2>
                     <p>${element.descrizione}</p>
