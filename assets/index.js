@@ -67,10 +67,8 @@ function homePageGen() {
     teaserBox();
     slideBox();
     slideHomeBox();
-    galleryGen();
-    
+    galleryGen();    
     //formGen();
-
     //buttonGen();
 
     console.log('Home Page generata');
@@ -278,7 +276,7 @@ function galleryGen() {
             pool.appendChild(galleryBox);
 
             //attesa gallery completata
-            if (galleryBox != '') {buttonGen();}
+            if (galleryBox != '') {formGen();buttonGen();}
 
             /*popolamento pagina */
             arrayStanze.forEach(element => {
