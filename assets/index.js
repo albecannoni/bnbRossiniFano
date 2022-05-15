@@ -21,7 +21,7 @@ class RoomCard {
 
     constructor(id, nome, descrizione, immagine, caratteristiche) {
         
-        caratteristiche = new Servizi
+        caratteristiche = new Servizi;
         this.id = id++;
         this.nome = nome;
         this.descrizione = descrizione;
@@ -64,10 +64,11 @@ function homePageGen() {
     resetPool();
     //generazione blocchi
     welcomeBox();
+    teaserBox();
     slideBox();
     slideHomeBox();
     galleryGen();
-    teaserBox();
+    
     //formGen();
 
     //buttonGen();
@@ -77,14 +78,14 @@ function homePageGen() {
 function welcomeBox() {
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
-    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1', 'boldText');
+    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1' );
     pool.append(quoteBox);
-    quoteBox.innerHTML = `<h3>La nostra magica città ti sta aspettando!</h3>`;
+    quoteBox.innerHTML = `<h3 class="bolderText">La nostra magica città ti sta aspettando!</h3>`;
 }
 function slideBox() {
     let slideBox = document.createElement("div");
     slideBox.setAttribute('id', 'slideBox');
-    slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna');
+    slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'py-2');
     pool.appendChild(slideBox);
     slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
     <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
@@ -133,7 +134,7 @@ function slideBox() {
 function slideHomeBox() {
     let slideHomeBox = document.createElement("div");
     slideHomeBox.setAttribute('id', 'slideHomeBox');
-    slideHomeBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-5');
+    slideHomeBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna','pt-2' );
     pool.appendChild(slideHomeBox);
     slideHomeBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
     <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner2">
@@ -177,7 +178,7 @@ function slideHomeBox() {
             </div>
         </div>
     </div>
-                          </div>`;
+    </div>`;
 }
 function teaserBox() {
 
@@ -188,7 +189,7 @@ function teaserBox() {
 
     let textBox2 = document.createElement("div");
     textBox2.setAttribute('id', 'textBox2');
-    textBox2.classList.add('text-center', 'w-100', 'corsivo', 'd-flex', 'justify-content-center', 'align-items-center',);
+    textBox2.classList.add('text-center', 'w-75', 'corsivo', 'd-flex', 'justify-content-center', 'align-items-center',);
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
@@ -277,9 +278,7 @@ function galleryGen() {
             pool.appendChild(galleryBox);
 
             //attesa gallery completata
-            if (galleryBox != '') {
-                buttonGen();
-            }
+            if (galleryBox != '') {buttonGen();}
 
             /*popolamento pagina */
             arrayStanze.forEach(element => {
@@ -290,7 +289,9 @@ function galleryGen() {
                 galleryBox.append(roomBox);
                 this.element = new RoomCard;
                 roomBox.innerHTML = `<div class="d-grid">
+                <h5 class="text-center boldText" id="titleBox">${element.titolo}</h5>
                                             <div class="d-flex justify-content-center flex-wrap">
+                                            
                                                 <figure class="col-md-8 ">
                                                 <div class="d-flex gap-3">
                                                     <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.cover}" alt="" >
@@ -374,9 +375,13 @@ function formGen() {
 }
 function roomPageGen() {
     resetPool();
-    welcomeBox();
-    galleryGen();
+    welcomeBox();   
+    galleryGen(); 
+   
+    quoteBox = document.querySelector('#quoteBox');    
+    quoteBox.innerHTML='<h5 class="boldText">La nostra casa ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';  
     console.log('pagina stanze generata');
+    
 }
 function expandRoom(id) {
     resetPool();
