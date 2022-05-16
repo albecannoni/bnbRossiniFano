@@ -78,7 +78,7 @@ function welcomeBox() {
     quoteBox.setAttribute('id', 'quoteBox');
     quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1');
     pool.append(quoteBox);
-    quoteBox.innerHTML = `<h3 class="bolderText text-border">La nostra <span class="text-viola">magica</span> città ti sta aspettando!</h3>`;
+    quoteBox.innerHTML = `<h3 class="bolderText text-border">La nostra <span style=" font-size: xx-large;;" class="text-viola">magica</span> città ti sta aspettando!</h3>`;
 }
 function slideBox() {
     let slideBox = document.createElement("div");
@@ -464,7 +464,7 @@ function expandRoom(id) {
                                                         <img src="${element.immagine2}" class="d-block w-100" alt="...">
                                                     </div>
                                                 </div>
-                                                                                                
+
                                                 <button class="carousel-control-prev " type="button"
                                                     data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon btn-dark bRadius" aria-hidden="true"></span>
