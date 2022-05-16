@@ -20,7 +20,7 @@ class InfoRequest {
 class RoomCard {
 
     constructor(id, nome, descrizione, immagine, caratteristiche) {
-        
+
         caratteristiche = new Servizi;
         this.id = id++;
         this.nome = nome;
@@ -67,7 +67,7 @@ function homePageGen() {
     teaserBox();
     slideBox();
     slideHomeBox();
-    galleryGen();    
+    galleryGen();
     //formGen();
     //buttonGen();
 
@@ -76,14 +76,14 @@ function homePageGen() {
 function welcomeBox() {
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
-    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1' );
+    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1');
     pool.append(quoteBox);
     quoteBox.innerHTML = `<h3 class="bolderText">La nostra magica città ti sta aspettando!</h3>`;
 }
 function slideBox() {
     let slideBox = document.createElement("div");
     slideBox.setAttribute('id', 'slideBox');
-    slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'py-2');
+    slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'bg-pesca', 'py-2');
     pool.appendChild(slideBox);
     slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
     <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
@@ -132,7 +132,7 @@ function slideBox() {
 function slideHomeBox() {
     let slideHomeBox = document.createElement("div");
     slideHomeBox.setAttribute('id', 'slideHomeBox');
-    slideHomeBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna','pt-2' );
+    slideHomeBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'bg-pesca', 'pt-2');
     pool.appendChild(slideHomeBox);
     slideHomeBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
     <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner2">
@@ -209,8 +209,8 @@ function buttonGen() {
 
     buttonBox.innerHTML = `<div class="'flex-md-row','flex-column'">
                             <div class="d-flex justify-content-center align-content-center ">
-                                <button type="button" class="btn3D text-black verdeLime my-3 ">
-                                <a class="text-black" href="tel:+393890172024">
+                                <button type="button" class="btn3D text-white bg-viola my-3 ">
+                                <a class="text-white" href="tel:+393890172024">
                                     <div class="d-flex justify-content-end align-items-center"></div>
                                     <div class="d-flex  justify-content-center">
                                         <div class="d-flex justify-content-center align-items-center">
@@ -236,7 +236,7 @@ function buttonGen() {
 
                         <div class="col p-0 m-0">
                             <div class="d-flex justify-content-center align-content-center ">
-                                <button type="button" class="btn3D text-white bluMail ">
+                                <button type="button" class="btn3D text-white bg-granata ">
                                 <a class="text-white" href="mailto:a.cannoni@hotmail.com">
                                     <div class="d-flex justify-content-center align-items-center">                                        
                                         <div class="col justify-content-center align-items-center h-100">
@@ -272,18 +272,19 @@ function galleryGen() {
             //creazione blocco gallery
             let galleryBox = document.createElement('div');
             galleryBox.setAttribute('id', 'galleryBox');
-            galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'panna');
+            galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center', 
+            'w-100', 'py-3', 'pt-4', 'bRadius', 'bg-pesca');
             pool.appendChild(galleryBox);
 
             //attesa gallery completata
-            if (galleryBox != '') {formGen();buttonGen();}
+            if (galleryBox != '') { formGen(); buttonGen(); }
 
             /*popolamento pagina */
             arrayStanze.forEach(element => {
 
                 let roomBox = document.createElement('div');
                 roomBox.setAttribute('id', 'roomBox');
-                roomBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'panna');
+                roomBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
                 galleryBox.append(roomBox);
                 this.element = new RoomCard;
                 roomBox.innerHTML = `<div class="d-grid">
@@ -308,7 +309,7 @@ function galleryGen() {
 function formGen() {
     let formBox = document.createElement('div');
     formBox.setAttribute('id', 'formBox');
-    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'panna', 'pt-1');
+    formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'bg-pesca', 'pt-1');
 
     pool.appendChild(formBox);
     formBox.innerHTML = ` <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
@@ -349,7 +350,7 @@ function formGen() {
                                 </fieldset>
 
                                 <div class="d-flex justify-content-center align-items-center py-2">
-                                    <button type="button" value="send" class="bRadius " id="infoBtn">
+                                    <button type="button" value="send" class="bg-viola bRadius " id="infoBtn">
                                         <div class="svg-wrapper-1">
                                             <div class="svg-wrapper">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -373,13 +374,13 @@ function formGen() {
 }
 function roomPageGen() {
     resetPool();
-    welcomeBox();   
-    galleryGen(); 
-   
-    quoteBox = document.querySelector('#quoteBox');    
-    quoteBox.innerHTML='<h5 class="boldText">La nostra casa ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';  
+    welcomeBox();
+    galleryGen();
+
+    quoteBox = document.querySelector('#quoteBox');
+    quoteBox.innerHTML = '<h5 class="boldText">La nostra casa ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';
     console.log('pagina stanze generata');
-    
+
 }
 function expandRoom(id) {
     resetPool();
