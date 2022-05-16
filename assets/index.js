@@ -78,7 +78,7 @@ function welcomeBox() {
     quoteBox.setAttribute('id', 'quoteBox');
     quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1');
     pool.append(quoteBox);
-    quoteBox.innerHTML = `<h3 class="bolderText">La nostra magica città ti sta aspettando!</h3>`;
+    quoteBox.innerHTML = `<h3 class="bolderText">La nostra <span class="text-viola">magica</span> città ti sta aspettando!</h3>`;
 }
 function slideBox() {
     let slideBox = document.createElement("div");
@@ -191,7 +191,7 @@ function teaserBox() {
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
-    textP2.classList.add('corsivo', 'm-sm-0', 'panna', 'w-75');
+    textP2.classList.add('corsivo', 'm-sm-0', 'bg-viola', 'w-75', 'bRadius', 'p-2', 'text-white');
     textBox2.append(textP2);
     textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
                         Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.

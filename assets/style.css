@@ -109,6 +109,13 @@ img {
 .bg-viola{
     background-color: #823DD1;
 }
+.text-viola{
+    color: #823DD1;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+.bg-ciano{
+    background-color: #00C2D9;
+}
 
 .bg-pesca{
     background-color: #F9835D;
@@ -122,7 +129,7 @@ img {
 }
 
 .bg-granata{
-    background-color: #800000;
+    background-color: #832800;
 }
 
 .fondoContrasto{
@@ -353,7 +360,7 @@ button {
     display: inline-block;
     padding: 10px 28px;
     text-decoration: none;
-    color: #fff;
+    color: black;
     border-radius: 5px;
     border: rgba(27, 26, 26, 0.202) 1px solid;
     box-shadow: 0 8px 0 #bcdab8, inset -5px 0 10px rgba(255, 255, 255, 0.2);
@@ -491,7 +498,7 @@ button:active {
         display: inline-block;
         padding: 10px 28px;
         text-decoration: none;
-        color: #fff;
+        color: black;
         border-radius: 5px;
         border: rgba(27, 26, 26, 0.202) 1px solid;
         box-shadow: 0 8px 0 #bcdab8, inset -5px 0 10px rgba(255, 255, 255, 0.2);
