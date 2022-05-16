@@ -32,6 +32,8 @@ body, html {
 
 h1,h2,h3,h4,h5,h6{
     color: black;
+    text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke, 0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
+
 }
 
 #pool {
@@ -111,7 +113,11 @@ img {
 }
 .text-viola{
     color: #823DD1;
-    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+    text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke, 0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
+}
+.text-border{
+    text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke, 0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
+
 }
 .bg-ciano{
     background-color: #00C2D9;

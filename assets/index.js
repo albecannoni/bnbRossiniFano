@@ -78,7 +78,7 @@ function welcomeBox() {
     quoteBox.setAttribute('id', 'quoteBox');
     quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1');
     pool.append(quoteBox);
-    quoteBox.innerHTML = `<h3 class="bolderText">La nostra <span class="text-viola">magica</span> città ti sta aspettando!</h3>`;
+    quoteBox.innerHTML = `<h3 class="bolderText text-border">La nostra <span class="text-viola">magica</span> città ti sta aspettando!</h3>`;
 }
 function slideBox() {
     let slideBox = document.createElement("div");
@@ -86,7 +86,7 @@ function slideBox() {
     slideBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'bg-pesca', 'py-2');
     pool.appendChild(slideBox);
     slideBox.innerHTML = `<div class="d-flex col-md-8 justify-content-center align-items-center">
-    <div class="container-fluid row justify-content-center align-items-center  h-100 w-100" id="banner">
+    <div class="container-fluid row justify-content-center align-items-center  h-100 w-100 bRadius" id="banner">
         <div class="d-flex justify-content-center align-content-center col-sm-11">
             <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
                 data-bs-ride="carousel">
@@ -100,7 +100,7 @@ function slideBox() {
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
                         aria-label="Slide 4"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner bRadius">
                     <div class="carousel-item active">
                         <img src="assets/images/caruosel1.png" class="d-block w-100" alt="...">
                     </div>
@@ -191,7 +191,7 @@ function teaserBox() {
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
-    textP2.classList.add('corsivo', 'm-sm-0', 'bg-viola', 'w-75', 'bRadius', 'p-2', 'text-white');
+    textP2.classList.add('corsivo', 'm-sm-0', 'bg-granata', 'w-75', 'bRadius', 'p-2', 'text-white');
     textBox2.append(textP2);
     textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
                         Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
@@ -207,7 +207,7 @@ function buttonGen() {
 
     pool.appendChild(buttonBox);
 
-    buttonBox.innerHTML = `<div class="'flex-md-row','flex-column'">
+    buttonBox.innerHTML = `<div class="'flex-md-row','flex-sm-col'">
                             <div class="d-flex justify-content-center align-content-center ">
                                 <button type="button" class="btn3D text-white bg-viola my-3 ">
                                 <a class="text-white" href="tel:+393890172024">
@@ -350,7 +350,7 @@ function formGen() {
                                 </fieldset>
 
                                 <div class="d-flex justify-content-center align-items-center py-2">
-                                    <button type="button" value="send" class="bg-viola bRadius " id="infoBtn">
+                                    <button type="button" value="send" class="bg-viola bRadius text-white " id="infoBtn">
                                         <div class="svg-wrapper-1">
                                             <div class="svg-wrapper">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -402,11 +402,11 @@ function expandRoom(id) {
             //generazione blocchi 
             let descriptionBox = document.createElement("div");
             descriptionBox.setAttribute('id', 'descriptionBox');
-            descriptionBox.classList.add('d-flex', 'justify-content-center', 'text-center', 'align-items-center', 'panna');
+            descriptionBox.classList.add('d-flex', 'justify-content-center', 'text-center', 'align-items-center', 'bg-pesca');
 
             let textBox = document.createElement("p");
             textBox.setAttribute('id', 'textBox');
-            textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100');
+            textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100','bg-pesca');
 
             //generazione blocco slideshow
             let slideBox = document.createElement("div");
@@ -415,9 +415,6 @@ function expandRoom(id) {
             pool.appendChild(slideBox);
 
             descriptionBox.append(textBox);
-
-
-
 
             arrayStanze.forEach(ele => {
                 if (ele.id == id) {
@@ -428,13 +425,13 @@ function expandRoom(id) {
 
             arrayLocale.forEach(element => {
                 let div = document.createElement('div');
-                div.classList.add('d-flex', 'flex-md-row', 'flex-column', 'justify-content-center', 'align-items-center', 'panna', 'p-2');
+                div.classList.add('d-flex', 'flex-md-row', 'flex-column', 'justify-content-center', 'align-items-center', 'bg-pesca', 'p-2');
                 slideBox.appendChild(div);
                 this.element = new RoomCard;
                 buttonGen();
                 textBox.innerHTML = `
-                <div class="text-center w-100 h-100">
-                <h2 class="boldText">${element.titolo}</h2>
+                <div class="text-center w-60 h-100">
+                <h4 class="boldText">${element.titolo}</h4>
                     <p>${element.descrizione}</p>
                 </div>`
                 div.innerHTML = `<div class="d-flex col-md-6 justify-content-center align-items-center">                           
@@ -467,7 +464,7 @@ function expandRoom(id) {
                                                         <img src="${element.immagine2}" class="d-block w-100" alt="...">
                                                     </div>
                                                 </div>
-                                                
+                                                                                                
                                                 <button class="carousel-control-prev " type="button"
                                                     data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon btn-dark bRadius" aria-hidden="true"></span>
@@ -482,9 +479,9 @@ function expandRoom(id) {
                                         </div>
                                     </div>
                                 </div>
-                            <div class="col-md-2 my-3 p-0 text-center">
-                            <h5>In questa stanza:</h5>
-                                    <ul  id="listaServizi" class="">                                        
+                            <div class="col-md-2 my-3 p-0 ">
+                            <h5 style="margin-left: 1.6em;">In questa stanza:</h5>
+                                    <ul  id="listaServizi" class="w-100">                                        
                                     </ul>
                                     </div>`;
                 console.log(arrayStanze);
@@ -500,11 +497,11 @@ function expandRoom(id) {
                 arrayservizi.forEach(element => {
                     // let li = document.createElement('li');
                     // ul.appendChild(li);
-                    ul.innerHTML = `<li>${element.bagno}</li>
-                                    <li>${element.terrazzo}</li>
-                                    <li>${element.connessione}</li>
-                                    <li>${element.postazione}</li>
-                                    <li>${element.frigorifero}</li>`;
+                    ul.innerHTML = `<li class="semiBoldText">${element.bagno}</li>
+                                    <li class="semiBoldText"> ${element.terrazzo}</li>
+                                    <li class="semiBoldText">${element.connessione}</li>
+                                    <li class="semiBoldText">${element.postazione}</li>
+                                    <li class="semiBoldText">${element.frigorifero}</li>`;
                 });
             })
 
