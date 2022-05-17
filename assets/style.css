@@ -144,6 +144,7 @@ img {
 
 #nomeStanza {
     color: #823DD1;
+    color: #832800;
 
 }
 
@@ -288,7 +289,7 @@ img {
 .ri-menu-line {
     color: #f3eed9;
     /* color:rgb(33, 173, 224) ; */
-    background-color: #800000;
+    background-color: #832800;;
     width: 99%;
     border-radius: 5px;
     margin-top: 6px;
@@ -333,7 +334,7 @@ img {
     font-weight: bold;
     display: flex;
     gap: 1vh;
-    color: #800000;
+    color: #832800;
     flex-direction: row;
     justify-content: start;
     margin: 0 auto;
@@ -361,6 +362,7 @@ img {
 form {
     color: white;
     background-color: #800000;
+    background-color: #832800;
     border-radius: 5px;
     box-shadow: 0px 0px 1.5vh rgb(56, 55, 55);
 }
@@ -509,6 +511,15 @@ button:active {
     display: none;
 }
 
+@media screen and (min-width: 768px) {
+    #textBox2 {
+        width: 55%;
+    };
+    #roomBox{
+        width: 70%;
+    }
+}
+    
 
 /* ========== MEDIA QUERIES MOBILE ============== */
 /*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/

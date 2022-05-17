@@ -193,7 +193,7 @@ function teaserBox() {
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
-    textP2.classList.add('corsivo', 'm-sm-0', 'bg-granata', 'w-100', 'bRadius', 'p-2', 'text-white');
+    textP2.classList.add('corsivo', 'm-sm-0', 'bg-granata', 'w-md-70', 'bRadius', 'p-2', 'text-white');
     textBox2.append(textP2);
     textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
                         Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
