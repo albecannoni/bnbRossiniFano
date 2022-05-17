@@ -284,7 +284,7 @@ function galleryGen() {
 
                 let roomBox = document.createElement('div');
                 roomBox.setAttribute('id', 'roomBox');
-                roomBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
+                roomBox.classList.add('container', 'd-flex','flex-sm-column', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
                 galleryBox.append(roomBox);
                 this.element = new RoomCard;
                 roomBox.innerHTML = `<div class="d-grid">
