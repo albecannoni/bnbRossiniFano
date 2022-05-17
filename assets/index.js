@@ -76,9 +76,11 @@ function homePageGen() {
 function welcomeBox() {
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
-    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1');
+    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1','w-100','text-center');
     pool.append(quoteBox);
-    quoteBox.innerHTML = `<h3 class="bolderText text-border">La nostra <span style=" font-size: xx-large;;" class="text-viola">magica</span> città ti sta aspettando!</h3>`;
+    quoteBox.innerHTML = `<div class="d-flex justify-content-center align-items-center w-80">
+    <h3 class="bolderText text-border">La nostra <span style=" font-size: xx-large;;" class="text-viola">magica</span> città ti sta aspettando!</h3>
+    </div>`;
 }
 function slideBox() {
     let slideBox = document.createElement("div");
@@ -272,8 +274,8 @@ function galleryGen() {
             //creazione blocco gallery
             let galleryBox = document.createElement('div');
             galleryBox.setAttribute('id', 'galleryBox');
-            galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center', 
-            'w-100', 'py-3', 'pt-4', 'bRadius', 'bg-pesca');
+            galleryBox.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-center',
+                'w-100', 'py-3', 'pt-4', 'bRadius', 'bg-pesca');
             pool.appendChild(galleryBox);
 
             //attesa gallery completata
@@ -284,21 +286,27 @@ function galleryGen() {
 
                 let roomBox = document.createElement('div');
                 roomBox.setAttribute('id', 'roomBox');
-                roomBox.classList.add('container', 'd-flex','flex-sm-column', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
+                roomBox.classList.add('container', 'd-flex', 'flex-sm-column', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
                 galleryBox.append(roomBox);
                 this.element = new RoomCard;
-                roomBox.innerHTML = `<div class="d-grid">
-                <h5 class="text-center boldText" id="titleBox">${element.titolo}</h5>
-                                            <div class="d-flex justify-content-center flex-wrap">
-                                            
-                                                <figure class="col-md-8 ">
-                                                <div class="d-flex gap-3">
-                                                    <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.cover}" alt="" >
-                                                    <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
-                                                    
+                roomBox.innerHTML = `<div class="d-flex">
+                                        <div class="">
+                                            <h5 class="col text-center boldText" id="titleBox">${element.titolo}</h5>
+                                            <div>                                            
+                                                <figure class="w-100">
+                                                <div class="d-flex gap-3 ">
+                                                
+                                                    <div>
+                                                        <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.cover}" alt="" >
+                                                    </div>                                                
+                                                    <div>
+                                                        <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
+                                                    </div>
+
                                                 </div>    
                                                 </figure>
                                             </div>
+                                        </div>
                                         </div>`;
             });
         }
@@ -406,7 +414,7 @@ function expandRoom(id) {
 
             let textBox = document.createElement("p");
             textBox.setAttribute('id', 'textBox');
-            textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100','bg-pesca');
+            textBox.classList.add('d-flex', 'justify-content-center', 'boldText', 'm-2', 'w-100', 'bg-pesca');
 
             //generazione blocco slideshow
             let slideBox = document.createElement("div");
