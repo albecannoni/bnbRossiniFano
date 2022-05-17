@@ -27,10 +27,10 @@ body, html {
     padding: 0;
     height: auto;
     width: auto;
-    
+
 }
 
-h1,h2,h3,h4,h5,h6{
+h1, h2, h3, h4, h5, h6 {
     color: black;
     text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke, 0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
 
@@ -39,14 +39,15 @@ h1,h2,h3,h4,h5,h6{
 #pool {
     height: 100vh;
     width: 100vw;
-  
+
 
 }
 
-li{
+li {
     list-style: none;
 }
-ul{
+
+ul {
     padding-right: 2rem;
     margin: 0;
 }
@@ -71,7 +72,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 }
 
 .bolderText {
-    font-weight:800;
+    font-weight: 800;
     font-size: x-large;
 }
 
@@ -79,9 +80,9 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     font-weight: 500;
 }
 
-.firma{
+.firma {
     font-family: 'Nothing You Could Do', cursive;
-    font-weight:900;
+    font-weight: 900;
 }
 
 .testoAlert {
@@ -104,46 +105,68 @@ img {
 }
 
 /*colori*/
-.viola{
+.viola {
     color: #823DD1;
 }
 
-.bg-viola{
+.bg-viola {
     background-color: #823DD1;
 }
-.text-viola{
+
+.text-viola {
     color: #823DD1;
-    text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke, 0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
+    /*text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
+        0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;*/
+        text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
+        0 -1px 0 #F9835D, 1px 1px #F9835D, -1px -1px 0 #F9835D, 1px -1px 0 #F9835D, -1px 1px 0 #F9835D;
 }
-.text-border{
-    text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke, 0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
+.text-border-pesca{
+    text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
+        0 -1px 0 #F9835D, 1px 1px #F9835D, -1px -1px 0 #F9835D, 1px -1px 0 #F9835D, -1px 1px 0 #F9835D;
+}
+
+.text-border {
+    text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
+        0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
+    
+
+        
 
 }
 
-.text-border-black{
-    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+.text-border-black {
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
+        1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
 
 }
-.bg-ciano{
+
+#nomeStanza {
+    color: #823DD1;
+    
+}
+
+.bg-ciano {
     background-color: #00C2D9;
 }
 
-.bg-pesca{
+.bg-pesca {
     background-color: #F9835D;
+    background-color: #95b0b5;
 }
+
 .panna {
     background-color: #f6f4ea;
 }
 
-.panna2{
+.panna2 {
     background-color: #f6f4ea;
 }
 
-.bg-granata{
+.bg-granata {
     background-color: #832800;
 }
 
-.fondoContrasto{
+.fondoContrasto {
     background-color: #f6f4ea;
 }
 
@@ -155,16 +178,15 @@ img {
     background-color: #385eab;
 }
 
-.cielo{
+.cielo {
 
     background-color: #62a8e51f;
 
 }
+
 .bg-mio {
     background-color: #a0cff8;
 }
-
-
 
 /*ombre*/
 .ombra {
@@ -327,7 +349,7 @@ img {
 #banner, #banner2 {
     width: auto;
     height: 40vh;
-    
+
 
     /* box-shadow: 0px 0px 1.5vh rgb(56, 55, 55); */
     border-radius: 5px;
@@ -500,10 +522,12 @@ button:active {
     #smCol {
         display: grid;
     }
-#banner{
-    padding-left: 0 auto;
 
-}
+    #banner {
+        padding-left: 0 auto;
+
+    }
+
     .btn3D {
         width: 23vw;
         display: inline-block;
@@ -533,7 +557,7 @@ button:active {
 
     img {
         width: auto;
-        height: auto;        
+        height: auto;
     }
 
 
@@ -566,6 +590,7 @@ button:active {
         color: #f3eed9;
 
     }
+
     /* 
         The general sibling selector (~) 
         selects all elements that are next siblings of #toggler.

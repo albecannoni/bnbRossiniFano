@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "titolo": "Stanza BRUSCHINO",
+        "titolo": "Stanza <span id='nomeStanza' class='text-border-pesca' >BRUSCHINO</span>",
         "descrizione": "Questa stanza può ospitare da 1 a 4 persone. Un luogo accogliente e luminoso, perfetto per coppie con figli piccoli al seguito",
         "cover": "assets/images/bruschino1.png",
         "immagine2": "assets/images/bruschino2.png",
@@ -16,7 +16,7 @@
     },
     {
         "id": "2",
-        "titolo":"Stanza ARMIDA",
+        "titolo":"Stanza <span id='nomeStanza' class='text-border-pesca'>ARMIDA</span>",
         "descrizione":"Questa stanza può ospitare 1 o 2 persone. Un luogo accogliente e luminoso, con terrazzo privato e armadio.",
         "cover": "assets/images/armida1.png",
         "immagine2": "assets/images/armida2.png",

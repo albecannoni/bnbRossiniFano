@@ -76,7 +76,7 @@ function homePageGen() {
 function welcomeBox() {
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
-    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1','w-100','text-center');
+    quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1', 'w-100', 'text-center');
     pool.append(quoteBox);
     quoteBox.innerHTML = `<div class="d-flex justify-content-center align-items-center w-80">
     <h3 class="bolderText text-border">La nostra <span style=" font-size: xx-large;;" class="text-viola">magica</span> città ti sta aspettando!</h3>
@@ -189,17 +189,16 @@ function teaserBox() {
 
     let textBox2 = document.createElement("div");
     textBox2.setAttribute('id', 'textBox2');
-    textBox2.classList.add('text-center', 'w-75', 'corsivo', 'd-flex', 'justify-content-center', 'align-items-center',);
+    textBox2.classList.add('text-center', 'w-80', 'corsivo', 'd-flex', 'justify-content-center', 'align-items-center',);
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
-    textP2.classList.add('corsivo', 'm-sm-0', 'bg-granata', 'w-75', 'bRadius', 'p-2', 'text-white');
+    textP2.classList.add('corsivo', 'm-sm-0', 'bg-granata', 'w-100', 'bRadius', 'p-2', 'text-white');
     textBox2.append(textP2);
     textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
                         Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
                         Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;                        
                         <span class="firma">Francesca</span>`;
-
 }
 function buttonGen() {
     let buttonBox = document.createElement('div');
@@ -439,7 +438,7 @@ function expandRoom(id) {
                 buttonGen();
                 textBox.innerHTML = `
                 <div class="text-center w-60 h-100">
-                <h4 class="boldText">${element.titolo}</h4>
+                <h4 class="boldText pt-3">${element.titolo}</h4>
                     <p>${element.descrizione}</p>
                 </div>`
                 div.innerHTML = `<div class="d-flex col-md-6 justify-content-center align-items-center">                           
@@ -493,6 +492,7 @@ function expandRoom(id) {
                                     </ul>
                                     </div>`;
                 console.log(arrayStanze);
+                
             })
 
             arrayLocale.forEach(element => {
