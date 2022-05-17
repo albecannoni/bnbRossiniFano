@@ -149,18 +149,18 @@ function slideHomeBox() {
                     <button type="button" data-bs-target="#carouselExampleIndicators1" data-bs-slide-to="3"
                         aria-label="Slide 7"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner bRadius">
                     <div class="carousel-item active">
-                        <img src="https://doodleipsum.com/1098x700/flat?i=eb82b7ba75b3a5086fff159602ef32f2" class="d-block w-100" alt="...">
+                        <img src="https://doodleipsum.com/1098x700/flat?bg=63C8D9&i=3758fd27c3704f08f828d043203dd96f" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://doodleipsum.com/1098x700/outline?i=ffd2040efe1ce06a127b90441fe179a1" class="d-block w-100" alt="...">
+                        <img src="https://doodleipsum.com/1098x700/outline?bg=63C8D9&i=87f2bf028a40f45739cf082d7af89616" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://doodleipsum.com/1098x700/abstract?i=f701b63cfe38e57fa0408c238af32027" class="d-block w-100" alt="...">
+                        <img src="https://doodleipsum.com/1098x700/avatar-5?bg=63C8D9&i=5d6e087e768084f18e994a0820732439" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://doodleipsum.com/1098x700/avatar-5?i=c04b6e7f620fb608af9d369df1e4a9cc" class="d-block w-100" alt="...">
+                        <img src="https://doodleipsum.com/1098x700/avatar-2?bg=63C8D9&i=cccf78a48198cc758c48aff0d56b1ff6" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button"
@@ -479,9 +479,9 @@ function expandRoom(id) {
                                         </div>
                                     </div>
                                 </div>
-                            <div class="col-md-2 my-3 p-0 ">
-                            <h5 style="margin-left: 1.6em;">In questa stanza:</h5>
-                                    <ul  id="listaServizi" class="w-100">                                        
+                            <div class="col-md-2 my-3 p-0 bg-granata bRadius p-3">
+                            <h5 style="margin-left: 1.6em;" class="text-white text-border-black">In questa stanza:</h5>
+                                    <ul  id="listaServizi" class="w-100 text-white">                                        
                                     </ul>
                                     </div>`;
                 console.log(arrayStanze);

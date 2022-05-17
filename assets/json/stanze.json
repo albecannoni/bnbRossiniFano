@@ -8,8 +8,8 @@
         "caratteristiche": {
             "bagno": "bagno privato",
             "terrazzo": "",
-            "armadio": "armadio",
-            "connessione": "wifi e via cavo",
+            "armadio": "guardaroba",
+            "connessione": "Connessione wifi e via cavo",
             "postazione": "postazione di lavoro",
             "frigorifero": "frigorifero"
         }
@@ -17,14 +17,14 @@
     {
         "id": "2",
         "titolo":"Stanza ARMIDA",
-        "descrizione":"test descrizione",
+        "descrizione":"Questa stanza può ospitare 1 o 2 persone. Un luogo accogliente e luminoso, con terrazzo privato e armadio.",
         "cover": "assets/images/armida1.png",
         "immagine2": "assets/images/armida2.png",
         "caratteristiche": {
             "bagno": "bagno privato",
             "terrazzo": "terrazzo privato",
-            "armadio": "guardaroba",
-            "connessione": "Wi-fi e via cavo",
+            "armadio": "armadio",
+            "connessione": "Connessione Wi-fi e via cavo",
             "postazione": "postazione di lavoro",
             "frigorifero": ""
         }
