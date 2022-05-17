@@ -115,12 +115,14 @@ img {
 
 .text-viola {
     color: #823DD1;
+    color: #832800;
     /*text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
         0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;*/
-        text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
+    text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
         0 -1px 0 #F9835D, 1px 1px #F9835D, -1px -1px 0 #F9835D, 1px -1px 0 #F9835D, -1px 1px 0 #F9835D;
 }
-.text-border-pesca{
+
+.text-border-pesca {
     text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
         0 -1px 0 #F9835D, 1px 1px #F9835D, -1px -1px 0 #F9835D, 1px -1px 0 #F9835D, -1px 1px 0 #F9835D;
 }
@@ -128,9 +130,9 @@ img {
 .text-border {
     text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
         0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
-    
 
-        
+
+
 
 }
 
@@ -142,7 +144,7 @@ img {
 
 #nomeStanza {
     color: #823DD1;
-    
+
 }
 
 .bg-ciano {
@@ -526,6 +528,10 @@ button:active {
     #banner {
         padding-left: 0 auto;
 
+    }
+
+    #textbox2 p {
+        width: 100%;
     }
 
     .btn3D {
