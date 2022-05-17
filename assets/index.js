@@ -203,58 +203,60 @@ function teaserBox() {
 function buttonGen() {
     let buttonBox = document.createElement('div');
     buttonBox.setAttribute('id', 'buttonBox');
-    buttonBox.classList.add('flex-md-row', 'flex-column', 'pt-4');
+    buttonBox.classList.add( 'container','py-2','col-8');
 
 
     pool.appendChild(buttonBox);
 
-    buttonBox.innerHTML = `<div class="'flex-md-row','flex-sm-col'">
-                            <div class="d-flex justify-content-center align-content-center ">
-                                <button type="button" class="btn3D text-white bg-viola my-3 ">
-                                <a class="text-white" href="tel:+393890172024">
-                                    <div class="d-flex justify-content-end align-items-center"></div>
-                                    <div class="d-flex  justify-content-center">
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            
-                                            <div class="col justify-content-center align-items-center h-100">
-                                                <p class="h-100 px-1 m-0 ">chiamaci!</p>
+    buttonBox.innerHTML = `
+                        <div class="d-flex align-items-center w-100 justify-content-center gap-5">
+                                <div class=" mt-3">
+                                    <div class="col-6 p-0 m-0 align-items-center">
+                                        <button type="button" class="btn3D text-white bg-viola my-1 ">
+                                        <a class="text-white" href="tel:+393890172024">
+                                            <div class="d-flex justify-content-end align-items-center"></div>
+                                            <div class="d-flex  justify-content-center">
+                                                <div class="d-flex justify-content-center align-items-center">                                                    
+                                                    <div class="justify-content-center align-items-center h-100">
+                                                        <p class="h-100 px-1 m-0 ">chiamaci!</p>
+                                                    </div>
+                                                    <div style="margin-top: 5px; margin-right: 5px;"><svg xmlns="http://www.w3.org/2000/svg"
+                                                            width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill"
+                                                            viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd"
+                                                                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div style="margin-top: 5px; margin-right: 5px;"><svg xmlns="http://www.w3.org/2000/svg"
-                                                    width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill"
-                                                    viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd"
-                                                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z" />
+                                            </a>
+                                        </button>
+                                    </div>
+                                </div>
+
+                        <div class="d-flex mt-3">   
+                            <div class="col  p-0 m-0">
+                                <div class="d-flex justify-content-center align-content-center ">
+                                    <button type="button" class="btn3D text-white bg-granata ">
+                                        <a class="text-white" href="mailto:a.cannoni@hotmail.com">
+                                            <div class="d-flex justify-content-center align-items-center">                                        
+                                                <div class="col justify-content-center align-items-center h-100">
+                                                    <p class="h-100 px-1 m-0 ">scrivici!</p>
+                                                </div>
+                                            <div style="margin-top: 6px; margin-right: 5px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="16" height="16" fill="white" class="bi bi-send" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
                                                 </svg>
                                             </div>
                                         </div>
-                                    </div>
-                                    </a>
-                                </button>
+                                        </a>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-<!--div di impaginazione-->
-            <div class="col-2"></div>
-
-                        <div class="col p-0 m-0">
-                            <div class="d-flex justify-content-center align-content-center ">
-                                <button type="button" class="btn3D text-white bg-granata ">
-                                <a class="text-white" href="mailto:a.cannoni@hotmail.com">
-                                    <div class="d-flex justify-content-center align-items-center">                                        
-                                        <div class="col justify-content-center align-items-center h-100">
-                                            <p class="h-100 px-1 m-0 ">scrivici!</p>
-                                        </div>
-                                        <div style="margin-top: 6px; margin-right: 5px;">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                width="16" height="16" fill="white" class="bi bi-send" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    </a>
-                                </button>
                             </div>
-                        </div> `
+                    </div> `
 
 
 
@@ -285,10 +287,11 @@ function galleryGen() {
 
                 let roomBox = document.createElement('div');
                 roomBox.setAttribute('id', 'roomBox');
-                roomBox.classList.add('container', 'd-flex', 'flex-sm-column', 'flex-wrap', 'justify-content-center', 'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
+                roomBox.classList.add('container', 'd-flex', 'flex-sm-column', 'flex-wrap', 'justify-content-center',
+                                         'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
                 galleryBox.append(roomBox);
                 this.element = new RoomCard;
-                roomBox.innerHTML = `<div class="d-flex">
+                roomBox.innerHTML = `<div class="d-flex wideScreen">
                                         <div class="">
                                             <h5 class="col text-center boldText" id="titleBox">${element.titolo}</h5>
                                             <div>                                            
@@ -296,7 +299,7 @@ function galleryGen() {
                                                 <div class="d-flex gap-3 ">
                                                 
                                                     <div>
-                                                        <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.cover}" alt="" >
+                                                        <img onclick="expandRoom(${element.id})" class="ombra " style="width: 100%;" src="${element.cover}" alt="" >
                                                     </div>                                                
                                                     <div>
                                                         <img onclick="expandRoom(${element.id})" class="ombra" style="width: 100%;" src="${element.immagine2}" alt="" >
