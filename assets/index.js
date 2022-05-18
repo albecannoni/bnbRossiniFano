@@ -45,7 +45,9 @@ class Servizi {
 window.addEventListener('load', init);
 
 function init() {
+    resetPool();
     homePageGen();
+
 
     //chiamataStanze();
     // roomPageGen();
@@ -69,7 +71,7 @@ function homePageGen() {
     slideHomeBox();
     galleryGen();
     //formGen();
-    //buttonGen();
+    //buttonGen();    
 
     console.log('Home Page generata');
 }
@@ -79,7 +81,7 @@ function welcomeBox() {
     quoteBox.classList.add('d-flex', 'justify-content-center', 'pt-2', 'align-items-center', 'my-3', 'py-1', 'w-100', 'text-center');
     pool.append(quoteBox);
     quoteBox.innerHTML = `<div class="d-flex justify-content-center align-items-center w-80">
-    <h3 class="bolderText text-border">La nostra <span style=" font-size: xx-large;;" class="text-viola">magica</span> città ti sta aspettando!</h3>
+    <h3 class="bolderText text-border">La nostra <span id="spanApi" style=" font-size: xx-large;;" class="text-viola">magica</span> città ti sta aspettando!</h3>
     </div>`;
 }
 function slideBox() {
@@ -193,6 +195,7 @@ function teaserBox() {
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
+    textP2.setAttribute('id', 'textP2');
     textP2.classList.add('corsivo', 'm-sm-0', 'bg-granata', 'w-md-70', 'bRadius', 'p-2', 'text-white');
     textBox2.append(textP2);
     textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
@@ -203,14 +206,10 @@ function teaserBox() {
 function buttonGen() {
     let buttonBox = document.createElement('div');
     buttonBox.setAttribute('id', 'buttonBox');
-    buttonBox.classList.add( 'container','py-2','col-8');
-
-
+    buttonBox.classList.add('container', 'py-2', 'col-8');
     pool.appendChild(buttonBox);
-
-    buttonBox.innerHTML = `
-                        <div class="d-flex align-items-center w-100 justify-content-center gap-5">
-                                <div class=" mt-3">
+    buttonBox.innerHTML = `<div class="d-flex align-items-center w-100 justify-content-center gap-5">
+                                <div id="btnTel" class=" mt-3">
                                     <div class="col-6 p-0 m-0 align-items-center">
                                         <button type="button" class="btn3D text-white bg-viola my-1 ">
                                         <a class="text-white" href="tel:+393890172024">
@@ -234,29 +233,29 @@ function buttonGen() {
                                     </div>
                                 </div>
 
-                        <div class="d-flex mt-3">   
-                            <div class="col  p-0 m-0">
-                                <div class="d-flex justify-content-center align-content-center ">
-                                    <button type="button" class="btn3D text-white bg-granata ">
-                                        <a class="text-white" href="mailto:a.cannoni@hotmail.com">
-                                            <div class="d-flex justify-content-center align-items-center">                                        
-                                                <div class="col justify-content-center align-items-center h-100">
-                                                    <p class="h-100 px-1 m-0 ">scrivici!</p>
+                                <div id="btnMail" class="d-flex mt-3">   
+                                    <div class="col  p-0 m-0">
+                                        <div class="d-flex justify-content-center align-content-center ">
+                                            <button type="button" class="btn3D text-white bg-granata ">
+                                                <a class="text-white" href="mailto:a.cannoni@hotmail.com">
+                                                    <div class="d-flex justify-content-center align-items-center">                                        
+                                                        <div class="col justify-content-center align-items-center h-100">
+                                                            <p class="h-100 px-1 m-0 ">scrivici!</p>
+                                                        </div>
+                                                    <div style="margin-top: 6px; margin-right: 5px;">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            width="16" height="16" fill="white" class="bi bi-send" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
-                                            <div style="margin-top: 6px; margin-right: 5px;">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    width="16" height="16" fill="white" class="bi bi-send" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
-                                                </svg>
-                                            </div>
+                                                </a>
+                                            </button>
                                         </div>
-                                        </a>
-                                    </button>
+                                    </div>
                                 </div>
-                            </div>
-                            </div>
-                    </div> `
+                            </div> `
 
 
 
@@ -288,7 +287,7 @@ function galleryGen() {
                 let roomBox = document.createElement('div');
                 roomBox.setAttribute('id', 'roomBox');
                 roomBox.classList.add('container', 'd-flex', 'flex-sm-column', 'flex-wrap', 'justify-content-center',
-                                         'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
+                    'align-items-center', 'w-100', 'py-1', 'bRadius', 'bg-pesca');
                 galleryBox.append(roomBox);
                 this.element = new RoomCard;
                 roomBox.innerHTML = `<div class="d-flex wideScreen">
@@ -323,7 +322,7 @@ function formGen() {
 
     pool.appendChild(formBox);
     formBox.innerHTML = ` <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
-                            <form action="mailto:alberto.cannoni@outlook.it" method="post" enctype="text/plain"
+                            <form id="formPrenotazioni" action="" method="post" enctype="text/plain"
                                 class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
                                 <fieldset>
                                     <div class="col-12">
@@ -495,7 +494,7 @@ function expandRoom(id) {
                                     </ul>
                                     </div>`;
                 console.log(arrayStanze);
-                
+
             })
 
             arrayLocale.forEach(element => {
@@ -522,13 +521,15 @@ function expandRoom(id) {
 }
 function contactPageGen() {
     resetPool();
-    //(sei una bestia!!)
-    let newDiv = document.createElement("div");
-    pool.append(newDiv);
-    newDiv.innerHTML = 'inserire elenco contatti!!';
-    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
-    console.log('pagina contatti generata');
+    welcomeBox();
+    teaserBox();
+    let textP2 = document.querySelector('#textP2')
+    console.log(textP2);
+    textP2.innerHTML = `Compila il form con i tuoi dati e
+     sarai ricontattato al più presto `
     formGen();
+    buttonGen();
+    console.log('pagina contatti generata');
 }
 function servicesPageGen() {
     resetPool();
@@ -548,6 +549,7 @@ function check() {
     let telefono = document.querySelector('#telephone');
     let testo = document.querySelector('#info');
     let btn = document.querySelector('#infoBtn');
+    let adrMail= document.querySelector('#formPrenotazioni')
 
     richiesta.id = arrayRichieste.length + 1;
     richiesta.nome = nome.value;
@@ -574,7 +576,9 @@ function check() {
     else {
         arrayRichieste.push(richiesta);
         console.log(arrayRichieste);
+        adrMail.setAttribute("action","mailto:alberto.cannoni@outlook.it")
         btn.setAttribute("type", "submit")
+        
         return (arrayRichieste);
     }
 }
