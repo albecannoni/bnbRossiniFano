@@ -209,10 +209,12 @@ function buttonGen() {
     buttonBox.classList.add('container', 'py-2', 'col-8');
     pool.appendChild(buttonBox);
     buttonBox.innerHTML = `<div class="d-flex align-items-center w-100 justify-content-center gap-5">
+                            
                                 <div id="btnTel" class=" mt-3">
+                                    <a class="text-white" href="tel:+393890172024">
                                     <div class="col-6 p-0 m-0 align-items-center">
                                         <button type="button" class="btn3D text-white bg-viola my-1 ">
-                                        <a class="text-white" href="tel:+393890172024">
+                                        
                                             <div class="d-flex justify-content-end align-items-center"></div>
                                             <div class="d-flex  justify-content-center">
                                                 <div class="d-flex justify-content-center align-items-center">                                                    
@@ -228,16 +230,18 @@ function buttonGen() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            </a>
+                                         
                                         </button>
                                     </div>
+                                    </a>
                                 </div>
 
-                                <div id="btnMail" class="d-flex mt-3">   
+                                <div id="btnMail" class="d-flex mt-3"> 
+                                    <a class="text-white" href="mailto:a.cannoni@hotmail.com">  
                                     <div class="col  p-0 m-0">
                                         <div class="d-flex justify-content-center align-content-center ">
                                             <button type="button" class="btn3D text-white bg-granata ">
-                                                <a class="text-white" href="mailto:a.cannoni@hotmail.com">
+                                                
                                                     <div class="d-flex justify-content-center align-items-center">                                        
                                                         <div class="col justify-content-center align-items-center h-100">
                                                             <p class="h-100 px-1 m-0 ">scrivici!</p>
@@ -250,15 +254,13 @@ function buttonGen() {
                                                         </svg>
                                                     </div>
                                                 </div>
-                                                </a>
+                                                
                                             </button>
                                         </div>
                                     </div>
+                                    </a>
                                 </div>
                             </div> `
-
-
-
 }
 function galleryGen() {
     /*chiamata ajax*/
@@ -270,7 +272,6 @@ function galleryGen() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let arrayStanze = JSON.parse(xhr.responseText);
             console.log(arrayStanze);
-
             //creazione blocco gallery
             let galleryBox = document.createElement('div');
             galleryBox.setAttribute('id', 'galleryBox');
@@ -321,7 +322,7 @@ function formGen() {
     formBox.classList.add('d-flex', 'justify-content-center', 'align-items-center', 'bg-pesca', 'pt-1');
 
     pool.appendChild(formBox);
-    formBox.innerHTML = ` <div class="container justify-content-center align-content-center  col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
+    formBox.innerHTML = ` <div class="container justify-content-center align-content-center col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
                             <form id="formPrenotazioni" action="" method="post" enctype="text/plain"
                                 class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
                                 <fieldset>
@@ -376,7 +377,6 @@ function formGen() {
                             </form>
                         </div>
                         </div>`;
-
     //listener bottone form
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
@@ -384,11 +384,8 @@ function formGen() {
 function roomPageGen() {
     resetPool();
     welcomeBox();
-    galleryGen();
-
-    formBox = document.querySelector('#formBox')
-    quoteBox = document.querySelector('#quoteBox');
-    formBox.innerHTML=''
+    galleryGen();    
+    quoteBox = document.querySelector('#quoteBox');    
     quoteBox.innerHTML = '<h5 class="boldText">La nostra casa ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';
     console.log('pagina stanze generata');
 
