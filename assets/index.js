@@ -575,10 +575,10 @@ function check() {
     }
     else {
         arrayRichieste.push(richiesta);
+        adrMail.setAttribute("action","mailto:alberto.cannoni@outlook.it");
         console.log(arrayRichieste);
-        adrMail.setAttribute("action","mailto:alberto.cannoni@outlook.it")
-        btn.setAttribute("type", "submit")
         
+        btn.setAttribute("type", "submit");        
         return (arrayRichieste);
     }
 }
