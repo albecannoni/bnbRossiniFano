@@ -279,7 +279,7 @@ function galleryGen() {
             pool.appendChild(galleryBox);
 
             //attesa gallery completata
-            if (galleryBox != '') { formGen(); buttonGen(); }
+            if (galleryBox != '') { buttonGen(); }
 
             /*popolamento pagina */
             arrayStanze.forEach(element => {
@@ -386,7 +386,9 @@ function roomPageGen() {
     welcomeBox();
     galleryGen();
 
+    formBox = document.querySelector('#formBox')
     quoteBox = document.querySelector('#quoteBox');
+    formBox.innerHTML=''
     quoteBox.innerHTML = '<h5 class="boldText">La nostra casa ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';
     console.log('pagina stanze generata');
 
@@ -549,7 +551,7 @@ function check() {
     let telefono = document.querySelector('#telephone');
     let testo = document.querySelector('#info');
     let btn = document.querySelector('#infoBtn');
-    let adrMail= document.querySelector('#formPrenotazioni')
+    let adrMail = document.querySelector('#formPrenotazioni')
 
     richiesta.id = arrayRichieste.length + 1;
     richiesta.nome = nome.value;
@@ -575,10 +577,10 @@ function check() {
     }
     else {
         arrayRichieste.push(richiesta);
-        adrMail.setAttribute("action","mailto:alberto.cannoni@outlook.it");
+        adrMail.setAttribute("action", "mailto:alberto.cannoni@outlook.it");
         console.log(arrayRichieste);
-        
-        btn.setAttribute("type", "submit");        
+
+        btn.setAttribute("type", "submit");
         return (arrayRichieste);
     }
 }
