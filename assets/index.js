@@ -1,7 +1,9 @@
 //variabili globali
+
 let pool = document.querySelector('#pool');
 let arrayRichieste = [];
 let arrayStanze = [];
+
 
 //classi
 class InfoRequest {
@@ -41,16 +43,16 @@ class Servizi {
     }
 }
 
+
+
 //innesco init
 window.addEventListener('load', init);
 
 function init() {
     resetPool();
     homePageGen();
-
-
     //chiamataStanze();
-    // roomPageGen();
+    //roomPageGen();
     //contactPageGen();
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
@@ -61,6 +63,7 @@ function init() {
 function resetPool() {
     pool.innerHTML = ``;
 }
+
 function homePageGen() {
     //svuota tutto
     resetPool();
@@ -70,6 +73,7 @@ function homePageGen() {
     slideBox();
     slideHomeBox();
     galleryGen();
+   
     //formGen();
     //buttonGen();    
 
@@ -204,6 +208,7 @@ function teaserBox() {
                         <span class="firma">Francesca</span>`;
 }
 function buttonGen() {
+
     let buttonBox = document.createElement('div');
     buttonBox.setAttribute('id', 'buttonBox');
     buttonBox.classList.add('container', 'py-2', 'col-8');
@@ -211,9 +216,9 @@ function buttonGen() {
     buttonBox.innerHTML = `<div class="d-flex align-items-center w-100 justify-content-center gap-5">
                             
                                 <div id="btnTel" class=" mt-3">
-                                    <a class="text-white" href="tel:+393890172024">
+                                    <a id="btnHrefTel" class="text-white" href="">
                                     <div class="col-6 p-0 m-0 align-items-center">
-                                        <button type="button" class="btn3D text-white bg-viola my-1 ">
+                                        <button  type="button" class="btn3D text-white bg-viola my-1 ">
                                         
                                             <div class="d-flex justify-content-end align-items-center"></div>
                                             <div class="d-flex  justify-content-center">
@@ -237,10 +242,10 @@ function buttonGen() {
                                 </div>
 
                                 <div id="btnMail" class="d-flex mt-3"> 
-                                    <a class="text-white" href="mailto:a.cannoni@hotmail.com">  
+                                    <a  id="btnHrefMail" class="text-white" href="">  
                                     <div class="col  p-0 m-0">
                                         <div class="d-flex justify-content-center align-content-center ">
-                                            <button type="button" class="btn3D text-white bg-granata ">
+                                            <button   type="button" class="btn3D text-white bg-granata ">
                                                 
                                                     <div class="d-flex justify-content-center align-items-center">                                        
                                                         <div class="col justify-content-center align-items-center h-100">
@@ -253,16 +258,27 @@ function buttonGen() {
                                                                 d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
                                                         </svg>
                                                     </div>
-                                                </div>
-                                                
+                                                </div>                                                
                                             </button>
                                         </div>
                                     </div>
                                     </a>
                                 </div>
-                            </div> `
+                            </div> `;
+
+
+    console.log(btnHrefTel);
+    fillAdr();
+
+
 }
+function fillAdr() {
+    btnHrefTel.setAttribute("href", "tel:+393890172024");
+    btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
+}
+
 function galleryGen() {
+
     /*chiamata ajax*/
     let urlAPI = 'assets/json/stanze.json'
     let xhr = new XMLHttpRequest();
@@ -284,7 +300,6 @@ function galleryGen() {
 
             /*popolamento pagina */
             arrayStanze.forEach(element => {
-
                 let roomBox = document.createElement('div');
                 roomBox.setAttribute('id', 'roomBox');
                 roomBox.classList.add('container', 'd-flex', 'flex-sm-column', 'flex-wrap', 'justify-content-center',
@@ -309,7 +324,7 @@ function galleryGen() {
                                                 </figure>
                                             </div>
                                         </div>
-                                        </div>`;
+                                    </div>`;
             });
         }
     }
@@ -384,8 +399,8 @@ function formGen() {
 function roomPageGen() {
     resetPool();
     welcomeBox();
-    galleryGen();    
-    quoteBox = document.querySelector('#quoteBox');    
+    galleryGen();
+    quoteBox = document.querySelector('#quoteBox');
     quoteBox.innerHTML = '<h5 class="boldText">La nostra casa ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';
     console.log('pagina stanze generata');
 
@@ -576,7 +591,6 @@ function check() {
         arrayRichieste.push(richiesta);
         adrMail.setAttribute("action", "mailto:alberto.cannoni@outlook.it");
         console.log(arrayRichieste);
-
         btn.setAttribute("type", "submit");
         return (arrayRichieste);
     }
