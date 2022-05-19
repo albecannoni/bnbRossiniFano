@@ -51,14 +51,12 @@ window.addEventListener('load', init);
 function init() {
     resetPool();
     homePageGen();
-    //chiamataStanze();
-    //roomPageGen();
-    //contactPageGen();
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
 }
+
 /*========= manipolazione DOM ========== */
 function resetPool() {
     pool.innerHTML = ``;
@@ -73,7 +71,7 @@ function homePageGen() {
     slideBox();
     slideHomeBox();
     galleryGen();
-   
+
     //formGen();
     //buttonGen();    
 
@@ -213,13 +211,11 @@ function buttonGen() {
     buttonBox.setAttribute('id', 'buttonBox');
     buttonBox.classList.add('container', 'py-2', 'col-8');
     pool.appendChild(buttonBox);
-    buttonBox.innerHTML = `<div class="d-flex align-items-center w-100 justify-content-center gap-5">
-                            
-                                <div id="btnTel" class=" mt-3">
+    buttonBox.innerHTML = `<div class="d-flex align-items-center w-100 justify-content-center gap-5">                            
+                                <div id="btnTel" class="mt-3">
                                     <a id="btnHrefTel" class="text-white" href="">
                                     <div class="col-6 p-0 m-0 align-items-center">
-                                        <button  type="button" class="btn3D text-white bg-viola my-1 ">
-                                        
+                                        <button onclick="fillAdr()" type="button" class="btn3D text-white bg-viola my-1">                                        
                                             <div class="d-flex justify-content-end align-items-center"></div>
                                             <div class="d-flex  justify-content-center">
                                                 <div class="d-flex justify-content-center align-items-center">                                                    
@@ -241,11 +237,11 @@ function buttonGen() {
                                     </a>
                                 </div>
 
-                                <div id="btnMail" class="d-flex mt-3"> 
+                                <div id="btnMail" class="mt-3"> 
                                     <a  id="btnHrefMail" class="text-white" href="">  
                                     <div class="col  p-0 m-0">
-                                        <div class="d-flex justify-content-center align-content-center ">
-                                            <button   type="button" class="btn3D text-white bg-granata ">
+                                        <div class="col-6 p-0 m-0 align-items-center">
+                                            <button onclick="fillAdr()"  type="button" class="btn3D text-white bg-granata ">
                                                 
                                                     <div class="d-flex justify-content-center align-items-center">                                        
                                                         <div class="col justify-content-center align-items-center h-100">
@@ -265,14 +261,12 @@ function buttonGen() {
                                     </a>
                                 </div>
                             </div> `;
-
-
     console.log(btnHrefTel);
-    fillAdr();
-
-
 }
 function fillAdr() {
+    //variabili non dichiarate
+    //sui viene istanziata direttamente una variabile mentre si assegna l'attributo
+    //probabilmente funziona sulo sui tag </a>
     btnHrefTel.setAttribute("href", "tel:+393890172024");
     btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
 }
@@ -392,6 +386,7 @@ function formGen() {
                             </form>
                         </div>
                         </div>`;
+
     //listener bottone form
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
@@ -401,7 +396,7 @@ function roomPageGen() {
     welcomeBox();
     galleryGen();
     quoteBox = document.querySelector('#quoteBox');
-    quoteBox.innerHTML = '<h5 class="boldText">La nostra casa ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';
+    quoteBox.innerHTML = '<h5 class="boldText w-90">La nostra <span class="text-viola h3">casa</span> ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';
     console.log('pagina stanze generata');
 
 }
@@ -563,7 +558,7 @@ function check() {
     let telefono = document.querySelector('#telephone');
     let testo = document.querySelector('#info');
     let btn = document.querySelector('#infoBtn');
-    let adrMail = document.querySelector('#formPrenotazioni')
+    let adrMail = document.querySelector('#formPrenotazioni');
 
     richiesta.id = arrayRichieste.length + 1;
     richiesta.nome = nome.value;
@@ -585,14 +580,13 @@ function check() {
         alert('inserisci un numero valido');
     }
     else if (testo.value == '') {
-        alert('compila tutti i campi 4');
+        alert('inserisci un testo');
     }
     else {
         arrayRichieste.push(richiesta);
         adrMail.setAttribute("action", "mailto:alberto.cannoni@outlook.it");
         console.log(arrayRichieste);
         btn.setAttribute("type", "submit");
-        return (arrayRichieste);
     }
 }
 function contraiMenu() {
