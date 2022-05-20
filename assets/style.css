@@ -512,6 +512,9 @@ button:active {
 #smCol {
     display: none;
 }
+.wResponsive{
+    width: 60vw;
+}
 
 
 
@@ -535,6 +538,10 @@ button:active {
         /*Makes the max-height 0 to side the expanded menu.*/
         overflow: hidden;
         /*Hides the overflowing content.*/
+    }
+
+    .wResponsive{
+        width: 86vw;
     }
    
 

@@ -51,6 +51,11 @@ window.addEventListener('load', init);
 function init() {
     resetPool();
     homePageGen();
+    eventHandler()
+
+}
+
+function eventHandler() {
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
@@ -63,17 +68,17 @@ function resetPool() {
 }
 
 function homePageGen() {
-    //svuota tutto
     resetPool();
+    
     //generazione blocchi
     welcomeBox();
     teaserBox();
     slideBox();
     slideHomeBox();
     galleryGen();
-
     //formGen();
-    //buttonGen();    
+    //buttonGen();
+    //roomPageGen();    
 
     console.log('Home Page generata');
 }
@@ -396,7 +401,7 @@ function roomPageGen() {
     welcomeBox();
     galleryGen();
     quoteBox = document.querySelector('#quoteBox');
-    quoteBox.innerHTML = '<h5 class="boldText w-90">La nostra <span class="text-viola h3">casa</span> ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';
+    quoteBox.innerHTML = '<h5 class="boldText wResponsive">La nostra <span class="text-viola h3">casa</span> ha a disposizione per voi ospiti due stanze dotate di ogni comfort:</h5>';
     console.log('pagina stanze generata');
 
 }
@@ -448,7 +453,7 @@ function expandRoom(id) {
                 this.element = new RoomCard;
                 buttonGen();
                 textBox.innerHTML = `
-                <div class="text-center w-60 h-100">
+                <div class="text-center wResponsive">
                 <h4 class="boldText pt-3">${element.titolo}</h4>
                     <p>${element.descrizione}</p>
                 </div>`
