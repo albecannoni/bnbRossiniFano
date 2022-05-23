@@ -540,19 +540,17 @@ function servicesPageGen() {
     teaserBox();
     let gMaps = document.createElement("div");
     pool.append(gMaps);
-    gMaps.innerHTML = `<div class="mapouter ombra bRadius">
-                            <div class="gmap_canvas  bRadius">
-                                <iframe width="804" height="400" id="gmap_canvas" 
-                                    src="https://maps.google.com/maps?q=vacanze%20a%20fano%20in%20compagnia&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+    gMaps.innerHTML = `<div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe class="" width="335" height="311" id="gmap_canvas" src="https://maps.google.com/maps?q=vacanze%20a%20fano%20in%20compagnia&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                                 </iframe>
-                                <a href="https://putlocker-is.org">putlocker</a><br>
-                                <style>.mapouter{position:relative;text-align:right;height:400px;width:804px;}</style>
-                                <a href="https://www.embedgooglemap.net">how to copy and paste google maps</a>
-                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:804px;}</style>
+                                <a href="https://www.whatismyip-address.com"></a><br>
+                                <style>.mapouter{position:relative;text-align:right;height:311px;width:335px;}</style>
+                                <a href="https://www.embedgooglemap.net">how to add a google map to my website</a>
+                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:311px;width:335px;}</style>
                             </div>
                         </div>`;
-    gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+    gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-start', 'align-items-center');
     console.log('pagina servizi generata');
 }
 function contraiMenu() {
@@ -611,5 +609,3 @@ function check() {
         btn.setAttribute("type", "submit");
     }
 }
-
-
