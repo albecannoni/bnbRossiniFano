@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 #pool {
     height: 100vh;
     width: 100vw;
+    background-color: #385eab;
 
 
 }
@@ -635,7 +636,7 @@ button:active {
         selects all elements that are next siblings of #toggler.
         In this case we target the .menu and we turn the height back to 100% 
         to show the menu. */
-        
+
     #toggler:checked~.menu {
         max-height: 100%;
     }
