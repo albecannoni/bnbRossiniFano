@@ -601,6 +601,7 @@ function check() {
         %0A Email: ${email.value}&cc=a.cannoni@hotmail.com`);
         console.log(arrayRichieste);
         btn.setAttribute("type", "submit");
+        adrMail.setAttribute('href','mailto:a.cannoni@hotmail.com')
     }
     fillAdr();
 }
