@@ -350,7 +350,7 @@ function formGen() {
                                         </div>
                                         <div class="col d-grid m-2">
                                             <label for="info">Richiesta:</label>
-                                            <textarea name="richiesta" id="info" cols="..." rows="4"
+                                            <textarea type="text" name="richiesta" id="info" cols="..." rows="4"
                                                 placeholder="scrivi la tua richiesta" required autocomplete="off"></textarea>
                                         </div>
                                     </div>
@@ -603,14 +603,14 @@ function check() {
         btn.setAttribute("type", "submit");
         adrMail.setAttribute('href','mailto:a.cannoni@hotmail.com')
     }
-    fillAdr();
+    
 }
 
 function fillAdr() {
     //variabili non dichiarate
     //sui viene istanziata direttamente una variabile mentre si assegna l'attributo
     //probabilmente funziona sulo sui tag </a>
-    infoBtn.setAttribute("type", "submit")
+    
     btnHrefTel.setAttribute("href", "tel:+393890172024");
     btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
 }
