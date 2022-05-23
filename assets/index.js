@@ -259,13 +259,7 @@ function buttonGen() {
                             </div> `;
     console.log(btnHrefTel);
 }
-function fillAdr() {
-    //variabili non dichiarate
-    //sui viene istanziata direttamente una variabile mentre si assegna l'attributo
-    //probabilmente funziona sulo sui tag </a>
-    btnHrefTel.setAttribute("href", "tel:+393890172024");
-    btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
-}
+
 function galleryGen() {
 
     /*chiamata ajax*/
@@ -326,7 +320,7 @@ function formGen() {
 
     pool.appendChild(formBox);
     formBox.innerHTML = ` <div class="container justify-content-center align-content-center col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
-                            <form id="formPrenotazioni" action="submit" method="post" enctype="text/plain"
+                            <form id="formPrenotazioni" action="" method="post" enctype="text/plain"
                                 class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
                                 <fieldset>
                                     <div class="col-12">
@@ -608,4 +602,14 @@ function check() {
         console.log(arrayRichieste);
         btn.setAttribute("type", "submit");
     }
+    fillAdr();
+}
+
+function fillAdr() {
+    //variabili non dichiarate
+    //sui viene istanziata direttamente una variabile mentre si assegna l'attributo
+    //probabilmente funziona sulo sui tag </a>
+    infoBtn.setAttribute("type", "submit")
+    btnHrefTel.setAttribute("href", "tel:+393890172024");
+    btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
 }
