@@ -1,9 +1,7 @@
 //variabili globali
-
 let pool = document.querySelector('#pool');
 let arrayRichieste = [];
 let arrayStanze = [];
-
 
 //classi
 class InfoRequest {
@@ -18,7 +16,6 @@ class InfoRequest {
         this.richiesta = richiesta;
     }
 }
-
 class RoomCard {
 
     constructor(id, nome, descrizione, immagine, caratteristiche) {
@@ -31,7 +28,6 @@ class RoomCard {
         this.caratteristiche = caratteristiche;
     }
 }
-
 class Servizi {
     constructor(bagno, terrazzo, armadio, connessione, postazione, frigorifero) {
         this.bagno = bagno;
@@ -43,8 +39,6 @@ class Servizi {
     }
 }
 
-
-
 //innesco init
 window.addEventListener('load', init);
 
@@ -54,19 +48,16 @@ function init() {
     eventHandler()
 
 }
-
 function eventHandler() {
     homePage.addEventListener('click', homePageGen);
     contactPage.addEventListener('click', contactPageGen);
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
 }
-
 /*========= manipolazione DOM ========== */
 function resetPool() {
     pool.innerHTML = ``;
 }
-
 function homePageGen() {
     resetPool();
     
@@ -275,7 +266,6 @@ function fillAdr() {
     btnHrefTel.setAttribute("href", "tel:+393890172024");
     btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
 }
-
 function galleryGen() {
 
     /*chiamata ajax*/
@@ -329,7 +319,6 @@ function galleryGen() {
     }
 
 }
-//generazione Form(da rendere sicuro)
 function formGen() {
     let formBox = document.createElement('div');
     formBox.setAttribute('id', 'formBox');
@@ -547,12 +536,38 @@ function contactPageGen() {
 }
 function servicesPageGen() {
     resetPool();
-    //(sei una bestia!!)
-    let newDiv = document.createElement("div");
-    pool.append(newDiv);
-    newDiv.innerHTML = 'inserire introduzione + anteprima servizi!!';
-    newDiv.classList.add('corsivo', 'm-2', 'm-sm-0', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
+    welcomeBox();
+    teaserBox();
+    let gMaps = document.createElement("div");
+    pool.append(gMaps);
+    gMaps.innerHTML = `<div class="mapouter ombra bRadius">
+                            <div class="gmap_canvas  bRadius">
+                                <iframe width="804" height="400" id="gmap_canvas" 
+                                    src="https://maps.google.com/maps?q=vacanze%20a%20fano%20in%20compagnia&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                </iframe>
+                                <a href="https://putlocker-is.org">putlocker</a><br>
+                                <style>.mapouter{position:relative;text-align:right;height:400px;width:804px;}</style>
+                                <a href="https://www.embedgooglemap.net">how to copy and paste google maps</a>
+                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:804px;}</style>
+                            </div>
+                        </div>`;
+    gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-center', 'align-items-center');
     console.log('pagina servizi generata');
+}
+function contraiMenu() {
+    menu = document.querySelector('#ulMenu');
+    menu.classList.toggle('nascondi');
+    console.log('test onclick')
+}
+function espandiMenu() {
+    box = document.querySelector('#box')
+    menu = document.querySelector('#ulMenu');
+    menu.classList.add('mostra');
+    box.classList.add('mostra');
+    menu.classList.remove('nascondi');
+    menu.classList.remove('mostra');
+    console.log('test espandi');
 }
 //controllo form
 function check() {
@@ -578,7 +593,7 @@ function check() {
     else if (cognome.value == '') {
         alert('inserisci un cognome valido');
     }
-    else if (email.value === '') {
+    else if (email.value == '@') {
         alert('inserisci un indirizzo mail valido');
     }
     else if (telefono.value == '') {
@@ -589,25 +604,12 @@ function check() {
     }
     else {
         arrayRichieste.push(richiesta);
-        adrMail.setAttribute("action", `mailto:alberto.cannoni@outlook.it?subject=Richiesta di informazioni, ${nome.value} ${cognome.value}
-        &body=Salve sono ${nome.value} ${cognome.value} ${testo.value}, i miei recapiti sono ${telefono.value} ${email.value}&cc=a.cannoni@hotmail.com`);
+        adrMail.setAttribute("action", `mailto:alberto.cannoni@outlook.it?subject=Richiesta di informazioni, ${nome.value} ${cognome.value}.
+        &body=Salve sono ${nome.value} ${cognome.value}%0A %0A ${testo.value}%0A %0A i miei recapiti sono:%0A Telefono: ${telefono.value}
+        %0A Email: ${email.value}&cc=a.cannoni@hotmail.com`);
         console.log(arrayRichieste);
         btn.setAttribute("type", "submit");
     }
-}
-function contraiMenu() {
-    menu = document.querySelector('#ulMenu');
-    menu.classList.toggle('nascondi');
-    console.log('test onclick')
-}
-function espandiMenu() {
-    box = document.querySelector('#box')
-    menu = document.querySelector('#ulMenu');
-    menu.classList.add('mostra');
-    box.classList.add('mostra');
-    menu.classList.remove('nascondi');
-    menu.classList.remove('mostra');
-    console.log('test espandi');
 }
 
 
