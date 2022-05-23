@@ -326,7 +326,7 @@ function formGen() {
 
     pool.appendChild(formBox);
     formBox.innerHTML = ` <div class="container justify-content-center align-content-center col-sm-8 col-md-6  pb-5 pt-2 m-sm-2 m-md-0">
-                            <form id="formPrenotazioni" action="" method="post" enctype="text/plain"
+                            <form id="formPrenotazioni" action="submit" method="post" enctype="text/plain"
                                 class="w-100 d-grid py-md-2 px-md-2" data-netlify="true">
                                 <fieldset>
                                     <div class="col-12">
