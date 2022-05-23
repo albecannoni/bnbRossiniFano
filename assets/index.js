@@ -350,7 +350,7 @@ function formGen() {
                                         </div>
                                         <div class="col d-grid m-2">
                                             <label for="info">Richiesta:</label>
-                                            <textarea type="text" name="richiesta" id="info" cols="..." rows="4"
+                                            <textarea type="text" name="info" id="info" cols="..." rows="4"
                                                 placeholder="scrivi la tua richiesta" required autocomplete="off"></textarea>
                                         </div>
                                     </div>
