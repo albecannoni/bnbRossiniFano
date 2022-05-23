@@ -589,7 +589,8 @@ function check() {
     }
     else {
         arrayRichieste.push(richiesta);
-        adrMail.setAttribute("action", "mailto:alberto.cannoni@outlook.it");
+        adrMail.setAttribute("action", `mailto:alberto.cannoni@outlook.it?subject=Richiesta di informazioni, ${nome.value} ${cognome.value}
+        &body=Salve sono ${nome.value} ${cognome.value} ${testo.value}, i miei recapiti sono ${telefono.value} ${email.value}&cc=a.cannoni@hotmail.com`);
         console.log(arrayRichieste);
         btn.setAttribute("type", "submit");
     }

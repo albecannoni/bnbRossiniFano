@@ -1,7 +1,7 @@
 [
     {
         "id": "1",
-        "titolo": "Stanza <span id='nomeStanza' class='text-border-pesca' >BRUSCHINO</span>",
+        "titolo": "Stanza <span id='nomeStanza' class='text-border-pesca' >GUILLAUME TELL</span>",
         "descrizione": "Questa stanza può ospitare da 1 a 4 persone. Un luogo accogliente e luminoso, perfetto per coppie con figli piccoli al seguito",
         "cover": "assets/images/bruschino1.png",
         "immagine2": "assets/images/bruschino2.png",

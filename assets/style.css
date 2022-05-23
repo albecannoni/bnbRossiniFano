@@ -631,13 +631,11 @@ button:active {
         color: #f3eed9;
 
     }
-
-    /* 
-        The general sibling selector (~) 
+    /* The general sibling selector (~) 
         selects all elements that are next siblings of #toggler.
         In this case we target the .menu and we turn the height back to 100% 
-        to show the menu.
-    */
+        to show the menu. */
+        
     #toggler:checked~.menu {
         max-height: 100%;
     }
@@ -650,12 +648,4 @@ button:active {
         display: inherit;
         max-height: 100%;
     }
-
-
-
-
-
-
-
-
 }
