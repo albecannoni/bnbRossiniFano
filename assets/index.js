@@ -1,9 +1,9 @@
-//variabili globali
+//*variabili globali
 let pool = document.querySelector('#pool');
 let arrayRichieste = [];
 let arrayStanze = [];
 
-//classi
+//*classi
 class InfoRequest {
 
     constructor(id, nome, cognome, email, telefono, richiesta) {
@@ -20,7 +20,7 @@ class RoomCard {
 
     constructor(id, nome, descrizione, immagine, caratteristiche) {
 
-        caratteristiche = new Servizi;
+        caratteristiche = new Caratteristiche;
         this.id = id++;
         this.nome = nome;
         this.descrizione = descrizione;
@@ -28,7 +28,7 @@ class RoomCard {
         this.caratteristiche = caratteristiche;
     }
 }
-class Servizi {
+class Caratteristiche {
     constructor(bagno, terrazzo, armadio, connessione, postazione, frigorifero) {
         this.bagno = bagno;
         this.terrazzo = terrazzo;
@@ -39,12 +39,21 @@ class Servizi {
     }
 }
 
-//innesco init
+class Servizi {
+    constructor(titolo, descrizione, icona) {
+        this.titolo = titolo;
+        this.descrizione = descrizione;
+        this.icona = icona;
+    }
+}
+
+//*!innesco init
 window.addEventListener('load', init);
 
 function init() {
     resetPool();
-    homePageGen();
+    servicesPageGen();
+    //homePageGen();
     eventHandler()
 
 }
@@ -54,14 +63,14 @@ function eventHandler() {
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
 }
-/*========= manipolazione DOM ========== */
+//*!========= manipolazione DOM ========== 
 function resetPool() {
     pool.innerHTML = ``;
 }
 function homePageGen() {
+    //?landingPage
     resetPool();
-    
-    //generazione blocchi
+    //?generazione blocchi
     welcomeBox();
     teaserBox();
     slideBox();
@@ -69,8 +78,6 @@ function homePageGen() {
     galleryGen();
     //formGen();
     //buttonGen();
-    //roomPageGen();    
-
     console.log('Home Page generata');
 }
 function welcomeBox() {
@@ -257,7 +264,7 @@ function buttonGen() {
                                     </a>
                                 </div>
                             </div> `;
-    console.log(btnHrefTel);
+
 }
 
 function galleryGen() {
@@ -374,8 +381,7 @@ function formGen() {
                             </form>
                         </div>
                         </div>`;
-
-    //listener bottone form
+    //*listener bottone form
     let btn = document.querySelector('#infoBtn');
     btn.addEventListener('click', check);
 }
@@ -519,6 +525,7 @@ function expandRoom(id) {
 function contactPageGen() {
     resetPool();
     welcomeBox();
+    gMapsGen();
     teaserBox();
     let textP2 = document.querySelector('#textP2')
     console.log(textP2);
@@ -529,10 +536,43 @@ function contactPageGen() {
     console.log('pagina contatti generata');
 }
 function servicesPageGen() {
+    arrayLocale = [];
+
+    let urlAPI = 'assets/json/servizi.json'
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', urlAPI);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            let arrayLocale = JSON.parse(xhr.responseText);
+            console.log(arrayLocale);
+        
     resetPool();
     welcomeBox();
-    teaserBox();
+    let serviceGrid = document.createElement('div');
+    serviceGrid.setAttribute('id', 'serviceGrid');
+    serviceGrid.classList.add('w-80', 'bg-danger', 'h-100', 'gridSystem');
+    pool.appendChild(serviceGrid);    
+
+    arrayLocale.forEach(element => {
+        let gridCard = document.createElement('div')
+        gridCard.setAttribute('id', 'gridCard');
+        gridCard.classList.add('border', 'gridCard');
+        serviceGrid.appendChild(gridCard);
+        this.element = new Servizi;
+        gridCard.innerHTML = `${element.icona}
+        ${element.titolo}
+        ${element.descrizione}`;
+    })
+}
+}
+
+    console.log('pagina servizi generata');
+}
+function gMapsGen() {
     let gMaps = document.createElement("div");
+    gMaps.setAttribute('id', 'gMaps')
+    gMaps.classList.add('w-100', 'd-flex', 'justify-content-center', 'align-items-center')
     pool.append(gMaps);
     gMaps.innerHTML = `<div class="mapouter">
                             <div class="gmap_canvas">
@@ -545,7 +585,6 @@ function servicesPageGen() {
                             </div>
                         </div>`;
     gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-start', 'align-items-center');
-    console.log('pagina servizi generata');
 }
 function contraiMenu() {
     menu = document.querySelector('#ulMenu');
@@ -561,7 +600,7 @@ function espandiMenu() {
     menu.classList.remove('mostra');
     console.log('test espandi');
 }
-//controllo form
+//*controllo form
 function check() {
     let richiesta = new InfoRequest
     let nome = document.querySelector('#fname');
@@ -601,16 +640,15 @@ function check() {
         %0A Email: ${email.value}&cc=a.cannoni@hotmail.com`);
         console.log(arrayRichieste);
         btn.setAttribute("type", "submit");
-        adrMail.setAttribute('href','mailto:a.cannoni@hotmail.com')
+        adrMail.setAttribute('href', 'mailto:a.cannoni@hotmail.com')
     }
-    
+
 }
 
 function fillAdr() {
-    //variabili non dichiarate
-    //sui viene istanziata direttamente una variabile mentre si assegna l'attributo
-    //probabilmente funziona sulo sui tag </a>
-    
+    //?variabili non dichiarate
+    //?sui viene istanziata direttamente una variabile mentre si assegna l'attributo
+    //?probabilmente funziona sulo sui tag </a>    
     btnHrefTel.setAttribute("href", "tel:+393890172024");
     btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
 }

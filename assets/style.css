@@ -42,6 +42,19 @@ h1, h2, h3, h4, h5, h6 {
     width: 100vw;
 }
 
+.gridSystem{
+    text-align: center;
+    margin: 0 auto;
+    display: grid;
+    grid-template: auto auto / auto auto;
+    gap: 1em;
+    border: 10px yellow solid;
+}
+
+.gridCard{
+    background-color: #823DD1;
+}
+
 li {
     list-style: none;
 }
@@ -208,6 +221,10 @@ img {
     height: auto;
 }
 
+#gMaps{
+    margin: 0 auto;
+
+}
 
 /*larghezze*/
 .w-90 {

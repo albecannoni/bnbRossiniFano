@@ -1,0 +1,22 @@
+[
+    {
+        "titolo":"colazione",
+        "descrizione":"su richiesta, è possibile avere anche la colazione",
+        "icona":"assets/images/colazione.png"
+    },
+    {
+        "titolo":"animali",
+        "descrizione":"i vostri amici animali sono i benvenuti nella nostra casa!",
+        "icona":"assets/images/animali.png"
+    },
+    {
+        "titolo":"biciclette",
+        "descrizione":"su richiesta mettiamo a disposizione delle biciclette, sono l'ideale per muoversi nella nostra bellissima città",
+        "icona":"assets/images/biciclette.png"
+    },
+    {
+        "titolo":"barbeque",
+        "descrizione":"a pochi metri dalla nostra casa abbiamo una area verde nella quale è possibile cucinare sia alla griglia che nel forno a legna",
+        "icona":"assets/images/barbeque.png"
+    }
+]

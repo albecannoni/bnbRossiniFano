@@ -9,7 +9,7 @@
             "bagno": "bagno privato",
             "terrazzo": "",
             "armadio": "guardaroba",
-            "connessione": "Connessione wifi e via cavo",
+            "connessione": "connessione wifi e via cavo",
             "postazione": "postazione di lavoro",
             "frigorifero": "frigorifero"
         }
@@ -24,7 +24,7 @@
             "bagno": "bagno privato",
             "terrazzo": "terrazzo privato",
             "armadio": "armadio",
-            "connessione": "Connessione Wi-fi e via cavo",
+            "connessione": "connessione Wi-fi e via cavo",
             "postazione": "postazione di lavoro",
             "frigorifero": ""
         }
