@@ -48,11 +48,13 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template: auto auto / auto auto;
     gap: 1em;
-    border: 10px yellow solid;
 }
 
 .gridCard{
-    background-color:white;
+    border:2px solid rgba(245, 245, 245, 0.303); 
+    border-radius: 7px;
+    padding: 1em;
+    
 }
 .serviceIcon{
     height: auto;
@@ -76,6 +78,10 @@ ul {
 html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     /* font-family: 'M PLUS Rounded 1c', sans-serif; */
     font-family: 'Poppins', sans-serif;
+}
+
+.upperCase{
+    text-transform: uppercase;
 }
 
 .corsivo {

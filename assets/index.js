@@ -546,26 +546,31 @@ function servicesPageGen() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             let arrayLocale = JSON.parse(xhr.responseText);
             console.log(arrayLocale);
-        
-    resetPool();
-    welcomeBox();
-    let serviceGrid = document.createElement('div');
-    serviceGrid.setAttribute('id', 'serviceGrid');
-    serviceGrid.classList.add('w-80', 'bg-danger', 'h-100', 'gridSystem');
-    pool.appendChild(serviceGrid);    
 
-    arrayLocale.forEach(element => {
-        let gridCard = document.createElement('div')
-        gridCard.setAttribute('id', 'gridCard');
-        gridCard.classList.add('border', 'gridCard');
-        serviceGrid.appendChild(gridCard);
-        this.element = new Servizi;
-        gridCard.innerHTML = `<img class="serviceIcon" src="${element.icona}">
-        <h6>${element.titolo}</h6>
-        <p>${element.descrizione}</p>`;
-    })
-}
-}
+            resetPool();
+            welcomeBox();
+
+            let serviceGrid = document.createElement('div');
+            serviceGrid.setAttribute('id', 'serviceGrid');
+            serviceGrid.classList.add('w-80', 'h-100', 'gridSystem');
+            pool.appendChild(serviceGrid);
+
+            arrayLocale.forEach(element => {
+                let gridCard = document.createElement('div')
+                gridCard.setAttribute('id', 'gridCard');
+                gridCard.classList.add('gridCard');
+                serviceGrid.appendChild(gridCard);
+                this.element = new Servizi;
+                gridCard.innerHTML = `<img class="serviceIcon" src="${element.icona}">
+                                        <h6 class="upperCase">${element.titolo}</h6>
+                                        <p>${element.descrizione}</p>`;
+            })
+
+            quoteBox.innerHTML = `<div class="d-flex justify-content-center align-items-center w-80">
+                                    <h3 class="bolderText text-border">I nostri
+                                    <span id="spanApi" style=" font-size: xx-large;;" class="text-viola"> servizi </span>aggiuntivi</h3>`
+        }
+    }
 
     console.log('pagina servizi generata');
 }
