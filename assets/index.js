@@ -560,9 +560,9 @@ function servicesPageGen() {
         gridCard.classList.add('border', 'gridCard');
         serviceGrid.appendChild(gridCard);
         this.element = new Servizi;
-        gridCard.innerHTML = `${element.icona}
-        ${element.titolo}
-        ${element.descrizione}`;
+        gridCard.innerHTML = `<img class="serviceIcon" src="${element.icona}">
+        <h6>${element.titolo}</h6>
+        <p>${element.descrizione}</p>`;
     })
 }
 }

@@ -12,7 +12,7 @@
     {
         "titolo":"biciclette",
         "descrizione":"su richiesta mettiamo a disposizione delle biciclette, sono l'ideale per muoversi nella nostra bellissima città",
-        "icona":"assets/images/biciclette.png"
+        "icona":"../assets/images/biciclette.png"
     },
     {
         "titolo":"barbeque",
