@@ -79,9 +79,17 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     /* font-family: 'M PLUS Rounded 1c', sans-serif; */
     font-family: 'Poppins', sans-serif;
 }
+.footerText{
+    font-size: small;
+}
 
 .upperCase{
     text-transform: uppercase;
+}
+.decNone{
+    text-decoration: none;
+    text-emphasis: none;
+    color: black;
 }
 
 .corsivo {

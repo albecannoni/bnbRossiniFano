@@ -52,10 +52,8 @@ window.addEventListener('load', init);
 
 function init() {
     resetPool();
-    servicesPageGen();
-    //homePageGen();
+    homePageGen();
     eventHandler()
-
 }
 function eventHandler() {
     homePage.addEventListener('click', homePageGen);
@@ -63,7 +61,7 @@ function eventHandler() {
     roomPage.addEventListener('click', roomPageGen);
     servicesPage.addEventListener('click', servicesPageGen);
 }
-//*!========= manipolazione DOM ========== 
+//*========= manipolazione DOM ========== 
 function resetPool() {
     pool.innerHTML = ``;
 }
@@ -591,11 +589,11 @@ function gMapsGen() {
                         </div>`;
     gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-start', 'align-items-center');
 }
-function contraiMenu() {
-    menu = document.querySelector('#ulMenu');
-    menu.classList.toggle('nascondi');
-    console.log('test onclick')
-}
+// function contraiMenu() {
+//     menu = document.querySelector('#ulMenu');
+//     menu.classList.add('nascondi');
+//     console.log('test onclick')
+// }
 function espandiMenu() {
     box = document.querySelector('#box')
     menu = document.querySelector('#ulMenu');
