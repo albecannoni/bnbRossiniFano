@@ -26,12 +26,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet"><link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
-    
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+        rel="stylesheet" />
+
     <!--handwriting-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <!--ToastJS-->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> -->
 </head>
 
 <body class="bg-pesca">
@@ -72,15 +77,13 @@
                                                 <div
                                                     class="w-100 h-100 d-sm-flex justify-content-sm-end justify-content-md-center align-items-md-end">
                                                     <ul id="ulMenu" class="list  px-sm-1 px-md-0 w-100">
-                                                        <li onclick="" class="elementiMenu"><a
-                                                                id="homePage" href="#casarossini/Homepage">Home</a></li>
-                                                        <li onclick="" class="elementiMenu"><a
-                                                                id="roomPage" href="#casarossini/Stanze">Stanze</a></li>
-                                                        <li onclick="" class="elementiMenu"><a
-                                                                id="contactPage"
+                                                        <li onclick="" class="elementiMenu"><a id="homePage"
+                                                                href="#casarossini/Homepage">Home</a></li>
+                                                        <li onclick="" class="elementiMenu"><a id="roomPage"
+                                                                href="#casarossini/Stanze">Stanze</a></li>
+                                                        <li onclick="" class="elementiMenu"><a id="contactPage"
                                                                 href="#casarossini/Contatti">Contatti</a></li>
-                                                        <li onclick="" class="elementiMenu"><a
-                                                                id="servicesPage"
+                                                        <li onclick="" class="elementiMenu"><a id="servicesPage"
                                                                 href="#casarossini/Servizi">Servizi</a>
                                                         </li>
                                                         <li onclick="" class="allinea elementiMenu">
@@ -95,7 +98,10 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div><link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+                                        </div>
+                                        <link
+                                            href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+                                            rel="stylesheet" />
                                     </div>
                                 </div>
                             </div>
@@ -112,15 +118,21 @@
 
     <!--tutto viene generato qui dentro a seconda degli eventi-->
     <!--JsPool-->
-    <div  id="pool" class="py-md-5 py-sm-3 h-100 bg-pesca "></div>
+    <div id="pool" class="py-md-5 py-sm-3 h-100 bg-pesca "></div>
 
     <!--Footer-->
-    <footer class="bottom ombra pt-3 bg-granata">
-        
+    <footer class=" ombra  d-flex justify-content-center bg-ciano ">
+        <div class="footerWrapper bg-ciano  w-60 h-100   semiBoldText">
+            <div class="pt-3">
+                <p class="footerText">Copyright &copy; 2022 PurpleTech</p>
+            </div>
+            <div class="pt-3">
+               <p onclick="scrollToTop()" class="footerText scroll">torna in alto</p> 
+            </div>
+            
+        </div>
     </footer>
-    <div class="fixed-bottom pt-1  footerWrapper bg-ciano d-flex justify-content-evenly align-items-center">
-        <p class="footerText">Copyright &copy; 2022 PurpleSoftware</p><p  class="footerText"><a class="decNone" href="#">torna in alto</a></p>
-    </div>
+
 
     <!--bootstrap-->
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -128,7 +140,9 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
+    <!--javascript-->
     <script src="assets/index.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
 
 </body>
 

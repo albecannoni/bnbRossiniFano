@@ -30,6 +30,10 @@ body, html {
 
 }
 
+.scroll:hover{
+    cursor: pointer;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: black;
     text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
@@ -81,6 +85,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
 }
 .footerText{
     font-size: small;
+    
 }
 
 .upperCase{
@@ -90,6 +95,8 @@ html, body, h1, h2, h3, h4, h5, h6, p, a, button, ul, li {
     text-decoration: none;
     text-emphasis: none;
     color: black;
+    display: flex;
+    justify-content: end;
 }
 
 .corsivo {
@@ -282,7 +289,6 @@ img {
     height: 60%;
 }
 
-
 /* ========== navBar ============== */
 .navWrapper {
     height: 3.5vh;
@@ -290,12 +296,18 @@ img {
 
 .nascondi {
     display: none;
-
 }
 
 .footerWrapper {
-    height: 5.5vh;
+    height: 3vh;
     position: bottom;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1vw;
+    margin: 0;
+   
+    
 }
 
 #imgLogo {
@@ -407,7 +419,6 @@ input, textarea {
 
 /* ========== footer ============== */
 footer {
-    height: 3rem;
     background-color: #a0cff8;
 }
 

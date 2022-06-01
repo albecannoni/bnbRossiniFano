@@ -2,6 +2,7 @@
 let pool = document.querySelector('#pool');
 let arrayRichieste = [];
 let arrayStanze = [];
+let scrollToTop = ()=> window.scroll(0,0);
 
 //*classi
 class InfoRequest {
@@ -47,7 +48,7 @@ class Servizi {
     }
 }
 
-//*!innesco init
+//!innesco init
 window.addEventListener('load', init);
 
 function init() {
@@ -158,10 +159,10 @@ function slideHomeBox() {
                 </div>
                 <div class="carousel-inner bRadius">
                     <div class="carousel-item active">
-                        <img src="https://doodleipsum.com/1098x700/flat?bg=63C8D9&i=3758fd27c3704f08f828d043203dd96f" class="d-block w-100" alt="...">
+                        <img src="assets/images/casa1.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://doodleipsum.com/1098x700/outline?bg=63C8D9&i=87f2bf028a40f45739cf082d7af89616" class="d-block w-100" alt="...">
+                        <img src="assets/images/casa2.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="https://doodleipsum.com/1098x700/avatar-5?bg=63C8D9&i=5d6e087e768084f18e994a0820732439" class="d-block w-100" alt="...">
@@ -589,11 +590,13 @@ function gMapsGen() {
                         </div>`;
     gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-start', 'align-items-center');
 }
-// function contraiMenu() {
-//     menu = document.querySelector('#ulMenu');
-//     menu.classList.add('nascondi');
-//     console.log('test onclick')
-// }
+
+//!SBAGLIATA
+//! function contraiMenu() {
+//!     menu = document.querySelector('#ulMenu');
+//!     menu.classList.add('nascondi');
+//!     console.log('test onclick')
+//! }
 function espandiMenu() {
     box = document.querySelector('#box')
     menu = document.querySelector('#ulMenu');
@@ -605,6 +608,7 @@ function espandiMenu() {
 }
 //*controllo form
 function check() {
+    
     let richiesta = new InfoRequest
     let nome = document.querySelector('#fname');
     let cognome = document.querySelector('#lname');
@@ -655,3 +659,8 @@ function fillAdr() {
     btnHrefTel.setAttribute("href", "tel:+393890172024");
     btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
 }
+
+
+
+
+
