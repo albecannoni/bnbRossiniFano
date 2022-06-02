@@ -585,6 +585,7 @@ button:active {
     
 
 /* ========== MEDIA QUERIES MOBILE ============== */
+
 /*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
 @media screen and (max-width: 768px) {
     .menu {
@@ -597,13 +598,12 @@ button:active {
 
     .wResponsive{
         width: 86vw;
-    }
-   
+    }   
 
     #smCol {
         display: grid;
     }
-
+    
     #banner {
         padding-left: 0 auto;
 
