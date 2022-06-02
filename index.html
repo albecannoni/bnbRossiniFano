@@ -42,9 +42,9 @@
 <body class="bg-pesca">
 
     <!--Header-->
-    <header class="ombraGranata bg-mio text-center">
+    <header class="ombraGranata bg-mio ">
         <!--navbar-->
-        <nav class="navbar container-fluid d-flex fixed-top ombra justify-content-center bg-mio">
+        <!-- <nav class="navbar container-fluid d-flex fixed-top ombra justify-content-center bg-mio">
             <div class=" col-sm-10 d-flex justify-content-sm-center col-md-11 d-flex justify-content-md-center">
                 <div class="w-100">
                     <div class="d-flex justify-content-center">
@@ -67,7 +67,7 @@
                                         class="w-100 d-flex justify-content-center flex-md-column justify-content-md-end">
                                         <div>
 
-                                            <!-- The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile. -->
+                                            The order that we place the checkbox and label here is important because we will use css only for the click event to open the menu on mobile.
                                             <input type="checkbox" id="toggler" class=" justify-content-end">
                                             <label id="box" for="toggler" onclick="espandiMenu()"><i
                                                     class="ri-menu-line hamburger text-center w-100  allineaToogler"></i></label>
@@ -108,6 +108,43 @@
                         </div>
                     </div>
                 </div>
+        </nav> -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-ciano">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img onclick="init()" src="/assets/images/logo2.png" alt="" width="30"
+                        height="24"></a>
+                <button class="navbar-toggler bg-danger toggleMenu" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end align-items-end">
+                        <li class="nav-item ">
+                            <a id="homePage" class="nav-link " aria-current="page" href="#casarossini/Homepage">Home</a>
+                        </li>
+                        <li id="roomPage" class="nav-item ">
+                            <a  class="nav-link "  id="roomPage" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Stanze
+                            </a>
+                        </li>
+                        <li class="nav-item"><a id="contactPage" class="nav-link" aria-current="page" href="#casarossini/Contatti">Contatti</a></li>
+                        <li class="nav-item"><a id="servicesPage" class="nav-link " aria-current="page" href="#casarossini/Servizi">Servizi</a></li>                    
+                        <li class="nav-item">
+                            <a  id="roomPage" href="#casarossini/Stanze">
+                                <div class="icons-wrapper d-flex w-100"><a class="nav-link" href="https://www.airbnb.it/users/show/34354561"
+                                        target="blank">
+                                        <div>&nbsp;Airbnb&nbsp;&nbsp;</div>
+                                        <div><i class="fa-brands fa-airbnb m-md-0">
+                                            </i>
+                                    </a></div>
+                            </a>
+                        </li>
+                    </ul>
+    
+                </div>
+            </div>
         </nav>
 
         <!--wrapper-->
