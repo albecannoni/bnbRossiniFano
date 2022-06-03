@@ -49,7 +49,7 @@ class Servizi {
     }
 }
 
-//!innesco init
+//*innesco init
 window.addEventListener('load', init);
 
 function init() {
@@ -648,8 +648,3 @@ function fillAdr() {
     btnHrefTel.setAttribute("href", "tel:+393890172024");
     btnHrefMail.setAttribute("href", "mailto:a.cannoni@hotmail.com");
 }
-
-
-
-
-
