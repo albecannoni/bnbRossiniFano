@@ -111,20 +111,20 @@
         </nav> -->
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-ciano">
             <div class="container">
-                <a class="navbar-brand" href="#"><img onclick="init()" src="/assets/images/logo2.png" alt="" width="30"
+                <a class="navbar-brand" href="#"><img class="logo" id="imgLogo" onclick="init()" src="/assets/images/logo2.png" alt="" width="30"
                         height="24"></a>
-                <button class="navbar-toggler bg-danger toggleMenu" type="button" data-bs-toggle="collapse"
+                <button id="hamburger" onclick="espandiMenu()" class="navbar-toggler bg-danger toggleMenu" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end align-items-end">
-                        <li class="nav-item "><a id="homePage" class="nav-link " aria-current="page" href="#casarossini/Homepage">Home</a></li>
-                        <li class="nav-link "><a id="roomPage" class="nav-link" aria-current="page" href="#casarossini/Stanze" >Stanze</a></li>
-                        <li class="nav-link"><a id="contactPage" class="nav-link" aria-current="page" href="#casarossini/Contatti">Contatti</a></li>
-                        <li class="nav-link"><a id="servicesPage" class="nav-link" aria-current="page" href="#casarossini/Servizi">Servizi</a></li>                    
-                        <li class="nav-link">
+                    <ul id="ulMenu" class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end align-items-end">
+                        <li onclick="contraiMenu()" class="nav-item "><a id="homePage" class="nav-link " aria-current="page" href="#casarossini/Homepage">Home</a></li>
+                        <li class="nav-link elementiMenu p-sm-0 m-sm-0"><a id="roomPage" class="nav-link" aria-current="page" href="#casarossini/Stanze" >Stanze</a></li>
+                        <li class="nav-link elementiMenu p-sm-0 m-sm-0"><a id="contactPage" class="nav-link" aria-current="page" href="#casarossini/Contatti">Contatti</a></li>
+                        <li class="nav-link elementiMenu p-sm-0 m-sm-0"><a id="servicesPage" class="nav-link" aria-current="page" href="#casarossini/Servizi">Servizi</a></li>                    
+                        <li class="nav-link elementiMenu p-sm-0 m-sm-0">
                             <a href="#casarossini/Stanze">
                                 <div class="icons-wrapper d-flex w-100"><a class="nav-link" href="https://www.airbnb.it/users/show/34354561"
                                         target="blank">
@@ -135,8 +135,7 @@
                                 </div>
                             </a>
                         </li>
-                    </ul>
-    
+                    </ul>    
                 </div>
             </div>
         </nav>

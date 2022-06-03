@@ -310,15 +310,6 @@ img {
     
 }
 
-#imgLogo {
-    width: 75%;
-    height: auto;
-    border-radius: 0px;
-    margin-right: 6em;
-    margin-bottom: 7px;
-    /* background-color: blueviolet; */
-}
-
 #ulMenu {
     margin-right: 150px;
 }
@@ -367,12 +358,9 @@ img {
     font-weight: bold;
     color: #800000;
 }
-
 .elementiMenu {
     font-size: 1em;
 }
-
-
 .list {
     margin-top: 0.5em;
     font-size: x-large;
@@ -387,31 +375,24 @@ img {
     /*Applies right and bottom spacing between 
     children inside a flex or grid container.*/
 }
-
 .toggleMenu{
-    margin-right: 7.5vw;
-    height: 5vh;
+    margin-right: 5.4vw;
+    margin-top: 2vh;
+    height: 4vh;
 }
 
-.bg-danger{
-    background-color: #823DD1;
-}
 .navbar-toggler-icon{
     color: white;
 }
-
 #toggler,
 .navbar label {
     display: none;
     /*Hide the checkbox and label on large screens.*/
 }
-
 /* ========== slideshow ============== */
 #banner, #banner2 {
     width: auto;
     height: 40vh;
-
-
     /* box-shadow: 0px 0px 1.5vh rgb(56, 55, 55); */
     border-radius: 5px;
 }
@@ -432,6 +413,7 @@ input, textarea {
 /* ========== footer ============== */
 footer {
     background-color: #a0cff8;
+    position: bottom;
 }
 
 /*bottone info*/
@@ -448,7 +430,7 @@ button {
     overflow: hidden;
     transition: all 0.2s;
 }
-
+/*bottoni animati della funzione buttonGen*/
 .btn3D {
     width: 13vw;
     display: inline-block;
@@ -465,7 +447,6 @@ button {
     transform: translate(4px);
     box-shadow: 0 4px 0 #bcdab8;
     scale: 1.15;
-
 }
 
 button span {
@@ -473,47 +454,36 @@ button span {
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
 }
-
 button svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
 }
-
 button:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
 }
-
 button:hover svg {
     transform: translateX(1.2em) rotate(45deg) scale(1.1);
 }
-
 button:hover span {
     transform: translateX(5em);
 }
-
 button:active {
     transform: scale(0.95);
 }
-
-
-
 @keyframes fly-1 {
     from {
         transform: translateY(0.1em);
     }
-
     to {
         transform: translateY(-0.1em);
     }
 }
 
-
 /*ICONA AIRBNB*/
 .icons-wrapper {
     position: relative;
 }
-
 .fa-airbnb {
     background: #800000;
     /*(circle at 30% 107%, #800000 0%, #fdf497 5%, #d649fd 45%, #d6249f 60%, #d496f1 90%);*/
@@ -521,17 +491,13 @@ button:active {
     -webkit-text-fill-color: transparent;
     /* This is the first item so no animation delay needed.*/
 }
-
 .fa-brands {
     display: inline-block;
     /*Makes the icons inline block level elements. This will let us animate the transform property.*/
     font-size: 25px;
     /*Applies the float keyframe animation over 5s and makes it run infinitely.*/
     animation: float 1.5s ease-in-out infinite;
-
-
 }
-
 .icons-wrapper::after {
     position: absolute;
     width: 100%;
@@ -542,165 +508,80 @@ button:active {
     transform: translateX(-50%);
     bottom: 0;
 }
-
+/*animazione icona AirBnb*/
 @keyframes float {
     0% {
         transform: translateY(0);
         /*The starting point of the animation is 0.*/
     }
-
     50% {
         transform: translateY(-4px);
         /*The middle point of the animation is -15xp. This will move the element up.*/
     }
-
     100% {
         transform: translateY(0);
         /*The last point of the animation is going back to the starting state of 0.*/
     }
 }
-
 #airbnb {
     margin-right: 20rem;
 }
-
 #smCol {
     display: none;
 }
 .wResponsive{
     width: 60vw;
 }
-
-
-
 @media screen and (min-width: 768px) {
     #textBox2 {
         width: 57.4vw
     }
     .wideScreen{       
         width: 57.4vw;
-    }
-    
-}
-    
+    }    
+}    
 
 /* ========== MEDIA QUERIES MOBILE ============== */
 
 /*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
-@media screen and (max-width: 768px) {
-    .menu {
-        width: 100%;
-        max-height: 0;
-        /*Makes the max-height 0 to side the expanded menu.*/
-        overflow: hidden;
-        /*Hides the overflowing content.*/
-    }
+@media screen and (max-width: 600px) { 
 
     .wResponsive{
         width: 86vw;
-    }   
-
+    }
     #smCol {
         display: grid;
     }
-    
     #banner {
         padding-left: 0 auto;
-
     }
-    #imgLogo{
-        
-        height: 30px;
-        width: auto;
-        padding-right: 25px;
-    }
-
     #textbox2 p {
         width: 100%;
     }
-
-    /* .btn3D {
-        width: 55%;
-        height: auto;
-        display: inline-block;
-        padding: 10px 28px;
-        text-decoration: none;
-        color: black;
-        border-radius: 5px;
-        border: rgba(27, 26, 26, 0.202) 1px solid;
-        box-shadow: 0 8px 0 #bcdab8, inset -5px 0 10px rgba(255, 255, 255, 0.2);
-        transition: all 0.3s;
-    } */
-
     .btn3D {
-        width:38vw;
-        
+        width:31vw;
+        height:min-content;        
     }
-
     .myCard {
         height: auto;
     }
-
     .logo {
-        margin-top: 6px;
-        font-size: large;
-        font-weight: bold;
-        color: #800000;
+        margin-top: 2vh;
+        margin-left: 6vw;        
     }
-
     .contrai {
         display: none;
     }
-
     img {
         width: auto;
         height: auto;
-    }
-
-
-
-    /*.list {
-        flex-direction: column;
-        justify-content: center;
-        /*Chances the direction of the flex container.
-        By default it is a row so we change it to column in small screens.*/
-        /*align-items: flex-end;
-        padding: 20px;
-        margin-left: auto;
-        font-size: large;
-        font-weight: 700;
-    }
-
-    #ulMenu {
-        margin-right: 0;
-    }
-
-    .navbar label {
-        display: inline-flex;
-        justify-content: end;
-        /*Makes it an inline flex container for the icon.
-        Used for centering the icon inside this box.*/
-        /*align-items: center;
-        cursor: grab;
-        width: 100px;
-        color: #f3eed9;
-
-    }
-    /* The general sibling selector (~) 
-        selects all elements that are next siblings of #toggler.
-        In this case we target the .menu and we turn the height back to 100% 
-        to show the menu. */
-
-    #toggler:checked~.menu {
-        max-height: 100%;
-    }
-
-    .nascondi {
+    }    
+    .nascondi li {
         display: none;
+        background-color: #823DD1;
     }
-
     .mostra {
-        display: inherit;
+        display: block;
         max-height: 100%;
     }
 }

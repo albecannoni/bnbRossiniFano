@@ -2,6 +2,7 @@
 let pool = document.querySelector('#pool');
 let arrayRichieste = [];
 let arrayStanze = [];
+let menu = document.querySelector('#ulMenu');
 let scrollToTop = ()=> window.scroll(0,0);
 
 //*classi
@@ -265,7 +266,6 @@ function buttonGen() {
                             </div> `;
 
 }
-
 function galleryGen() {
 
     /*chiamata ajax*/
@@ -536,7 +536,6 @@ function contactPageGen() {
 }
 function servicesPageGen() {
     arrayLocale = [];
-
     let urlAPI = 'assets/json/servizi.json'
     let xhr = new XMLHttpRequest();
     xhr.open('GET', urlAPI);
@@ -570,7 +569,6 @@ function servicesPageGen() {
                                     <span id="spanApi" style=" font-size: xx-large;;" class="text-viola"> servizi </span>aggiuntivi</h3>`
         }
     }
-
     console.log('pagina servizi generata');
 }
 function gMapsGen() {
@@ -590,21 +588,13 @@ function gMapsGen() {
                         </div>`;
     gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-start', 'align-items-center');
 }
-
-//!SBAGLIATA
-//! function contraiMenu() {
-//!     menu = document.querySelector('#ulMenu');
-//!     menu.classList.add('nascondi');
-//!     console.log('test onclick')
-//! }
+//?SBAGLIATA
+ function contraiMenu() {     
+     menu.classList.add('nascondi');
+     console.log(menu)
+ }
 function espandiMenu() {
-    box = document.querySelector('#box')
-    menu = document.querySelector('#ulMenu');
-    menu.classList.add('mostra');
-    box.classList.add('mostra');
-    menu.classList.remove('nascondi');
-    menu.classList.remove('mostra');
-    console.log('test espandi');
+    menu.classList.remove('nascondi');    
 }
 //*controllo form
 function check() {
@@ -651,7 +641,6 @@ function check() {
     }
 
 }
-
 function fillAdr() {
     //?variabili non dichiarate
     //?sui viene istanziata direttamente una variabile mentre si assegna l'attributo
