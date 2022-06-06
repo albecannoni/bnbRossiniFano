@@ -55,7 +55,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gridCard{
-    border:2px solid rgba(245, 245, 245, 0.303); 
+    border:2px solid rgba(245, 245, 245, 0.303);
+    background-color: rgb(245, 245, 245);
     border-radius: 7px;
     padding: 1em;
     
@@ -152,16 +153,17 @@ img {
 
 .text-viola {
     color: #823DD1;
-    color: #832800;
-    /*text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
-        0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;*/
-    text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
-        0 -1px 0 #F9835D, 1px 1px #F9835D, -1px -1px 0 #F9835D, 1px -1px 0 #F9835D, -1px 1px 0 #F9835D;
+    /* color: #832800; */
+    text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
+        0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
+    /* text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
+        0 -1px 0 #F9835D, 1px 1px #F9835D, -1px -1px 0 #F9835D, 1px -1px 0 #F9835D, -1px 1px 0 #F9835D; */
 }
 
 .text-border-pesca {
     text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
         0 -1px 0 #F9835D, 1px 1px #F9835D, -1px -1px 0 #F9835D, 1px -1px 0 #F9835D, -1px 1px 0 #F9835D;
+        
 }
 
 .text-border {
@@ -181,8 +183,11 @@ img {
 
 #nomeStanza {
     color: #823DD1;
-    color: #832800;
+    /* color: #832800; */
 
+}
+#ulMenu a{
+    color: rgba(0, 0, 0, 0.628);
 }
 
 .bg-ciano {
@@ -209,7 +214,9 @@ img {
 .cl-granata {
     color: #832800;
 }
-
+.cl-black {
+    color: black;
+}
 .fondoContrasto {
     background-color: #f6f4ea;
 }
@@ -327,14 +334,7 @@ img {
     box-shadow: 0px 0px 2.5vh rgb(56, 55, 55);
 }
 
-.ri-menu-line {
-    color: #f3eed9;
-    /* color:rgb(33, 173, 224) ; */
-    background-color: #832800;;
-    width: 99%;
-    border-radius: 5px;
-    margin-top: 6px;
-}
+
 
 .navbar {
     display: flex;
@@ -351,7 +351,7 @@ img {
 
 .navbar a {
     text-decoration: none;
-    color: inherit;
+    /* color: inherit; */
     /*Inherits the same color as the parent element or 
     grandparent (the body) unless you set the color to the navbar.*/
 }
@@ -364,6 +364,7 @@ img {
 }
 .elementiMenu {
     font-size: 1em;
+    color: black;
 }
 .list {
     margin-top: 0.5em;

@@ -206,12 +206,12 @@ function teaserBox() {
 
     let textBox2 = document.createElement("div");
     textBox2.setAttribute('id', 'textBox2');
-    textBox2.classList.add('text-center', 'w-80', 'corsivo', 'd-flex', 'justify-content-center', 'align-items-center',);
+    textBox2.classList.add('text-center', 'w-80', 'corsivo', 'd-flex', 'justify-content-center', 'align-items-center','ombra', 'bRadius');
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
     textP2.setAttribute('id', 'textP2');
-    textP2.classList.add('corsivo', 'm-sm-0', 'bg-granata', 'w-md-70', 'bRadius', 'p-2', 'text-white');
+    textP2.classList.add('corsivo', 'm-sm-0', 'bg-light', 'w-md-70', 'bRadius', 'p-2', 'text-dark');
     textBox2.append(textP2);
     textP2.innerHTML = `&quot; Cristina è stata una persona disponibile e solare, accogliente e sempre disponibile.
                         Camera pulita e confortevole Estremamente disponibile nell&apos; accogliere anche il mio cane.
@@ -307,7 +307,7 @@ function galleryGen() {
                 this.element = new RoomCard;
                 roomBox.innerHTML = `<div class="d-flex wideScreen">
                                         <div class="">
-                                            <h5 class="col text-center boldText" id="titleBox">${element.titolo}</h5>
+                                            <h5 class="col text-center boldText " id="titleBox">${element.titolo}</h5>
                                             <div>                                            
                                                 <figure class="w-100">
                                                 <div class="d-flex gap-3 ">
@@ -455,7 +455,7 @@ function expandRoom(id) {
                 <h4 class="boldText pt-3">${element.titolo}</h4>
                     <p>${element.descrizione}</p>
                 </div>`
-                div.innerHTML = `<div class="d-flex col-md-6 justify-content-center align-items-center">                           
+                div.innerHTML = `<div class="d-flex col-md-6 justify-content-center align-items-center ">                           
                                     <div class="container-fluid md-col d-flex justify-content-center align-items-center  h-100 w-100" id="banner">
                                         <div class="d-flex justify-content-center align-content-center col-sm-11">                                        
                                             <div id="carouselExampleIndicators" class="carousel slide carousel-fade ombra bRadius"
@@ -500,9 +500,9 @@ function expandRoom(id) {
                                         </div>
                                     </div>
                                 </div>
-                            <div class="col-md-2 my-3 p-0 bg-granata bRadius p-3">
-                            <h5 style="margin-left: 1.6em;" class="text-white text-border-black">In questa stanza:</h5>
-                                    <ul  id="listaServizi" class="w-100 text-white">                                        
+                            <div class="col-md-2 my-3 p-0 bg-light text-dark bRadius p-3 ombra">
+                            <h5 style="margin-left: 1.6em;" class="text-dark ">In questa stanza:</h5>
+                                    <ul  id="listaServizi" class="w-100 text-dark">                                        
                                     </ul>
                                     </div>`;
                 console.log(arrayStanze);
@@ -603,7 +603,8 @@ function gMapsGen() {
      console.log(menu)
  }
 function espandiMenu() {
-    menu.classList.remove('nascondi');    
+    menu.classList.remove('nascondi');
+        
 }
 //*controllo form
 function check() {
