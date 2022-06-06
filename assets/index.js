@@ -523,15 +523,17 @@ function expandRoom(id) {
 }
 function contactPageGen() {
     resetPool();
-    welcomeBox();
-    gMapsGen();
+    welcomeBox();    
     teaserBox();
     let textP2 = document.querySelector('#textP2')
     console.log(textP2);
-    textP2.innerHTML = `Compila il form con i tuoi dati e
-     sarai ricontattato al più presto `
+    textP2.innerHTML = `La nostra casa si trova nel quartiere S. Orso: un luogo tranquillo e silenzioso da cui
+                        si può raggiungere il centro in pochi minuti, ma anche vicino al ingresso della
+                        autostrada A14 e della superstrada Fano-Grosseto, perfetta per raggiungere Urbino e tutti
+                        i meravigliosi paesi del nostro entroterra`
     formGen();
     buttonGen();
+    gMapsGen();
     console.log('pagina contatti generata');
 }
 function servicesPageGen() {
@@ -576,18 +578,15 @@ function gMapsGen() {
     gMaps.setAttribute('id', 'gMaps')
     gMaps.classList.add('w-100', 'd-flex', 'justify-content-center', 'align-items-center')
     pool.append(gMaps);
-    gMaps.innerHTML = `<div class="mapouter">
-                            <div class="gmap_canvas">
-                                <iframe class="" width="335" height="311" id="gmap_canvas" src="https://maps.google.com/maps?q=vacanze%20a%20fano%20in%20compagnia&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                                </iframe>
-                                <a href="https://www.whatismyip-address.com"></a><br>
-                                <style>.mapouter{position:relative;text-align:right;height:311px;width:335px;}</style>
-                                <a href="https://www.embedgooglemap.net">how to add a google map to my website</a>
-                                <style>.gmap_canvas {overflow:hidden;background:none!important;height:311px;width:335px;}</style>
-                            </div>
-                        </div>`;
+    gMaps.innerHTML = `<div class="mapouter d-flex justify-content-center align-items-center">
+    <div class="gmap_canvas">
+    <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=via%20guido%20guiducci%2010&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    <a href="https://2piratebay.org">pirate bay</a><br>
+    <style>.mapouter{position:relative;text-align:right;height:60vh;width:600vw;}</style>
+    <a href="https://www.embedgooglemap.net">how to add map to website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:50vh;width:60vw;}</style></div></div>`;
     gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-start', 'align-items-center');
 }
+
 //?SBAGLIATA
  function contraiMenu() {     
      menu.classList.add('nascondi');

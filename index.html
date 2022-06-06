@@ -111,23 +111,31 @@
         </nav> -->
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-ciano">
             <div class="container">
-                <a class="navbar-brand" href="#"><img class="logo" id="imgLogo" onclick="init()" src="/assets/images/logo2.png" alt="" width="30"
-                        height="24"></a>
-                <button id="hamburger" onclick="espandiMenu()" class="navbar-toggler bg-danger toggleMenu" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#"><img class="logo" id="imgLogo" onclick="init()"
+                        src="/assets/images/logo2.png" alt="" width="30" height="24"></a>
+                <button id="hamburger" onclick="espandiMenu()" class="navbar-toggler bg-danger toggleMenu" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul id="ulMenu" class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end align-items-end">
-                        <li onclick="contraiMenu()" class="nav-item "><a id="homePage" class="nav-link " aria-current="page" href="#casarossini/Homepage">Home</a></li>
-                        <li class="nav-link elementiMenu p-sm-0 m-sm-0"><a id="roomPage" class="nav-link" aria-current="page" href="#casarossini/Stanze" >Stanze</a></li>
-                        <li class="nav-link elementiMenu p-sm-0 m-sm-0"><a id="contactPage" class="nav-link" aria-current="page" href="#casarossini/Contatti">Contatti</a></li>
-                        <li class="nav-link elementiMenu p-sm-0 m-sm-0"><a id="servicesPage" class="nav-link" aria-current="page" href="#casarossini/Servizi">Servizi</a></li>                    
-                        <li class="nav-link elementiMenu p-sm-0 m-sm-0">
+                        <li onclick="contraiMenu()" class="nav-item elementiMenu p-sm-0 m-sm-0 bolderText"><a
+                                id="homePage" class="nav-link cl-granata" aria-current="page"
+                                href="#casarossini/Homepage">Home</a></li>
+                        <li onclick="contraiMenu()" class="nav-link elementiMenu p-sm-0 m-sm-0 bolderText"><a
+                                id="roomPage" class="nav-link cl-granata" aria-current="page"
+                                href="#casarossini/Stanze">Stanze</a></li>
+                        <li onclick="contraiMenu()" class="nav-link elementiMenu p-sm-0 m-sm-0 bolderText"><a
+                                id="contactPage" class="nav-link cl-granata" aria-current="page"
+                                href="#casarossini/Contatti">Contatti</a></li>
+                        <li onclick="contraiMenu()" class="nav-link elementiMenu p-sm-0 m-sm-0 bolderText"><a
+                                id="servicesPage" class="nav-link cl-granata" aria-current="page"
+                                href="#casarossini/Servizi">Servizi</a></li>
+                        <li onclick="contraiMenu()" class="nav-link elementiMenu p-sm-0 m-sm-0 bolderText">
                             <a href="#casarossini/Stanze">
-                                <div class="icons-wrapper d-flex w-100"><a class="nav-link" href="https://www.airbnb.it/users/show/34354561"
-                                        target="blank">
+                                <div class="icons-wrapper d-flex w-100"><a class="nav-link"
+                                        href="https://www.airbnb.it/users/show/34354561" target="blank">
                                         <div>&nbsp;Airbnb&nbsp;&nbsp;</div>
                                         <div><i class="fa-brands fa-airbnb m-md-0">
                                             </i>
@@ -135,7 +143,7 @@
                                 </div>
                             </a>
                         </li>
-                    </ul>    
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -157,9 +165,9 @@
                 <p class="footerText">Copyright &copy; 2022 PurpleTech</p>
             </div>
             <div class="pt-3">
-               <p onclick="scrollToTop()" class="footerText scroll">torna in alto</p> 
+                <p onclick="scrollToTop()" class="footerText scroll">torna in alto</p>
             </div>
-            
+
         </div>
     </footer>
 
@@ -169,7 +177,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-
+    <!--googleMaps-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
     <!--javascript-->
     <script src="assets/index.js"></script>
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> -->
