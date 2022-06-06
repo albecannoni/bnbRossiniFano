@@ -108,13 +108,23 @@ function slideBox() {
                         aria-label="Slide 3"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
                         aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
                 </div>
                 <div class="carousel-inner bRadius">
                     <div class="carousel-item active">
-                        <img src="assets/images/caruosel1.png" class="d-block w-100" alt="...">
+                        <img src="assets/images/caruosel1.png" class="d-block w-100" alt="piazza 20 settembre Fano">
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="assets/images/mare1.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/caruosel2.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="assets/images/mare2.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="assets/images/caruosel3.png" class="d-block w-100" alt="...">
