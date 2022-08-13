@@ -42,32 +42,31 @@
 <body class="bg-pesca">
 
     <!--Header-->
-    <header class="ombraGranata bg-mio ">
-
-        <nav class="navbar navbar-expand-lg fixed-top  ombra">
+    <header class="">
+        <nav id="nav-bar" class="navbar navbar-expand-lg fixed-top  ombra">
             <div class="container">
                 <a class="navbar-brand" href="#"><img class="logo" id="imgLogo" onclick="init()"
                         src="/assets/images/logo2.png" alt="" width="30" height="24"></a>
-                <button  id="hamburger" onclick="espandiMenu()" class="navbar-toggler bg-dark toggleMenu ombra d-flex justify-content-center align-items-center" type="button"
+                <button  id="hamburger" onclick="espandiMenu()" class="navbar-toggler bg-light toggleMenu ombra d-flex justify-content-center align-items-center" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul id="ulMenu" class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end align-items-end ">
-                        <li  onclick="" class="nav-item elementiMenu p-sm-0 m-sm-0 bolderText"><a
+                        <li  onclick="" class="nav-item  p-sm-0 m-sm-0 "><a
                                 id="homePage" class="nav-link " aria-current="page"
                                 href="#casarossini/Homepage">Home</a></li>
-                        <li onclick="" class="nav-link elementiMenu p-sm-0 m-sm-0 bolderText"><a
-                                id="roomPage" class="nav-link cl-granata" aria-current="page"
+                        <li onclick="" class="nav-link elementiMenu p-sm-0 m-sm-0 "><a
+                                id="roomPage" class="nav-link " aria-current="page"
                                 href="#casarossini/Stanze">Stanze</a></li>
-                        <li onclick="" class="nav-link elementiMenu p-sm-0 m-sm-0 bolderText"><a
-                                id="contactPage" class="nav-link cl-granata" aria-current="page"
+                        <li onclick="" class="nav-link elementiMenu p-sm-0 m-sm-0 "><a
+                                id="contactPage" class="nav-link " aria-current="page"
                                 href="#casarossini/Contatti">Contatti</a></li>
-                        <li onclick="" class="nav-link elementiMenu p-sm-0 m-sm-0 bolderText"><a
-                                id="servicesPage" class="nav-link cl-granata" aria-current="page"
+                        <li onclick="" class="nav-link elementiMenu p-sm-0 m-sm-0 "><a
+                                id="servicesPage" class="nav-link " aria-current="page"
                                 href="#casarossini/Servizi">Servizi</a></li>
-                        <li onclick="" class="nav-link elementiMenu p-sm-0 m-sm-0 bolderText">
+                        <li onclick="" class="nav-link elementiMenu p-sm-0 m-sm-0 ">
                             <a href="#casarossini/Stanze">
                                 <div class="icons-wrapper d-flex w-100"><a class="nav-link"
                                         href="https://www.airbnb.it/users/show/34354561" target="blank">
@@ -82,13 +81,8 @@
                 </div>
             </div>
         </nav>
-
-        <!--wrapper-->
-        <div class="navWrapper">
-            <p></p>
-        </div>
     </header>
-
+<div id="container">
     <!--tutto viene generato qui dentro a seconda degli eventi-->
     <!--JsPool-->
     <div id="pool" class="py-md-5 py-sm-3 h-100 bg-pesca "></div>
@@ -106,7 +100,7 @@
         </div>
     </footer>
 
-
+</div>
     <!--bootstrap-->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
