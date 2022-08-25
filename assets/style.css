@@ -53,18 +53,18 @@ html{
     height: 60%;
 }
 
-
-body, html {
+html {
     margin: 0;
     padding: 0;
     height: auto;
     width: 100vw;
+    background-color: var(--colore3);
 }
 :root {
     /* --colore1: #00c9a6; */
     --colore1: #4a4453;
     --colore2: #00536c;
-    --colore3: #845EC2;
+    --colore3: #F4BE27;
     --colore4: #372b4a;
     --accento: #D2F4CC;
     --fondino: rgba(210, 244, 204, 0.15);
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #container{
     position: absolute;
-    top: 7vh;}
+    top: 16vh;}
 
 
 #pool {
@@ -168,33 +168,25 @@ img {
     cursor: zoom-in;
 }
 
-/*colori*/
-
 header nav{
-    background-color: var(--colore2);
+    background-color: var(--colore4);
     color: var(--accento);
 }
-#ulMenu li{
+#ulMenu{
     color: black;
     text-decoration: none;
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    
 }
 a{
     text-decoration: none;
-    color: var(--colore4)
+   
 }
-
-.text-border-pesca {
-    text-shadow: 1px 0 0 #F9835D, -1px 0 0 #F9835D, 0 1px 0 #F9835D,
-        0 -1px 0 #F9835D, 1px 1px #F9835D, -1px -1px 0 #F9835D, 1px -1px 0 #F9835D, -1px 1px 0 #F9835D;
-        
-}
-
-.text-border {
-    text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
-        0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
-}
-
 .text-border-black {
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
         1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
@@ -226,21 +218,18 @@ a{
 }
 
 /* ========== navBar ============== */
-#navbarSupportedContent{
-    background-color: #800000;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
 .nascondi {
     display: none;
 }
 
 .logo {
-    margin-top: 6px;
     font-size: x-large;
     font-weight: bold;
-    color: #800000;
+    color: var(--colore3);
+    
+}
+#logo{
+    height: 36px;
 }
 .list {
     margin-top: 0.5em;
@@ -352,7 +341,7 @@ button:active {
     position: relative;
 }
 .fa-airbnb {
-    background: #800000;
+    background: var(--colore3);
     /*(circle at 30% 107%, #800000 0%, #fdf497 5%, #d649fd 45%, #d6249f 60%, #d496f1 90%);*/
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
