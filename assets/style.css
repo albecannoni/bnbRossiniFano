@@ -9,6 +9,7 @@
     vertical-align: baseline;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    list-style: none;
 }
 
 html {
@@ -431,8 +432,9 @@ button:active {
 
 /** ========== FOOTER ============== */
 footer {
-    background-color: #a0cff8;
+    background-color: var(--colore4);
     position: bottom;
+    color: var(--colore3);
 }
 
 .footerWrapper {
@@ -481,7 +483,7 @@ align-items: center;
 
 #logo {position: absolute;
     top: 10px;
-    height: 40% !important;
+    height: 3.77vh !important;
     /* border: 3px rgb(117, 128, 0) solid; */
     
 }
