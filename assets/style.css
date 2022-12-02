@@ -1,6 +1,6 @@
 /*UA reset*/
 
- * {
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -10,9 +10,11 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-html{
+
+html {
     font-size: 16px;
 }
+
 /*generiche*/
 
 /*larghezze*/
@@ -60,31 +62,36 @@ html {
     width: 100vw;
     background-color: var(--colore3);
 }
+
 :root {
     /* --colore1: #00c9a6; */
     --colore1: #4a4453;
     --colore2: #00536c;
-    --colore3: #d6d3cb; /*fondo pagina*/
-    --colore4: #372b4a; /*?--navbar*/
-    --colore4: #444148; /*?--navbar*/
+    --colore3: #d6d3cb;
+    /*fondo pagina*/
+    /* --colore4: #372b4a; ?--navbar */
+    --colore4: #444148;
+    /*?--navbar*/
     --accento: #D2F4CC;
     --fondino: rgba(210, 244, 204, 0.15);
     --testo: rgba(254, 255, 249, 1);
 }
 
-.scroll:hover{
+.scroll:hover {
     cursor: pointer;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: black;
     text-shadow: 1px 0 0 whitesmoke, -1px 0 0 whitesmoke, 0 1px 0 whitesmoke,
-                 0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
+        0 -1px 0 whitesmoke, 1px 1px whitesmoke, -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke;
 
 }
-#container{
+
+#container {
     position: absolute;
-    top: 16vh;}
+    top: 16vh;
+}
 
 
 #pool {
@@ -92,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100vw;
 }
 
-.gridSystem{
+.gridSystem {
     text-align: center;
     margin: 0 auto;
     display: grid;
@@ -100,26 +107,28 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1em;
 }
 
-.gridCard{
-    border:2px solid rgba(245, 245, 245, 0.303);
+.gridCard {
+    border: 2px solid rgba(245, 245, 245, 0.303);
     background-color: var(--accento);
     padding: 1em;
-    
+
 }
-.serviceIcon{
+
+.serviceIcon {
     height: auto;
     width: 7em;
 }
 
-.footerText{
+.footerText {
     font-size: small;
-    
+
 }
 
-.upperCase{
+.upperCase {
     text-transform: uppercase;
 }
-.decNone{
+
+.decNone {
     text-decoration: none;
     text-emphasis: none;
     color: black;
@@ -144,6 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 .semiBoldText {
     font-weight: 500;
 }
+
 /*handwriting*/
 .firma {
     font-family: 'Nothing You Could Do', cursive;
@@ -169,11 +179,12 @@ img {
     cursor: zoom-in;
 }
 
-header nav{
+header nav {
     background-color: var(--colore4);
     color: var(--accento);
 }
-#ulMenu{
+
+#ulMenu {
     color: black;
     text-decoration: none;
     list-style: none;
@@ -182,12 +193,14 @@ header nav{
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    
+
 }
-a{
+
+a {
     text-decoration: none;
-   
+
 }
+
 .text-border-black {
     text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black,
         1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
@@ -214,7 +227,7 @@ a{
     height: auto;
 }
 
-#gMaps{
+#gMaps {
     margin: 0 auto;
 }
 
@@ -227,11 +240,13 @@ a{
     font-size: x-large;
     font-weight: bold;
     color: var(--colore3);
-    
+
 }
-#logo{
+
+#logo {
     height: 36px;
 }
+
 .list {
     margin-top: 0.5em;
     font-size: x-large;
@@ -266,13 +281,14 @@ form {
     padding-bottom: 2em;
     background-color: var(--colore2);
     padding: 0 0;
-  }
-  
-  fieldset {
+}
+
+fieldset {
     border: none;
     padding: 2rem 0;
     border-bottom: 3px solid var(--fondino);
-  }
+}
+
 /*bottone info*/
 button {
     font-family: inherit;
@@ -287,6 +303,7 @@ button {
     overflow: hidden;
     transition: all 0.2s;
 }
+
 /*bottoni animati della funzione buttonGen*/
 .btn3D {
     width: 13vw;
@@ -311,27 +328,34 @@ button span {
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
 }
+
 button svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
 }
+
 button:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
 }
+
 button:hover svg {
     transform: translateX(1.2em) rotate(45deg) scale(1.1);
 }
+
 button:hover span {
     transform: translateX(5em);
 }
+
 button:active {
     transform: scale(0.95);
 }
+
 @keyframes fly-1 {
     from {
         transform: translateY(0.1em);
     }
+
     to {
         transform: translateY(-0.1em);
     }
@@ -341,6 +365,7 @@ button:active {
 .icons-wrapper {
     position: relative;
 }
+
 .fa-airbnb {
     background: var(--colore3);
     /*(circle at 30% 107%, #800000 0%, #fdf497 5%, #d649fd 45%, #d6249f 60%, #d496f1 90%);*/
@@ -348,6 +373,7 @@ button:active {
     -webkit-text-fill-color: transparent;
     /* This is the first item so no animation delay needed.*/
 }
+
 .fa-brands {
     display: inline-block;
     /*Makes the icons inline block level elements. This will let us animate the transform property.*/
@@ -355,6 +381,7 @@ button:active {
     /*Applies the float keyframe animation over 5s and makes it run infinitely.*/
     animation: float 1.5s ease-in-out infinite;
 }
+
 .icons-wrapper::after {
     position: absolute;
     width: 100%;
@@ -365,21 +392,25 @@ button:active {
     transform: translateX(-50%);
     bottom: 0;
 }
+
 /*animazione icona AirBnb*/
 @keyframes float {
     0% {
         transform: translateY(0);
         /*The starting point of the animation is 0.*/
     }
+
     50% {
         transform: translateY(-4px);
         /*The middle point of the animation is -15xp. This will move the element up.*/
     }
+
     100% {
         transform: translateY(0);
         /*The last point of the animation is going back to the starting state of 0.*/
     }
 }
+
 #airbnb {
     margin-right: 20rem;
 }
@@ -388,7 +419,7 @@ button:active {
     display: none;
 }
 
-.wResponsive{
+.wResponsive {
     width: 60vw;
 }
 
@@ -396,16 +427,18 @@ button:active {
     #textBox2 {
         width: 57.4vw
     }
-    .wideScreen{       
+
+    .wideScreen {
         width: 57.4vw;
-    }    
-}    
+    }
+}
 
 /* ========== footer ============== */
 footer {
     background-color: #a0cff8;
     position: bottom;
 }
+
 .footerWrapper {
     height: 3vh;
     position: bottom;
@@ -413,54 +446,18 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     padding-left: 1vw;
-    margin: 0;    
+    margin: 0;
 }
 
 /* ========== MEDIA QUERIES MOBILE ============== */
 
 /*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 600px) {
 
-    .wResponsive{
-        width: 86vw;
-    }
-    #smCol {
-        display: grid;
-    }
-    #banner {
-        padding-left: 0 auto;
-    }
-    #textbox2 p {
-        width: 100%;
-    }
-    .btn3D {
-        width:31vw;
-        height:min-content;        
-    }
-    .myCard {
-        height: auto;
-    }
-    .logo {
-        margin-top: 2vh;
-        margin-left: 6vw;        
-    }
-    .contrai {
-        display: none;
-    }
-    img {
-        width: auto;
-        height: auto;
-    }    
-    .nascondi li {
-        display: none;
-        background-color: #823DD1;
-    }
-    .mostra {
-        display: block;
-        max-height: 100%;
-    }
 }
- #ulMenu li a{
+
+
+#ulMenu li a {
     color: var(--testo);
     text-decoration: none;
     text-decoration-color: black;
