@@ -15,9 +15,31 @@ html {
     font-size: 16px;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100vw;
+    background-color: var(--colore3);
+}
+
+:root {
+    /* --colore1: #00c9a6; */
+    --colore1: #4a4453;
+    --colore2: #00536c;
+    --colore3: #d6d3cb;
+    /*fondo pagina*/
+    /* --colore4: #372b4a; ?--navbar */
+    --colore4: #444148;
+    /*?--navbar*/
+    --accento: #D2F4CC;
+    --fondino: rgba(210, 244, 204, 0.15);
+    --testo: rgba(254, 255, 249, 1);
+}
+
 /*generiche*/
 
-/*larghezze*/
+/**--larghezze*/
 .w-90 {
     width: 90%;
 }
@@ -53,28 +75,6 @@ html {
 
 .h-60 {
     height: 60%;
-}
-
-html {
-    margin: 0;
-    padding: 0;
-    height: auto;
-    width: 100vw;
-    background-color: var(--colore3);
-}
-
-:root {
-    /* --colore1: #00c9a6; */
-    --colore1: #4a4453;
-    --colore2: #00536c;
-    --colore3: #d6d3cb;
-    /*fondo pagina*/
-    /* --colore4: #372b4a; ?--navbar */
-    --colore4: #444148;
-    /*?--navbar*/
-    --accento: #D2F4CC;
-    --fondino: rgba(210, 244, 204, 0.15);
-    --testo: rgba(254, 255, 249, 1);
 }
 
 .scroll:hover {
@@ -231,9 +231,15 @@ a {
     margin: 0 auto;
 }
 
-/* ========== navBar ============== */
+/** ========== navBar ============== */
 .nascondi {
     display: none;
+}
+
+#ulMenu li a {
+    color: var(--testo);
+    text-decoration: none;
+    text-decoration-color: black;
 }
 
 .logo {
@@ -264,7 +270,7 @@ a {
 
 
 
-/* ========== slideshow ============== */
+/** ========== SLIDESHOW ============== */
 #banner, #banner2 {
     width: auto;
     height: 40vh;
@@ -272,7 +278,7 @@ a {
     border-radius: 5px;
 }
 
-/* ========== form ============== */
+/**========== FORM ============== */
 form {
     width: 30vw;
     max-width: 500px;
@@ -304,7 +310,7 @@ button {
     transition: all 0.2s;
 }
 
-/*bottoni animati della funzione buttonGen*/
+/**bottoni animati della funzione buttonGen*/
 .btn3D {
     width: 13vw;
     display: inline-block;
@@ -361,7 +367,7 @@ button:active {
     }
 }
 
-/*ICONA AIRBNB*/
+/*!ICONA AIRBNB*/
 .icons-wrapper {
     position: relative;
 }
@@ -423,17 +429,7 @@ button:active {
     width: 60vw;
 }
 
-@media screen and (min-width: 768px) {
-    #textBox2 {
-        width: 57.4vw
-    }
-
-    .wideScreen {
-        width: 57.4vw;
-    }
-}
-
-/* ========== footer ============== */
+/** ========== FOOTER ============== */
 footer {
     background-color: #a0cff8;
     position: bottom;
@@ -449,16 +445,99 @@ footer {
     margin: 0;
 }
 
-/* ========== MEDIA QUERIES MOBILE ============== */
-
+/** ========== MEDIA QUERIES MOBILE ============== */
 /*Breakpoint set at 600px, once it is 600px or smaller the layout changes to use the following styles overriding the old ones.*/
+
 @media screen and (max-width: 600px) {
+html{
+    width: 100vw !important;
+    border: solid 3px white;
+}
+/** ========== NAVBAR ============== */
 
+#nav-bar{
+    position:fixed !important;
+    /* border: 3px solid red; */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 12vh;
+    z-index: 999;
+    
+}
+#nav-bar .container{
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column !important;
+justify-content: center;
+align-items: center;
+/* border: 3px solid rgb(40, 157, 29); */
+
+}
+.nascondi {
+    display: none;
+}
+
+#logo {position: absolute;
+    top: 10px;
+    height: 40% !important;
+    /* border: 3px rgb(117, 128, 0) solid; */
+    
 }
 
 
-#ulMenu li a {
-    color: var(--testo);
-    text-decoration: none;
-    text-decoration-color: black;
+#ulMenu{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    /* border: 3px green solid; */
+    /* background-color: var(--colore4); */
+    /* z-index: -100; */
+    width: 100vw !important;
+    height: 8vh !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+    #ulMenu li{
+        /* position: absolute; */
+        /* left: 0; */
+        top: 15px;
+        width: 18.5vw;
+        height: 4vh;
+        /* border: greenyellow 1px  solid !important; */
+        font-size: 0.7rem;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+    #ulMenu li a{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    #textBox2 {
+        width: 57.4vw
+    }
+
+    .wideScreen {
+        width: 57.4vw;
+    }
+}
+
+
