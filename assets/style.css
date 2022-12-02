@@ -64,8 +64,9 @@ html {
     /* --colore1: #00c9a6; */
     --colore1: #4a4453;
     --colore2: #00536c;
-    --colore3: #F4BE27;
-    --colore4: #372b4a;
+    --colore3: #d6d3cb; /*fondo pagina*/
+    --colore4: #372b4a; /*?--navbar*/
+    --colore4: #444148; /*?--navbar*/
     --accento: #D2F4CC;
     --fondino: rgba(210, 244, 204, 0.15);
     --testo: rgba(254, 255, 249, 1);

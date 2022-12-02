@@ -3,7 +3,7 @@ let pool = document.querySelector('#pool');
 let arrayRichieste = [];
 let arrayStanze = [];
 let menu = document.querySelector('#ulMenu');
-let scrollToTop = ()=> window.scroll(0,0);
+let scrollToTop = () => window.scroll(0, 0);
 
 //*classi
 class InfoRequest {
@@ -68,7 +68,7 @@ function resetPool() {
     pool.innerHTML = ``;
 }
 function homePageGen() {
-    //?landingPage
+
     resetPool();
     //?generazione blocchi
     welcomeBox();
@@ -80,6 +80,7 @@ function homePageGen() {
     //buttonGen();
     console.log('Home Page generata');
 }
+
 function welcomeBox() {
     let quoteBox = document.createElement("div");
     quoteBox.setAttribute('id', 'quoteBox');
@@ -89,6 +90,7 @@ function welcomeBox() {
     <h3 class="bolderText text-border">La nostra <span id="spanApi" style=" font-size: xx-large;;" class="text-viola">magica</span> città ti sta aspettando!</h3>
     </div>`;
 }
+
 function slideBox() {
     let slideBox = document.createElement("div");
     slideBox.setAttribute('id', 'slideBox');
@@ -148,6 +150,7 @@ function slideBox() {
     </div>
                           </div>`;
 }
+
 function slideHomeBox() {
     let slideHomeBox = document.createElement("div");
     slideHomeBox.setAttribute('id', 'slideHomeBox');
@@ -197,6 +200,7 @@ function slideHomeBox() {
     </div>
     </div>`;
 }
+
 function teaserBox() {
 
     let teaserBox = document.createElement('div');
@@ -206,7 +210,7 @@ function teaserBox() {
 
     let textBox2 = document.createElement("div");
     textBox2.setAttribute('id', 'textBox2');
-    textBox2.classList.add('text-center', 'w-80', 'corsivo', 'd-flex', 'justify-content-center', 'align-items-center','ombra', 'bRadius');
+    textBox2.classList.add('text-center', 'w-80', 'corsivo', 'd-flex', 'justify-content-center', 'align-items-center', 'ombra', 'bRadius');
     teaserBox.append(textBox2);
 
     let textP2 = document.createElement("p");
@@ -218,6 +222,7 @@ function teaserBox() {
                         Consiglio senza riserve questa possibilità. Davvero ottima esperienza! &quot;                        
                         <span class="firma">Francesca</span>`;
 }
+
 function buttonGen() {
 
     let buttonBox = document.createElement('div');
@@ -276,6 +281,7 @@ function buttonGen() {
                             </div> `;
 
 }
+
 function galleryGen() {
 
     /*chiamata ajax*/
@@ -533,7 +539,7 @@ function expandRoom(id) {
 }
 function contactPageGen() {
     resetPool();
-    welcomeBox();    
+    welcomeBox();
     teaserBox();
     let textP2 = document.querySelector('#textP2')
     console.log(textP2);
@@ -597,18 +603,18 @@ function gMapsGen() {
     gMaps.classList.add('m-2', 'pt-5', 'd-flex', 'justify-content-start', 'align-items-center');
 }
 
-//?SBAGLIATA
- function contraiMenu() {     
-     menu.classList.add('nascondi');
-     console.log(menu)
- }
+//!SBAGLIATA
+function contraiMenu() {
+    menu.classList.add('nascondi');
+    console.log(menu)
+}
 function espandiMenu() {
     menu.classList.remove('nascondi');
-        
+
 }
 //*controllo form
 function check() {
-    
+
     let richiesta = new InfoRequest
     let nome = document.querySelector('#fname');
     let cognome = document.querySelector('#lname');
