@@ -329,6 +329,9 @@ button {
     box-shadow: 0 4px 0 #bcdab8;
     scale: 1.15;
 }
+.callTo{
+background-color: #00536c;
+}
 
 button span {
     display: block;

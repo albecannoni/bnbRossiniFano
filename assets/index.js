@@ -230,12 +230,12 @@ function buttonGen() {
     buttonBox.classList.add('container', 'py-2', 'col-8');
     pool.appendChild(buttonBox);
     buttonBox.innerHTML = `<div class="d-flex align-items-center w-100 justify-content-center gap-5">                            
-                                <div id="btnTel" class="mt-3">
-                                    <a id="btnHrefTel" class="text-white" href="">
+                                <div id="btnTel" class="mt-3 ">
+                                    <a id="btnHrefTel" class="text-white " href="">
                                     <div class="col-6 p-0 m-0 align-items-center">
-                                        <button onclick="fillAdr()" type="button" class="btn3D text-white bg-viola my-1">                                        
+                                        <button onclick="fillAdr()" type="button" class="btn3D text-white bg-viola my-1 callTo">                                        
                                             <div class="d-flex justify-content-end align-items-center"></div>
-                                            <div class="d-flex  justify-content-center">
+                                            <div class="d-flex justify-content-center">
                                                 <div class="d-flex justify-content-center align-items-center">                                                    
                                                     <div class="justify-content-center align-items-center h-100">
                                                         <p class="h-100 px-1 m-0 ">chiamaci!</p>
@@ -259,7 +259,7 @@ function buttonGen() {
                                     <a  id="btnHrefMail" class="text-white" href="">  
                                     <div class="col  p-0 m-0">
                                         <div class="col-6 p-0 m-0 align-items-center">
-                                            <button onclick="fillAdr()"  type="button" class="btn3D text-white bg-granata ">
+                                            <button onclick="fillAdr()"  type="button" class="btn3D text-white bg-granata callTo">
                                                 
                                                     <div class="d-flex justify-content-center align-items-center">                                        
                                                         <div class="col justify-content-center align-items-center h-100">
