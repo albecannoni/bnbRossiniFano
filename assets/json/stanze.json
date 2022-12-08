@@ -10,7 +10,7 @@
             "terrazzo": "",
             "armadio": "guardaroba",
             "connessione": "connessione wifi e via cavo",
-            "postazione": "postazione di lavoro",
+            "postazione": "scrivania",
             "frigorifero": "frigorifero"
         }
     },
@@ -25,7 +25,7 @@
             "terrazzo": "terrazzo privato",
             "armadio": "armadio",
             "connessione": "connessione Wi-fi e via cavo",
-            "postazione": "postazione di lavoro",
+            "postazione": "scrivania",
             "frigorifero": ""
         }
     }
